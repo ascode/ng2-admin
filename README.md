@@ -31,8 +31,19 @@ yarn
 webpack-merge
 rimraf
 
-# Angularjs2 在线教程 http://www.hubwiz.com/course/5599d367a164dd0d75929c76/  
+## 帮助
+* Angularjs2 在线教程   http://www.hubwiz.com/course/5599d367a164dd0d75929c76/   
 
+* 奚琛发起的《开发人员帮助手册》  
+http://vosung.bgenius.cn/xic/Devlopment-Helper  
+
+* 通知公告  
+http://vosung.bgenius.cn/ascode/notice  
+
+
+
+
+# 如下是作者的源码首页  
 
 [![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
 [![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
