@@ -1,4 +1,3 @@
-
 ## 先决条件
 npm install webpack-merge -g
 npm install webpack -g
@@ -12,6 +11,7 @@ npm 4.1.2
 webpack-merge
 rimraf
 
+# Angularjs2 在线教程 http://www.hubwiz.com/course/5599d367a164dd0d75929c76/  
 
 
 [![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
