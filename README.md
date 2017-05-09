@@ -50,7 +50,7 @@ To run the local copy in production mode and build the sources, execute:
 ```
 npm run start:prod
 ```
-or in AOT mode  
+or in [AOT mode](ourdocs/asserts/angularaotscreenshot1.png)    
 ```
 npm run start:prod:aot
 ```
