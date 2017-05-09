@@ -1,11 +1,23 @@
 ## 说明  
 目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发习惯进行。  
 
-这里将用到的前端知识：  
+This project aims to bootstrap the development of your product and provide an ecosystem for building production-ready application or prototypes.
 
-程序员必须运用的前端知识：  
+Frameworks like Bootstrap provide a number of components, but usually it’s not enough to build a real-world app. This template comes with lots of popular UI components with a unified color scheme, plus it is based on a modern Angular framework and has a flexible component based structure.
 
-
+## List of features
+* Angular 2+
+* Angular CLI
+* Bootstrap 4 CSS Framework
+* SASS
+* Smart Table
+* Forms
+* Editors
+* Charts (amChart, Chartist, Chart.js, Morris)
+* Maps (Google, Leaflet, amMap)
+* Responsive layout
+* High resolution
+* and many more!
 
 ## 先决条件  
 * [下载安装git](https://git-for-windows.github.io/)  
@@ -78,6 +90,11 @@ http://vosung.bgenius.cn/xic/Devlopment-Helper
 * 通知公告  
 http://vosung.bgenius.cn/ascode/notice  
 
+## 知识储备  
+
+这里将用到的前端知识：  
+
+程序员必须运用的前端知识：  
 
 
 
