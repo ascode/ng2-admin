@@ -1,3 +1,12 @@
+## 说明  
+目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发习惯进行。  
+
+这里将用到的前端知识：  
+
+程序员必须运用的前端知识：  
+
+
+
 ## 先决条件  
 * [下载安装git](https://git-for-windows.github.io/)  
 * [下载安装nodejs(v6.10.2)](https://nodejs.org)  
@@ -5,9 +14,12 @@
 * npm install webpack -g  
 * npm install rimraf -g  
 
-## 运行环境
-node v6.10.2
-npm 4.1.2  
+## 运行环境  
+框架作者要求：  
+Make sure you have Node version >= 6.0 and NPM >= 3  
+我们统一支持：  
+node v6.10.2  
+npm 4.1.2    
 
 ## 运行项目  
 #### 克隆仓库并且安装依赖  
@@ -25,7 +37,32 @@ or
 cd ng2-admin
 yarn
 ```
-注意：如果安装依赖失败，可以删除node-modules目录然后重试，如果多次失败则向同事请求协助。
+注意：如果安装依赖失败，可以删除node-modules目录然后重试，如果多次失败则向同事请求协助。  
+
+#### 运行本地副本  
+在development mode运行本地副本：  
+```
+npm start
+```  
+Go to http://0.0.0.0:4200 or http://localhost:4200 in your browser.  
+
+To run the local copy in production mode and build the sources, execute:  
+```
+npm run start:prod
+```
+or in AOT mode  
+```
+npm run start:prod:aot
+```
+To create a bundle in production mode, execute:  
+```
+npm run build:prod
+```
+or  
+```
+npm run build:prod:aot
+```
+This will clear up your dist folder (where release files are located), generate a release build and start the built-in server. Now you can copy the sources from the dist folder and use it with any backend framework or simply put it under a web server.
 
 ## 模块说明
 webpack-merge
