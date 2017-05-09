@@ -1,11 +1,31 @@
-## 先决条件
+## 先决条件  
+[下载安装git](https://git-for-windows.github.io/)  
+[下载安装nodejs(v6.10.2)](https://nodejs.org)  
 npm install webpack-merge -g
 npm install webpack -g
 npm install rimraf -g
 
 ## 运行环境
 node v6.10.2
-npm 4.1.2
+npm 4.1.2  
+
+## 运行项目  
+### 克隆仓库并且安装依赖  
+你可以使用git命令行克隆仓库：  
+```
+git clone https://github.com/akveo/ng2-admin.git  
+```
+克隆好仓库之后，进入项目目录，并安装依赖：  
+```
+cd ng2-admin
+npm install
+```
+or  
+```
+cd ng2-admin
+yarn
+```
+注意：如果安装依赖失败，可以删除node-modules目录然后重试，如果多次失败则向同事请求协助。
 
 ## 模块说明
 webpack-merge
