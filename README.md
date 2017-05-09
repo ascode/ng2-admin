@@ -1,5 +1,5 @@
 ## 说明  
-目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发习惯进行。  
+目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发风格进行。  
 
 This project aims to bootstrap the development of your product and provide an ecosystem for building production-ready application or prototypes.
 
@@ -98,6 +98,8 @@ http://vosung.bgenius.cn/ascode/notice
 
 
 
+
+---
 # 如下是作者的源码首页  
 
 [![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
