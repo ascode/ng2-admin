@@ -76,9 +76,11 @@ npm run build:prod:aot
 ```
 This will clear up your dist folder (where release files are located), generate a release build and start the built-in server. Now you can copy the sources from the dist folder and use it with any backend framework or simply put it under a web server.
 
-## 模块说明
-webpack-merge
-rimraf
+## 组件/模块说明
+* webpack-merge  
+* rimraf  
+* Karma  
+Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程管理工具（Test Runner）。该工具可用于测试所有主流Web浏览器，也可集成到 CI （Continuous integration）工具，也可和其他代码编辑器一起使用。
 
 ## 帮助
 * Angularjs2 在线教程  
