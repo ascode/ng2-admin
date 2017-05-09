@@ -79,7 +79,7 @@ This will clear up your dist folder (where release files are located), generate 
 ## 组件/模块说明
 * webpack-merge  
 * rimraf  
-* Karma  
+* [Karma](ourdocs/karma.md)  
 Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程管理工具（Test Runner）。该工具可用于测试所有主流Web浏览器，也可集成到 CI （Continuous integration）工具，也可和其他代码编辑器一起使用。
 
 ## 帮助
