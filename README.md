@@ -79,7 +79,7 @@ This will clear up your dist folder (where release files are located), generate 
 ## mock测试服务  
 * RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
 
-## 组件/模块说明
+## 组件/模块/工具说明
 * webpack-merge  
 * rimraf  
 * [Karma](ourdocs/karma.md)  
@@ -88,6 +88,8 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 [https://github.com/nuysoft/Mock/wiki](https://github.com/nuysoft/Mock/wiki)  
 * express路由 
 [http://www.expressjs.com.cn/guide/routing.html](http://www.expressjs.com.cn/guide/routing.html)    
+* Postman  
+api测试工具  
 
 ## 帮助
 * Angularjs2 在线教程  
