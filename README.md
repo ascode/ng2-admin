@@ -90,6 +90,9 @@ http://vosung.bgenius.cn/xic/Devlopment-Helper
 * 通知公告  
 http://vosung.bgenius.cn/ascode/notice  
 
+* 相关工具和平台  
+* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+
 ## 知识储备  
 
 这里将用到的前端知识：  
