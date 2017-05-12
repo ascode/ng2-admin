@@ -35,7 +35,6 @@ Approver	审核人	字符串(50)
 ApproveTime	审核时刻	日期+时间
 Abandoner	禁用人	字符串(50)
 AbandonTime	禁用时刻	日期+时间
-
 ```
 
 
