@@ -1,5 +1,5 @@
-## api列表  
-### 用户  
+### api列表  
+* 用户  
 adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
 queryuser(json [jsonQueryUser](#jsonQueryUser))  查询用户  
 removeuser(int userid)  删除用户  
