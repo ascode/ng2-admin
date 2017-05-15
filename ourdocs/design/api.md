@@ -2,13 +2,14 @@
 
 #### api  
 adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
-queryuser(json jsonQueryUser)  查询用户  
+queryuser(json [jsonQueryUser](#jsonQueryUser))  查询用户  
 removeuser(int userid)  删除用户  
 updateuser(json [jsonObjUpdateUser](#jsonObjUpdateUser))  更新用户  
 
 #### 数据说明  
 
 * jsonObjAddUser
+<span id="jsonObjAddUser" name="jsonObjAddUser"></span>
 类型： json对象  
 字段：  
 ```
@@ -39,6 +40,7 @@ AbandonTime	禁用时刻	日期+时间
 
 
 * jsonQueryUser  
+<span id="jsonQueryUser" name="jsonQueryUser"></span>
 类型： json对象  
 字段： 
 ``` 
