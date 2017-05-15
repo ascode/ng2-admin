@@ -17,7 +17,6 @@ removeUserToRole  从指定角色中移除一个用户
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
-#### 2.1.1 一览说明  
 * userLogin  用户登录  
 请求类型：  
 POST    
@@ -41,39 +40,6 @@ POST
 请求类型：POST  
 请求数据：  
 响应数据：
-
-#### 2.1.2 数据说明  
-
-* jsonObjAddUser
-<span id="jsonObjAddUser" name="jsonObjAddUser"></span>
-类型： json对象  
-字段：  
-```
-编号	名称	字段类型
-FName	姓名	字符串(50)
-Dir	分类	字符串(50)
-Password	密码	字符串(50)
-ScanCode	扫描码	字符串(500)
-Admin	系统管理员	布尔值
-LogonUser	系统登录用户	布尔值
-ErpUser	ERP用户	字符串(50)
-ErpEmp	ERP员工	字符串(50)
-UseErpPassword	使用ERP密码登录	布尔值
-InValidTime	失效时间	日期+时间
-DataStatus	数据状态	数值枚举
-AbandonStatus	禁用标记	布尔值
-Creator	创建人	字符串(50)
-CreateTime	创建时间	日期+时间
-Updator	修改人	字符串(50)
-UpdateTime	修改时间	日期+时间
-Submitter	提交人	字符串(50)
-SubmitTime	提交时刻	日期+时间
-Approver	审核人	字符串(50)
-ApproveTime	审核时刻	日期+时间
-Abandoner	禁用人	字符串(50)
-AbandonTime	禁用时刻	日期+时间
-```
-
 
 * jsonQueryUser  
 <span id="jsonQueryUser" name="jsonQueryUser"></span>
