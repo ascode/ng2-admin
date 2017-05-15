@@ -1,5 +1,7 @@
-### api列表  
+### api一览  
 * 用户  
+api名称：请求方式：数据描述：：api说明
+userLogin：POST：jsonObjForUserLogin：：用户登录
 adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
 queryuser(json [jsonQueryUser](#jsonQueryUser))  查询用户  
 removeuser(int userid)  删除用户  
