@@ -1,10 +1,11 @@
 ### api一览  
 * 用户  
-api名称：请求方式：数据描述：：api说明
-userLogin：POST：jsonObjForUserLogin：：用户登录
-adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
-queryuser(json [jsonQueryUser](#jsonQueryUser))  查询用户  
-removeuser(int userid)  删除用户  
+
+将按照如下格式进行一览：“api名称：请求方式：数据描述/api说明”其中json数据请查看详情    
+userLogin：POST：jsonObjForUserLogin(json)/ 用户登录
+adduser:POST:[jsonObjAddUser](#jsonObjAddUser)(json)/  新增用户  
+queryuser:[jsonQueryUser](#jsonQueryUser)(json)/  查询用户  
+removeuser:GET:userid(int)/  删除用户  
 updateuser(json [jsonObjUpdateUser](#jsonObjUpdateUser))  更新用户  
 
 ### 用户api详细说明  
