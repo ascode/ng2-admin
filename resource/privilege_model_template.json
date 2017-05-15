@@ -1,0 +1,15 @@
+{
+    "all": [{
+        "module_name": "",
+        "module_text": "",
+        "selected": false,
+        "culumns": [{
+            "column_name": "",
+            "column_text": "",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "", "privilege_item_text": "", "selected": false }
+            ]
+        }]
+    }]
+}

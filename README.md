@@ -3,7 +3,11 @@
 
 This project aims to bootstrap the development of your product and provide an ecosystem for building production-ready application or prototypes.
 
-Frameworks like Bootstrap provide a number of components, but usually it’s not enough to build a real-world app. This template comes with lots of popular UI components with a unified color scheme, plus it is based on a modern Angular framework and has a flexible component based structure.
+Frameworks like Bootstrap provide a number of components, but usually it’s not enough to build a real-world app. This template comes with lots of popular UI components with a unified color scheme, plus it is based on a modern Angular framework and has a flexible component based structure.  
+
+## 目录  
+* 开发框架说明[本页]  
+* [API说明](ourdocs/design/api.md)    
 
 ## List of features
 * Angular 2+
@@ -18,6 +22,7 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * Responsive layout
 * High resolution
 * and many more!
+* 企业组织管理  
 
 ## 先决条件  
 * [下载安装git](https://git-for-windows.github.io/)  
