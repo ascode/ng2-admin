@@ -1,10 +1,17 @@
+## api列表  
 ### 用户  
-
-#### api  
 adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
 queryuser(json [jsonQueryUser](#jsonQueryUser))  查询用户  
 removeuser(int userid)  删除用户  
 updateuser(json [jsonObjUpdateUser](#jsonObjUpdateUser))  更新用户  
+
+### 用户api详细说明  
+
+#### api  
+adduser(json jsonObjAddUser)  新增用户  
+queryuser(json jsonQueryUser)  查询用户  
+removeuser(int userid)  删除用户  
+updateuser(json jsonObjUpdateUser)  更新用户  
 
 #### 数据说明  
 
