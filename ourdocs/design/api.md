@@ -49,4 +49,4 @@ AbandonStatus	禁用标记	布尔值
 * userid  
 
 * jsonObjUpdateUser  
-
+<span id="jsonObjUpdateUser" name="jsonObjUpdateUser"></span>
