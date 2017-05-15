@@ -19,12 +19,15 @@ removeUserToRole  从指定角色中移除一个用户
 #### 2.1 用户api  
 #### 2.1.1 一览说明  
 * userLogin  用户登录  
-请求类型：POST  
+请求类型：  
+POST    
 请求数据：  
+{"uid":0,"pwd":"***"}    
 响应数据：  
+包括用户信息(不带有密码的用户信息)、用户的权限信息、授权的token。一个示例数据是这样：{"userinfo":{},"privilege":{},"token":""}    
 * adduser(json jsonObjAddUser)  新增用户  
 请求类型：POST  
-请求数据：  
+请求数据：{}  
 响应数据：
 * queryuser(json jsonQueryUser)  查询用户  
 请求类型：POST  
