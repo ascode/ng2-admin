@@ -6,6 +6,14 @@ queryuser  查询用户
 removeuser  删除用户  
 updateuser  更新用户  
 
+* 角色  
+addRole  创建角色  
+updatePrivilegeForRole  更新角色的授权  
+queryPrivilegeByRole  查询角色的权限  
+queryUsersByRole  查询属于指定角色的用户列表  
+addUsersToRole  添加一个或者多个用户到一个角色  
+removeUserToRole  从指定角色中移除一个用户  
+
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
