@@ -1,14 +1,14 @@
 ### 用户  
 
 #### api  
-adduser(json jsonObjAddUser)  新增用户  
+adduser(json [jsonObjAddUser](#jsonObjAddUser))  新增用户  
 queryuser(json jsonQueryUser)  查询用户  
 removeuser(int userid)  删除用户  
 updateuser(json jsonObjUpdateUser)  更新用户  
 
 #### 数据说明  
 
-* jsonObjAddUser
+* [jsonObjAddUser](#jsonObjAddUser)  
 类型： json对象  
 字段：  
 ```
