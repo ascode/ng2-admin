@@ -1,73 +1,12 @@
-
-## 先决条件
-npm install webpack-merge -g
-npm install webpack -g
-npm install rimraf -g
-
-## 运行环境
-node v6.10.2
-npm 4.1.2
-
-## 模块说明
-webpack-merge
-rimraf
-
-
-
-[![Build Status](https://travis-ci.org/akveo/ng2-admin.svg?branch=master)](https://travis-ci.org/akveo/ng2-admin)
-[![Join the chat at https://gitter.im/ng2-admin/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng2-admin/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Dependency Status](https://david-dm.org/akveo/ng2-admin/status.svg)](https://david-dm.org/akveo/ng2-admin)
-
-# Admin panel framework based on Angular, Bootstrap 4 and Angular CLI
-
-Admin template made with :heart:  by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get the latest news about this template first!
-
-### Demo
-
-<a target="_blank" href="http://akveo.com/ng2-admin/"><img src="http://i.imgur.com/QK9AzHj.jpg" width="600" alt="Sky Blue"/></a>
-
-<a target="_blank" href="http://akveo.com/ng2-admin/">Live Demo</a>
-
-## Angular 1.x version
-Here you can find Angular 1.x based version: [Blur Admin](http://akveo.github.io/blur-admin/)
- 
-## Documentation
-Installation, customization and other useful articles: https://akveo.github.io/ng2-admin/
-
-## Based on
-Angular 2+, Angular CLI, Bootstrap 4, and lots of awesome modules and plugins
-
-## BrowserStack
-This project runs its tests on multiple desktop and mobile browsers using [BrowserStack](http://www.browserstack.com).
-
-<img src="https://cloud.githubusercontent.com/assets/131406/22254249/534d889e-e254-11e6-8427-a759fb23b7bd.png" height="40" />
-
-## How can I support developers?
-- Star our GitHub repo :star:
-- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow us on [Twitter](https://twitter.com/akveo_inc) :feet:
-- Like our page on [Facebook](https://www.facebook.com/akveo/) :thumbsup:
-
-## Can I hire you guys?
-Yes!  Visit [our homepage](http://akveo.com/) or simply leave us a message to [contact@akveo.com](mailto:contact@akveo.com). We will be happy to work with you!
-
-## Features
-* TypeScript
-* Webpack
-* Responsive layout
-* High resolution
-* Bootstrap 4 CSS Framework
-* Sass
-* Angular
-* jQuery
-* Charts (Chartist, Chart.js)
-* Maps (Google, Leaflet, amMap)
-* and many more!
-
-## License
-[MIT](LICENSE.txt) license.
-
-### From akveo
-
-Enjoy :metal:
-We're always happy to receive your feedback!
+/*
+expect:
+viewport-units: 0
+*/
+.icon {
+    background-image: url('data:image/png;base64,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');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 45px 45px;
+    height: 45px;
+    width: 45px;
+}
