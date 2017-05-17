@@ -18,6 +18,8 @@ export const routes: Routes = [
     path: 'pages',
     component: Pages,
     children: [
+      { path: 'user', loadChildren: './organization/user/user.module#UserModule' },
+      { path: 'role', loadChildren: './organization/role/role.module#RoleModule' },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
