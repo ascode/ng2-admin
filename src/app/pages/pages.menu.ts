@@ -6,6 +6,124 @@ export const PAGES_MENU = [
         path: 'dashboard',
         data: {
           menu: {
+            title: '仪表板',
+            icon: 'ion-android-home',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: 'organization',
+        data: {
+          menu: {
+            title: '常用菜单',
+            icon: 'ion-edit',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        },
+        children: [
+          {
+            path: 'ckeditor',
+            data: {
+              menu: {
+                title: '常用菜单1',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            }
+          }
+        ]
+      },
+      {
+        path: '',
+        data: {
+          menu: {
+            title: '组织管理',
+            icon: 'ion-edit',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        },
+        children: [
+          {
+            path: 'user',
+            data: {
+              menu: {
+                title: '用户管理',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+              {
+                path: 'usercreate',
+                data: {
+                  menu: {
+                    title: '新增用户',
+                  }
+                }
+              },
+              {
+                path: 'usermgmt',
+                data: {
+                  menu: {
+                    title: '用户信息',
+                  }
+                }
+              }
+            ]
+          },
+          {
+            path: 'role',
+            data: {
+              menu: {
+                title: '角色管理',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+              {
+                path: 'rolecreate',
+                data: {
+                  menu: {
+                    title: '创建角色',
+                  }
+                }
+              },
+              {
+                path: 'roleprivilege',
+                data: {
+                  menu: {
+                    title: '角色权限管理',
+                  }
+                }
+              },
+              {
+                path: 'rolepeople',
+                data: {
+                  menu: {
+                    title: '角色人员管理',
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        
+      },
+      {
+        path: 'dashboard',
+        data: {
+          menu: {
             title: 'general.menu.dashboard',
             icon: 'ion-android-home',
             selected: false,
