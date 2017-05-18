@@ -1,4 +1,67 @@
-<div>
-    创建用户
+<div class="widgets">
+    <div class="row">
+        <div class="col-md-6">
+            <ba-card title="标题" bacardclass="with-scroll">
+                <form>
+                    <div class="form-group">
+                        <label for="input01">用户姓名</label>
+                        <input type="text" class="form-control" id="input01" placeholder="姓名" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input02">密码</label>
+                        <input type="password" class="form-control" id="input02" placeholder="密码" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input03">扫描码</label>
+                        <input type="text" class="form-control" id="input03" placeholder="扫描码" />
+                    </div>
+                    <div class="form-group">
+                        <label>是否企业员工</label>
+                        <div class="input-demo radio-demo row">
+                            <div class="col-md-4">
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" /> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" /> <span>否</span> </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>是否允许登陆</label>
+                        <div class="input-demo radio-demo row">
+                            <div class="col-md-4">
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" /> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" /> <span>否</span> </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea01">自我描述</label>
+                        <textarea placeholder="自我描述 Input" class="form-control" id="textarea01"></textarea>
+                    </div>
+                </form>
+            </ba-card>
+        </div>
+        <div class="col-md-6">
+            <ba-card title="文本标签" bacardclass="with-scroll">
+                <div class="form-group">
+                    <label>数据状态</label>
+                    <div class="input-demo radio-demo row">
+                        <div class="col-md-6">
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" /> <span>新建</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" /> <span>提交</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" /> <span>审核</span> </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="exampleSelect1">审核人</label>
+                        <select class="form-control" id="exampleSelect1"> <option>请选择</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option> </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="input03">创建人</label>
+                        <input type="text" class="form-control" id="input03" placeholder="姓名" />
+                    </div>
+                </div>
+            </ba-card>
+        </div>
+    </div>
 </div>
-<user-create></user-create>
