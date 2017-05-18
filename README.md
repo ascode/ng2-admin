@@ -8,7 +8,8 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 ## 目录  
 * 开发框架说明[本页]  
 * [API说明](ourdocs/design/api.md)    
-* [前端处理逻辑说明](ourdocs/design/logic.md)
+* [前端处理逻辑说明](ourdocs/design/logic.md)  
+* [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
 
 ## List of features
 * Angular 2+
