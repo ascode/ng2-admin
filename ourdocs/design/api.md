@@ -5,11 +5,11 @@
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是
 ### 一、api一览  
 * 用户  
-userLogin  用户登录  
-adduser  新增用户  
-queryuser  查询用户  
-removeuser  删除用户  
-updateuser  更新用户  
+userLoginReq  用户登录  
+adduserReq  新增用户  
+queryuserReq  查询用户  
+removeuserReq  删除用户  
+updateuserReq  更新用户  
 
 * 角色  
 addRole  创建角色  
@@ -107,6 +107,10 @@ userinfo:
             <tr>
                 <td>Dir</td>
                 <td>分类，由原Mes系统保留，暂时没用</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>用户登陆密码</td>
             </tr>
             <tr>
                 <td>ScanCode</td>
@@ -224,8 +228,21 @@ privilege:
 
 * adduser(json jsonObjAddUser)  新增用户  
 请求类型：POST  
-请求数据：{}  
+请求数据：
+{
+    "login_name":"wangraoji",
+    "user_name":"wangraoji",
+    "Password":"123",
+    "ScanCode":"kk00011",
+    "IsEmployee":1,
+    "IsAllowLogin":1,
+    "InValidTime":"2017-01-02",
+    "DataStatus":"新建",
+    "Creator_uniqueid":"00001",
+    "creator_name":"老王"
+}  
 响应数据：
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
 * queryuser(json jsonQueryUser)  查询用户  
 请求类型：POST  
 请求数据：  
