@@ -4,19 +4,11 @@ import { ModuleWithProviders } from '@angular/core';
 // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
-
+// 在page页面的所有路由路径
 export const routes: Routes = [
-  {
-    path: 'login',
-    loadChildren: 'app/pages/login/login.module#LoginModule'
-  },
-  {
-    path: 'register',
-    loadChildren: 'app/pages/register/register.module#RegisterModule'
-  },
-  {
-    path: 'pages',
-    component: Pages,
+  { path: 'login',loadChildren: 'app/pages/login/login.module#LoginModule'},
+  {path: 'register',loadChildren: 'app/pages/register/register.module#RegisterModule'},
+  {path: 'pages',component: Pages,
     children: [
       { path: 'user', loadChildren: './organization/user/user.module#UserModule' },
       { path: 'role', loadChildren: './organization/role/role.module#RoleModule' },

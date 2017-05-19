@@ -109,6 +109,10 @@ userinfo:
                 <td>分类，由原Mes系统保留，暂时没用</td>
             </tr>
             <tr>
+                <td>Password</td>
+                <td>用户登陆密码</td>
+            </tr>
+            <tr>
                 <td>ScanCode</td>
                 <td>扫描码</td>
             </tr>
@@ -224,8 +228,23 @@ privilege:
 
 * adduser(json jsonObjAddUser)  新增用户  
 请求类型：POST  
-请求数据：{}  
+请求数据：
+{
+    "login_name":"wangraoji",
+    "user_name":"wangraoji",
+    "Password":"123",
+    "ScanCode":"kk00011",
+    "IsEmployee":1,
+    "IsAllowLogin":1,
+    "InValidTime":"2017-01-02",
+    "DataStatus":"新建",
+    "Creator_uniqueid":"00001",
+    "creator_name":"老王"
+}  
 响应数据：
+{
+    
+}
 * queryuser(json jsonQueryUser)  查询用户  
 请求类型：POST  
 请求数据：  

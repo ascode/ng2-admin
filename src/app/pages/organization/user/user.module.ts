@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
+// import {NgForm} from '@angular/forms';
 // import { HttpModule } from "@angular/http";
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { routing } from './user.routing';
@@ -18,6 +19,7 @@ import { UserMgmtService } from './components/userMgmt/userMgmt.service'
     NgaModule,
     Ng2SmartTableModule,
     // HttpModule,
+    // NgForm,
     routing
   ],
   declarations: [
