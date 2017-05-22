@@ -271,7 +271,7 @@ AbandonStatus	禁用标记	布尔值
 
 ##### **2.1.5 removeuserReq*  
 
-##### **2.1.6 updateuserReq*
+##### *2.1.6 updateuserReq*
 
 * userid  
 
