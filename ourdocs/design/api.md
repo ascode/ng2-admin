@@ -22,7 +22,7 @@ removeUserToRole  从指定角色中移除一个用户
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
-##### 2.1.1 **userLoginReq  用户登录**  
+##### 2.1.1 *userLoginReq  用户登录*  
 
 * 请求类型：  
 POST    
@@ -230,7 +230,7 @@ privilege:
         </tbody>
     </table>
 
-##### **2.1.2 adduserReq(json jsonObjAddUser)  新增用户**  
+##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  
 请求类型：POST  
 请求数据：
 {
@@ -247,7 +247,7 @@ privilege:
 }  
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
-##### **2.1.3 queryuserReq(json jsonQueryUser)  查询用户**  
+##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
 请求类型：POST  
 请求数据：  
 响应数据：
@@ -260,7 +260,7 @@ privilege:
 请求数据：  
 响应数据：
 
-##### **2.1.4jsonQueryUser**  
+##### *2.1.4jsonQueryUser*  
 <span id="jsonQueryUser" name="jsonQueryUser"></span>
 类型： json对象  
 字段： 
@@ -269,7 +269,7 @@ FName	姓名	字符串(50)
 AbandonStatus	禁用标记	布尔值
 ```
 
-##### **2.1.5 removeuserReq*  
+##### *2.1.5 removeuserReq*  
 
 ##### *2.1.6 updateuserReq*
 
