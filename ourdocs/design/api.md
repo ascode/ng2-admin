@@ -260,18 +260,9 @@ privilege:
 请求数据：  
 响应数据：
 
-##### *2.1.4jsonQueryUser*  
-<span id="jsonQueryUser" name="jsonQueryUser"></span>
-类型： json对象  
-字段： 
-``` 
-FName	姓名	字符串(50)
-AbandonStatus	禁用标记	布尔值
-```
+##### *2.1.4 removeuserReq*  
 
-##### *2.1.5 removeuserReq*  
-
-##### *2.1.6 updateuserReq*
+##### *2.1.5 updateuserReq*
 
 * userid  
 
