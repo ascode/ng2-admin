@@ -3,7 +3,7 @@ stages:
 deploy:
   stage: deploy
   script:
-    - npm start
+    - npm install webpack-merge -g && npm install webpack -g && npm install rimraf -g && npm start
   only:
     - mes
   tags:
