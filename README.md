@@ -110,6 +110,10 @@ http://vosung.bgenius.cn/xic/Devlopment-Helper
 * 通知公告  
 http://vosung.bgenius.cn/ascode/notice  
 
+* 关于ng serve  
+ng serve/ng serve --prod --aot启动项目出现的问题.  
+参见 https://github.com/angular/angular-cli/issues/4895 解决。具体原因，其实那该黄色到警告已经说明，angular-cli 已经被抛弃，转到 @angular/cli。所以当我卸载 angular-cli  ，运行npm install -g @angular/cli，成功后就可以用 cli 的命令了。
+
 
 ## 知识储备  
 
