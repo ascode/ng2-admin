@@ -12,12 +12,12 @@ removeuserReq  删除用户
 updateuserReq  更新用户  
 
 * 角色  
-addRole  创建角色  
-updatePrivilegeForRole  更新角色的授权  
-queryPrivilegeByRole  查询角色的权限  
-queryUsersByRole  查询属于指定角色的用户列表  
-addUsersToRole  添加一个或者多个用户到一个角色  
-removeUserToRole  从指定角色中移除一个用户  
+addRoleReq  创建角色  
+updatePrivilegeForRoleReq  更新角色的授权  
+queryPrivilegeByRoleReq  查询角色的权限  
+queryUsersByRoleReq  查询属于指定角色的用户列表  
+addUsersToRoleReq  添加一个或者多个用户到一个角色  
+removeUserToRoleReq  从指定角色中移除一个用户  
 
 ### 二、用户api详细说明  
 
@@ -264,7 +264,33 @@ privilege:
 
 ##### *2.1.5 updateuserReq*
 
-* userid  
 
-* jsonObjUpdateUser  
-<span id="jsonObjUpdateUser" name="jsonObjUpdateUser"></span>
+#### 2.2 角色api  
+
+##### *2.2.1 addRoleReq  创建角色*
+请求类型：POST  
+请求数据：
+{
+    "FName":"角色名称",
+    "desc":"角色描述",
+    "creator_uniqueid":"创建人全局唯一ID",
+    "creator_name":"创建人名称",
+    "create_time":"2017-12-12",
+
+}  
+响应数据：
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+##### *2.2.2 updatePrivilegeForRoleReq  更新角色的授权*  
+
+
+##### *2.2.3 queryPrivilegeByRoleReq  查询角色的权限*  
+
+
+##### *2.2.4 queryUsersByRoleReq  查询属于指定角色的用户列表*  
+
+
+##### *2.2.5 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
+
+
+##### *2.2.6 removeUserToRoleReq  从指定角色中移除一个用户*  
+
