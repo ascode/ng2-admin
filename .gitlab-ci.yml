@@ -3,7 +3,7 @@ stages:
 deploy:
   stage: deploy
   script:
-    - npm install webpack-merge -g && npm install webpack -g && npm install rimraf -g && npm start
+    - deployng2admin framework-group ng2-admin
   only:
     - mes
   tags:
