@@ -288,7 +288,7 @@ privilege:
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 
 ##### *2.2.2 queryRolesReq  查询角色列表*  
-请求类型：GET  
+请求类型：POST  
 请求数据：  
 ```
 {
@@ -337,7 +337,7 @@ privilege:
 请求数据：
 ```
 {
-    "role_unique_id":"",
+    "role_unique_id":"0",
     "inserted_privileges":["新增用户","查看用户列表"],
     "deleted_privileges":["修改用户","删除用户"]
 }  
@@ -348,7 +348,12 @@ privilege:
 ```
 
 ##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  
+请求类型：GET  
+请求数据：  
+?role_unique_id=0
 
+响应数据：
+点击查看 [privilege_model](../../resource/privilege_model.json)  
 
 ##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  
 
