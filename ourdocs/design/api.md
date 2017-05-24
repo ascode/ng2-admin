@@ -48,7 +48,7 @@ POST
         "uniqueid":"",
         "login_name":"",
         "user_name":"",
-        "Dir":"",
+        "department_unique_id":"",
         "ScanCode":"",
         "IsAllowLogin":0,
         "InValidTime":"",
@@ -110,8 +110,8 @@ userinfo:
                 <td>用户姓名</td>
             </tr>
             <tr>
-                <td>Dir</td>
-                <td>分类，由原Mes系统保留，暂时没用</td>
+                <td>department_unique_id</td>
+                <td>部门全局唯一id</td>
             </tr>
             <tr>
                 <td>Password</td>
@@ -356,8 +356,17 @@ privilege:
 点击查看 [privilege_model](../../resource/privilege_model.json)  
 
 ##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  
+请求类型：GET  
+请求数据：  
+?role_unique_id=0  
 
-
+响应数据： 
+``` 
+[
+    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
+    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
+]
+```
 ##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
 
 
