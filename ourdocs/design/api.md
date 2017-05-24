@@ -234,6 +234,7 @@ privilege:
 ##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  
 请求类型：POST  
 请求数据：
+```
 {
     "login_name":"wangraoji",
     "user_name":"wangraoji",
@@ -246,6 +247,7 @@ privilege:
     "Creator_uniqueid":"00001",
     "creator_name":"老王"
 }  
+```
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
 ##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
@@ -271,6 +273,7 @@ privilege:
 ##### *2.2.1 addRoleReq  创建角色*
 请求类型：POST  
 请求数据：
+```
 {
     "FName":"角色名称",
     "desc":"角色描述",
@@ -279,12 +282,14 @@ privilege:
     "create_time":"2017-12-12",
 
 }  
+```
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 
 ##### *2.2.2 queryRolesReq  查询角色列表*  
 请求类型：GET  
 请求数据：  
+```
 {
     "pagesize":10,
     "current_page_index":1,
@@ -294,7 +299,9 @@ privilege:
         "creator_name":"创建人名称"
     }
 }
+```
 响应数据：  
+```
 [
     {
         "id":0,
@@ -323,7 +330,7 @@ privilege:
         "last_timestamp":"最后一次更新数据的时间戳"
     }
 ]
-
+```
 ##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  
 
 
