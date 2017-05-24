@@ -83,7 +83,6 @@ npm run build:prod:aot
 ```
 This will clear up your dist folder (where release files are located), generate a release build and start the built-in server. Now you can copy the sources from the dist folder and use it with any backend framework or simply put it under a web server.
 
-
 ## 自动部署（ci）  
 本项目采用gitlab-ci实现编码到测试部署的持续集成。   
 自动部署的地址是： [http://vosung.bgenius.cn:4200](http://vosung.bgenius.cn:4200)  
@@ -120,16 +119,17 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 api测试工具  
 
 ## 帮助
-* Angularjs2 在线教程  
-http://www.hubwiz.com/course/5599d367a164dd0d75929c76/  
+* [Angularjs2 在线教程](http://www.hubwiz.com/course/5599d367a164dd0d75929c76/)  
+  
+* [bootstrap 4 官方网站](https://v4-alpha.getbootstrap.com/)  
 
-* bootstrap 4 官方网站：https://v4-alpha.getbootstrap.com/
+* [奚琛发起的《开发人员帮助手册》](http://vosung.bgenius.cn/xic/Devlopment-Helper)  
 
-* 奚琛发起的《开发人员帮助手册》  
-http://vosung.bgenius.cn/xic/Devlopment-Helper  
+* [通知公告](http://vosung.bgenius.cn/ascode/notice)  
+  
+* [前端界面开发框架admui](http://www.admui.com/)  
 
-* 通知公告  
-http://vosung.bgenius.cn/ascode/notice  
+* [前端界面开发框架H+](http://www.zi-han.net/theme/hplus/index.html)  
 
 * 关于ng serve  
 ng serve/ng serve --prod --aot启动项目出现的问题.  
