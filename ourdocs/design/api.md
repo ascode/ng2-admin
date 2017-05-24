@@ -13,6 +13,7 @@ updateuserReq  更新用户
 
 * 角色  
 addRoleReq  创建角色  
+queryRolesReq  查询角色列表  
 updatePrivilegeForRoleReq  更新角色的授权  
 queryPrivilegeByRoleReq  查询角色的权限  
 queryUsersByRoleReq  查询属于指定角色的用户列表  
@@ -279,18 +280,61 @@ privilege:
 
 }  
 响应数据：
-{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
-##### *2.2.2 updatePrivilegeForRoleReq  更新角色的授权*  
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+
+##### *2.2.2 queryRolesReq  查询角色列表*  
+请求类型：GET  
+请求数据：  
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "query_entity":{
+        "FName":"角色名称",
+        "creator_name":"创建人名称"
+    }
+}
+响应数据：  
+[
+    {
+        "id":0,
+        "unique_id":"unique_id",
+        "FCode":"角色编号",
+        "FName":"角色名称",
+        "Dir":"角色分类",
+        "desc":"角色描述",
+        "creator_uniqueid":"创建人全局唯一ID",
+        "creator_name":"创建人名称",
+        "create_time":"2014-01-01",
+        "updator_uniqueid":"最后更新人全局唯一ID",
+        "updator_name":"最后更新人名称",
+        "update_time":"最后更新时间",
+        "submitter_uniqueid":"提交人全局唯一ID",
+        "submitter_name":"提交人名称",
+        "submit_time":"提交时间",
+        "approver_uniqueid":"审核人名称",
+        "approver_name":"审核人名称",
+        "approver_time":"2014-01-10",
+        "abandoner_uniqueid":"禁用人全局唯一ID",
+        "abandoner_name":"禁用人名称",
+        "abandon_time":"禁用时间",
+        "data_status":"数据状态",
+        "abandon_status":"禁用状态",
+        "last_timestamp":"最后一次更新数据的时间戳"
+    }
+]
+
+##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  
 
 
-##### *2.2.3 queryPrivilegeByRoleReq  查询角色的权限*  
+##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  
 
 
-##### *2.2.4 queryUsersByRoleReq  查询属于指定角色的用户列表*  
+##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  
 
 
-##### *2.2.5 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
+##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
 
 
-##### *2.2.6 removeUserToRoleReq  从指定角色中移除一个用户*  
+##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  
 
