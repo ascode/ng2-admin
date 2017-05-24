@@ -102,6 +102,7 @@ This will clear up your dist folder (where release files are located), generate 
 ```
 相关文章：  
 [Electron基础 - 解决无法使用jQuery/RequireJS/Meteor/AngularJS 的问题](https://zhuanlan.zhihu.com/p/21440362)    
+Electron Hybird项目地址：http://ascode@vosung.bgenius.cn/framework-group/Net4Frm-Hybird.git   
 
 ## mock测试服务  
 * RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
