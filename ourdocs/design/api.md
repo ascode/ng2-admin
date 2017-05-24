@@ -278,10 +278,10 @@ privilege:
     "FCode":"角色编号",
     "FName":"角色名称",
     "desc":"角色描述",
+    "data_status":"数据状态枚举字段，可选值：新建、提交、审核",
     "creator_uniqueid":"创建人全局唯一ID",
     "creator_name":"创建人名称",
-    "create_time":"2017-12-12",
-
+    "create_time":"2017-12-12"
 }  
 ```
 响应数据：
@@ -333,7 +333,19 @@ privilege:
 ]
 ```
 ##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  
-
+请求类型：POST  
+请求数据：
+```
+{
+    "role_unique_id":"",
+    "inserted_privileges":["新增用户","查看用户列表"],
+    "deleted_privileges":["修改用户","删除用户"]
+}  
+```
+响应数据：
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 ##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  
 
