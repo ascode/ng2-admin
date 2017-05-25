@@ -20,6 +20,9 @@ export const routes: Routes = [
     children: [
       { path: 'user', loadChildren: './organization/user/user.module#UserModule' },
       { path: 'role', loadChildren: './organization/role/role.module#RoleModule' },
+      { path: 'dataprivilege', loadChildren: './organization/dataprivilege/dataprivilege.module#DataPrivilegeModule' },
+      { path: 'privilegereport', loadChildren: './organization/privilegereport/privilegereport.module#PrivilegeReportModule' },
+      { path: 'log', loadChildren: './organization/log/log.module#LogModule' },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
