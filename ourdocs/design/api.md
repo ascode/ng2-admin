@@ -21,8 +21,10 @@ addUsersToRoleReq  添加一个或者多个用户到一个角色
 removeUserToRoleReq  从指定角色中移除一个用户  
 
 * 机构  
-queryDepartment  查询部门列表  
-
+queryDepartment  查询部门树  
+queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息  
+createDepartment  新增部门  
+deleteDepartment  删除部门  
 
 ### 二、用户api详细说明  
 
@@ -376,4 +378,84 @@ privilege:
 
 
 ##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  
+
+
+
+#### 2.3 机构api  
+
+##### *2.3.1 queryDepartment  查询部门树*  
+请求类型：GET  
+请求数据：  
+?userid=0  
+响应数据：  
+{
+    "id":0
+    "organization_uniqueid":"唯一ID",
+    "organization_code":"部门编码",
+    "name":"部门名称",
+    "brief_name":"部门简称",
+    "description":"部门描述",
+    "mnemonic_code":"助记码",
+    "manager_uniqueid":"负责人全局ID",
+    "prd_manager_name":"负责人名称",
+    "parent_organization_uniqueid":"上级部门全局ID",
+    "parent_organization_name":"上级部门名称",
+    "remark":"备注",
+    "data_status":"数据状态",
+    "abandon_status":"禁用状态",
+    "creator_uniqueid":"创建人的全局ID",
+    "prd_creator_name":"创建人名称",
+    "create_time":"2017-12-12",
+    "updator":"",
+    "update_time":"",
+    "submitter":"",
+    "submit_time":"",
+    "approver":"",
+    "approve_time":"",
+    "abandoner":"",
+    "abandon_time":"",
+    "last_timestamp":4123442342,
+    "childs":[
+        {
+            "id":0
+            "organization_uniqueid":"唯一ID",
+            "organization_code":"部门编码",
+            "name":"部门名称",
+            "brief_name":"部门简称",
+            "description":"部门描述",
+            "mnemonic_code":"助记码",
+            "manager_uniqueid":"负责人全局ID",
+            "prd_manager_name":"负责人名称",
+            "parent_organization_uniqueid":"上级部门全局ID",
+            "parent_organization_name":"上级部门名称",
+            "remark":"备注",
+            "data_status":"数据状态",
+            "abandon_status":"禁用状态",
+            "creator_uniqueid":"创建人的全局ID",
+            "prd_creator_name":"创建人名称",
+            "create_time":"2017-12-12",
+            "updator":"",
+            "update_time":"",
+            "submitter":"",
+            "submit_time":"",
+            "approver":"",
+            "approve_time":"",
+            "abandoner":"",
+            "abandon_time":"",
+            "last_timestamp":4123442342,
+            "childs":[]
+        }
+    ]
+}
+
+
+##### *2.3.2 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息*  
+
+
+
+##### *2.3.3 createDepartment  新增部门*   
+
+
+##### *2.3.4 deleteDepartment  删除部门*    
+
 
