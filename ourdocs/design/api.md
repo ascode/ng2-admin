@@ -249,15 +249,9 @@ privilege:
 }  
 ```
 响应数据：
-<<<<<<< HEAD
-{
-    
-}
-* queryuser(json jsonQueryUser)  查询用户  
-=======
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+
 ##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
->>>>>>> 77e1ecf5e22fbac48289c1e9e7d3f5b83fc426b2
 请求类型：POST  
 请求数据：  
 响应数据：

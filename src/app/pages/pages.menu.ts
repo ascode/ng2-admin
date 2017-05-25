@@ -52,6 +52,35 @@ export const PAGES_MENU = [
         },
         children: [
           {
+            path: 'department',
+            data: {
+              menu: {
+                title: '部门管理',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+             {
+                path: 'CreateDepartment',
+                data: {
+                  menu: {
+                    title: '新建部门',
+                  }
+                }
+              },
+              {
+                path: 'DepartmentList',
+                data: {
+                  menu: {
+                    title: '部门列表',
+                  }
+                }
+              },  
+            ]
+          },
+          {
             path: 'user',
             data: {
               menu: {
@@ -77,7 +106,23 @@ export const PAGES_MENU = [
                     title: '用户信息',
                   }
                 }
-              }
+              },
+              {
+                path: 'table',
+                data: {
+                  menu: {
+                    title: '滚动表格',
+                  }
+                }
+              },
+              {
+                path: 'datatab',
+                data: {
+                  menu: {
+                    title: '数据表格',
+                  }
+                }
+              },
             ]
           },
           {
@@ -116,9 +161,103 @@ export const PAGES_MENU = [
                 }
               }
             ]
+          },
+          {
+            path: 'dataprivilege',
+            data: {
+              menu: {
+                title: '数据权限管理',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+             {
+                path: 'DataOperatePrivilegeToRole',
+                data: {
+                  menu: {
+                    title: '根据角色',
+                  }
+                }
+              },
+              {
+                path: 'DataOperatePrivilegeToUser',
+                data: {
+                  menu: {
+                    title: '根据用户',
+                  }
+                }
+              }
+            ]
+          },
+          {
+            path: 'privilegereport',
+            data: {
+              menu: {
+                title: '权限报表',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+             {
+                path: 'UserPrivilegeReport',
+                data: {
+                  menu: {
+                    title: '用户权限报表',
+                  }
+                }
+              }
+            ]
+          },
+          {
+            path: 'log',
+            data: {
+              menu: {
+                title: '日志',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
+              {
+                path: 'LogForUserLogin',
+                data: {
+                  menu: {
+                    title: '用户登录日志',
+                  }
+                }
+              }, 
+              {
+                path: 'LogForUserOperate',
+                data: {
+                  menu: {
+                    title: '用户操作日志',
+                  }
+                }
+              },
+              {
+                path: 'LogForUserLoginException',
+                data: {
+                  menu: {
+                    title: '用户异常登录日志',
+                  }
+                }
+              },
+              {
+                path: 'LogForUserOperateException',
+                data: {
+                  menu: {
+                    title: '用户异常操作日志',
+                  }
+                }
+              }
+            ]
           }
-        ],
-        
+        ]
       },
       {
         path: 'dashboard',
@@ -326,14 +465,14 @@ export const PAGES_MENU = [
               }
             }
           },
-           {
-             path: 'hottables',
-             data: {
-               menu: {
-                 title: 'Hot Tables',
-               }
-             }
-           }
+          {
+            path: 'hottables',
+            data: {
+              menu: {
+                title: 'Hot Tables',
+              }
+            }
+          }
         ]
       },
       {

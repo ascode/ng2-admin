@@ -47,7 +47,7 @@ export class UserMgmtComponent {
         type: 'string'
       },
       age: {
-        title: '是否启用',
+        title: '操作',
         type: 'number'
       }
     }
