@@ -18,26 +18,9 @@ export class User {
     public InValidTime: string = '',
     public DataStatus: string = '',
     public Creator_uniqueid: string = '00001',
-    public creator_name: string = '王饶冀',
+    public creator_name: string = 'zly',
   ) { }
 }
-
-
-export class User {
-    constructor(
-      public name: string = '',
-      public psw: string = '',
-      public smm: string = '',
-      public qiyeUser: string = '',
-      public login: string = '',
-      public date: string = '',
-      public dataZt: string = '',
-      public shenheren: string = '',
-      public chuangjianren: string = '',
-    ){}
-  
-} 
-
 
 @Component({
   templateUrl: './userCreate.html',

@@ -10,4 +10,10 @@ export class RolePeopleComponent {
   public test:string = '<p>Hello</p>';
   constructor() {
   }
+  //  ngOnInit() {
+  //          this.route.params.subscribe(params => {
+  //             //  this.id = params  // {id: "xxx"}
+  //             console.log(222)
+  //          });
+  //      }
 }
