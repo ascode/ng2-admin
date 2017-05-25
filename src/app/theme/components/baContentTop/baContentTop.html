@@ -1,4 +1,4 @@
-<div class="content-top clearfix">
+<!--<div class="content-top clearfix">
   <h1 class="al-title" translate>{{ activePageTitle }}</h1>
 
   <ul class="breadcrumb al-breadcrumb">
@@ -7,4 +7,15 @@
     </li>
     <li class="breadcrumb-item active" translate>{{ activePageTitle }}</li>
   </ul>
-</div>
+</div>-->
+<header class="content-top clearfix ">
+   <ul class="breadcrumb al-breadcrumb">
+    <li><span class='ion-chevron-left'></span></li>
+    <li>
+      <a routerLink="/pages/role/rolepeople" translate class=" active">{{activePageTitle}}</a>
+      <a routerLink="/pages/role/rolecreate" translate  class=" active">{{activePageTitle}}</a>
+    </li>
+    <li><span class='ion-chevron-right'></span></li>
+    <li><a routerLink="/pages/dashboard"  translate>{{'general.home'}}</a></li>
+  </ul>
+</header>

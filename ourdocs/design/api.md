@@ -5,11 +5,11 @@
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是
 ### 一、api一览  
 * 用户  
-userLogin  用户登录  
-adduser  新增用户  
-queryuser  查询用户  
-removeuser  删除用户  
-updateuser  更新用户  
+userLoginReq  用户登录  
+adduserReq  新增用户  
+queryuserReq  查询用户  
+removeuserReq  删除用户  
+updateuserReq  更新用户  
 
 * 角色  
 addRole  创建角色  
@@ -242,9 +242,13 @@ privilege:
     "creator_name":"老王"
 }  
 响应数据：
+<<<<<<< HEAD
 {
     
 }
+=======
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+>>>>>>> 072422f8b61265c003802203d06c728446431058
 * queryuser(json jsonQueryUser)  查询用户  
 请求类型：POST  
 请求数据：  

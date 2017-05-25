@@ -1,5 +1,6 @@
 import { Routes, RouterModule }  from '@angular/router';
 import { Pages } from './pages.component';
+
 import { ModuleWithProviders } from '@angular/core';
 // noinspection TypeScriptValidateTypes
 
@@ -10,9 +11,13 @@ export const routes: Routes = [
   {path: 'register',loadChildren: 'app/pages/register/register.module#RegisterModule'},
   {path: 'pages',component: Pages,
     children: [
+      { path: 'department', loadChildren: './organization/department/department.module#DepartmentModule' },
       { path: 'user', loadChildren: './organization/user/user.module#UserModule' },
       { path: 'role', loadChildren: './organization/role/role.module#RoleModule' },
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dataprivilege', loadChildren: './organization/dataprivilege/dataprivilege.module#DataPrivilegeModule' },
+      { path: 'privilegereport', loadChildren:'./organization/privilegereport/privilegereport.module#PrivilegeReportModule'},
+      { path: 'log', loadChildren: './organization/log/log.module#LogModule' },
+      { path: '', redirectTo: 'user', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
       { path: 'components', loadChildren: './components/components.module#ComponentsModule' },

@@ -1,34 +1,48 @@
 @import '../../sass/conf/conf';
 
 .content-top {
-  padding-top: 13px;
-  padding-bottom: 27px;
+  border: 1px solid #ccc;
+  height: 40px;
+  margin: 10px 0px ;
 }
 
-h1.al-title {
-  font-weight: $font-bold;
-  color: $default-text;
-  float: left;
-  width: auto;
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  text-transform: uppercase;
-  opacity: 0.9;
-}
+// header.al-title {
+//   font-weight: $font-bold;
+//   color: $default-text;
+//   width: auto;
+//   margin: 0;
+//   padding: 0;
+//   font-size: 24px;
+//   text-transform: uppercase;
+//   opacity: 0.9;
+// }
 
 .al-breadcrumb {
   background: none;
   color: $default-text;
   padding: 0;
   margin: 0;
-  float: right;
-  padding-top: 11px;
+  height: 40px;
   li {
-    font-size: 18px;
+    height: 40px;
+    line-height: 39px;
+    font-size: 15px;
     font-weight: $font-normal;
+     float: left; 
+    span{
+      border-right: 1px solid #ccc;
+      display: inline-block;
+      padding: 0 5px;
+    }
     a {
+      display:inline-block;
+       padding: 0px 15px;
       color: $primary-light;
+      border-right: 1px solid #ccc;  
+    }
+    a.active{
+      color: red;
+      // background: yellow;
     }
 
     &.breadcrumb-item.active {
@@ -36,12 +50,12 @@ h1.al-title {
     }
   }
 }
-
-.al-look {
-  float: right;
-  margin-right: 10px;
-  padding-top: 10px;
-  > a {
-    font-size: 19px;
-  }
-}
+// 
+// .al-look {
+//   float: right;
+//   margin-right: 10px;
+//   padding-top: 10px;
+//   > a {
+//     font-size: 19px;
+//   }
+// }

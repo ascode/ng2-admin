@@ -1,29 +1,30 @@
 <div class="widgets" style="position:relative">
-    <div class="row">
-        <div class="form-group" style="position:absolute;top:-55px;left:200px;">
-            <button type="submit" class="btn btn-primary" (click)='onClick($event)'>保存</button>
-        </div>
+    <div class="row">     
         <div class="col-md-6">
             <ba-card title="标题" bacardclass="with-scroll">
                 <form>
                     <div class="form-group">
+                        <label for="input001">登录名</label>
+                        <input type="text" class="form-control" id="input001" placeholder="登录名"  [(ngModel)]='userObj.login_name' name="login_name"/>
+                    </div>
+                    <div class="form-group">
                         <label for="input01">用户姓名</label>
-                        <input type="text" class="form-control" id="input01" placeholder="姓名"  [(ngModel)]='userObj.name' name="name"/>
+                        <input type="text" class="form-control" id="input01" placeholder="姓名"  [(ngModel)]='userObj.user_name' name="user_name"/>
                     </div>
                     <div class="form-group">
                         <label for="input02">密码</label>
-                        <input type="password" class="form-control" id="input02" placeholder="密码" [(ngModel)]='userObj.psw' name='psw'/>
+                        <input type="password" class="form-control" id="input02" placeholder="密码" [(ngModel)]='userObj.Password' name='Password'/>
                     </div>
                     <div class="form-group">
                         <label for="input03">扫描码</label>
-                        <input type="text" class="form-control" id="input03" placeholder="扫描码" [(ngModel)]='userObj.smm' name='smm'/>
+                        <input type="text" class="form-control" id="input03" placeholder="扫描码" [(ngModel)]='userObj.ScanCode' name='ScanCode'/>
                     </div>
                     <div class="form-group">
                         <label>是否企业员工</label>
                         <div class="input-demo radio-demo row">
                             <div class="col-md-4">
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='sex' [(ngModel)]='userObj.qiyeUser'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='sex' [(ngModel)]='userObj.qiyeUser'/> <span>否</span> </label>
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>否</span> </label>
                             </div>
                         </div>
                     </div>
@@ -31,17 +32,17 @@
                         <label>是否允许登陆</label>
                         <div class="input-demo radio-demo row">
                             <div class="col-md-4">
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='login' [(ngModel)]='userObj.login'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='login' [(ngModel)]='userObj.login'/> <span>否</span> </label>
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>否</span> </label>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="input05">日期</label>
-                        <input type="date" class="form-control" id="input05"  [(ngModel)]='userObj.date' name='date'/>
+                        <input type="date" class="form-control" id="input05"  [(ngModel)]='userObj.InValidTime' name='InValidTime'/>
                     </div>
                 </form>
-            </ba-card>
+            </ba-card> 
         </div>
         <div class="col-md-6">
             <ba-card title="文本标签" bacardclass="with-scroll">
@@ -49,22 +50,21 @@
                     <label>数据状态</label>
                     <div class="input-demo radio-demo row">
                         <div class="col-md-6">
-                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="新建" [(ngModel)]='userObj.dataZt' name='dataZt'/> <span>新建</span> </label>&nbsp;&nbsp;&nbsp;
-                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="提交" [(ngModel)]='userObj.dataZt' name='dataZt'/> <span>提交</span> </label>&nbsp;&nbsp;&nbsp;
-                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="审核" [(ngModel)]='userObj.dataZt' name='dataZt'/> <span>审核</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="新建" [(ngModel)]='userObj.DataStatus' name='DataStatus'/> <span>新建</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="提交" [(ngModel)]='userObj.DataStatus' name='DataStatus'/> <span>提交</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="审核" [(ngModel)]='userObj.DataStatus' name='DataStatus'/> <span>审核</span> </label>&nbsp;&nbsp;&nbsp;
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
-                        <label for="exampleSelect1">审核人</label>
-                        <select class="form-control" id="exampleSelect1" [(ngModel)]='userObj.shenheren'> <option>请选择</option> <option>2</option> <option>3</option> <option>4</option> <option>5</option> </select>
-                    </div>
-                    <div class="form-group">
                         <label for="input03">创建人</label>
-                        <input type="text" class="form-control" id="input03" placeholder="姓名" [(ngModel)]='userObj.chuangjianren' name='chuangjianren'/>
+                        <input type="text" class="form-control" id="input03" placeholder="姓名" [(ngModel)]='userObj.creator_name' name='creator_name' disabled/>
                     </div>
                 </div>
             </ba-card>
+              <div class="form-group" style="float:right">
+            <button type="submit" class="btn btn-primary" (click)='onClick($event)'>保存</button>
+        </div>
         </div>
     </div>
 </div>
