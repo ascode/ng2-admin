@@ -23,8 +23,8 @@
                         <label>是否企业员工</label>
                         <div class="input-demo radio-demo row">
                             <div class="col-md-4">
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>否</span> </label>
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="0" name='IsEmployee' [(ngModel)]='userObj.IsEmployee'/> <span>否</span> </label>
                             </div>
                         </div>
                     </div>
@@ -32,8 +32,8 @@
                         <label>是否允许登陆</label>
                         <div class="input-demo radio-demo row">
                             <div class="col-md-4">
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="true" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
-                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="false" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>否</span> </label>
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>是</span> </label>&nbsp;&nbsp;&nbsp;
+                                <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="0" name='IsAllowLogin' [(ngModel)]='userObj.IsAllowLogin'/> <span>否</span> </label>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <br />
                     <div class="form-group">
                         <label for="input03">创建人</label>
-                        <input type="text" class="form-control" id="input03" placeholder="姓名" [(ngModel)]='userObj.creator_name' name='creator_name' disabled/>
+                        <input type="text" class="form-control" id="input03" placeholder="王饶冀" [(ngModel)]='userObj.creator_name' name='creator_name' disabled/>
                     </div>
                 </div>
             </ba-card>
