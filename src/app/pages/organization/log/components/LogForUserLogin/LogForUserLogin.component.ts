@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'LogForUserLogin',
-  template: `<p> 用户登录日志 菜单 </p>`,
+  template:    `<h1>用户登录日志</h1>`
 })
+
 export class LogForUserLoginComponent {
   constructor() {
   }

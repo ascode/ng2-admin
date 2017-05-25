@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'privilegereport',
-  template: `<router-outlet></router-outlet>`,
+	selector: 'privilegereport',
+	template:`<router-outlet></router-outlet>`,
 })
-export class privilegereportComponent {
-  constructor() {
-  }
+
+export class PrivilegeReportComponent {
+
+
 }

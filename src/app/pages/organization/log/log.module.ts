@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { routing } from './log.routing';
 import { LogComponent } from './log.component';
-
 import { LogForUserLoginComponent } from './components/LogForUserLogin/LogForUserLogin.component';
-import { LogForUserLoginExceptionComponent } from './components/LogForUserLoginException/LogForUserLoginException.component';
 import { LogForUserOperateComponent } from './components/LogForUserOperate/LogForUserOperate.component';
+import { LogForUserLoginExceptionComponent } from './components/LogForUserLoginException/LogForUserLoginException.component';
 import { LogForUserOperateExceptionComponent } from './components/LogForUserOperateException/LogForUserOperateException.component';
 
 @NgModule({
@@ -17,12 +16,11 @@ import { LogForUserOperateExceptionComponent } from './components/LogForUserOper
     routing
   ],
   declarations: [
-    LogComponent,
-    LogForUserLoginComponent,
-    LogForUserLoginExceptionComponent,
-    LogForUserOperateComponent,
-    LogForUserOperateExceptionComponent
-  ],
+   LogComponent,
+   LogForUserLoginComponent,
+   LogForUserOperateComponent,
+   LogForUserLoginExceptionComponent,
+   LogForUserOperateExceptionComponent
+  ]
 })
 export class LogModule {}
-

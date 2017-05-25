@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'DataOperatePrivilegeToRole',
-  template: `<p> 根据角色 菜单 </p>`,
+  template:    `<h1>根据角色</h1>`
 })
+
 export class DataOperatePrivilegeToRoleComponent {
   constructor() {
   }

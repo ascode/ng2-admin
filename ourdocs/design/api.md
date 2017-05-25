@@ -242,7 +242,13 @@ privilege:
     "creator_name":"老王"
 }  
 响应数据：
+<<<<<<< HEAD
+{
+    
+}
+=======
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+>>>>>>> 072422f8b61265c003802203d06c728446431058
 * queryuser(json jsonQueryUser)  查询用户  
 请求类型：POST  
 请求数据：  

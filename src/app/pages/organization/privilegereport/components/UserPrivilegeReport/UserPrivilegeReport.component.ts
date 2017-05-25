@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'UserPrivilegeReport',
-  template: `<p> 用户权限报表 菜单 </p>`,
+	selector: 'UserPrivilegeReport',
+	template: `<h2>用户权限报表</h2>`
 })
-export class UserPrivilegeReportComponent {
-  constructor() {
-  }
+
+export class UserPrivilegeReportComponent  {
+
+
 }

@@ -7,19 +7,18 @@ import {EmailValidator, EqualPasswordsValidator} from '../../theme/validators';
   templateUrl: './register.html',
   styleUrls: ['./register.scss']
 })
+// 定义需要的变量。
 export class Register {
-
   public form:FormGroup;
   public name:AbstractControl;
   public email:AbstractControl;
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
   public passwords:FormGroup;
-
   public submitted:boolean = false;
 
-  constructor(fb:FormBuilder) {
-
+  constructor(fb:FormBuilder) {   
+// 设置表单验证，密码。
     this.form = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
@@ -28,7 +27,7 @@ export class Register {
         'repeatPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
       }, {validator: EqualPasswordsValidator.validate('password', 'repeatPassword')})
     });
-
+    // 变量赋值，controls：控制。
     this.name = this.form.controls['name'];
     this.email = this.form.controls['email'];
     this.passwords = <FormGroup> this.form.controls['passwords'];

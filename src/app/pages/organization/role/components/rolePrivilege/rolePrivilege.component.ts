@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-
+import { RolePrivilegeService } from './rolePrivilege.service';
+import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'role-privilege',
-  templateUrl: './rolePrivilege.component.html',
-  styleUrls: ['./rolePrivilege.component.scss']
+  templateUrl:'./rolePrivilege.html',
+  styleUrls:['./rolePrivilege.scss']
 })
 
 export class RolePrivilegeComponent {
-  shouquan = true;
-
-  query: string = '';
-  
+   query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -28,8 +26,8 @@ export class RolePrivilegeComponent {
     },
     columns: {
       id: {
-        title: '编号',
-        type: 'number'
+        title: '角色编号',
+        type: 'string'
       },
       firstName: {
         title: '角色名称',
@@ -48,19 +46,27 @@ export class RolePrivilegeComponent {
         type: 'string'
       },
       age: {
-        title: '操作',
+        title: '授权',
         type: 'string'
       }
     }
   };
-  
-  // source: LocalDataSource = new LocalDataSource();
+   liulan = false;
+    shouquan(){
+        this.liulan = true;
+      }
+      goBack(){
+        this.liulan = false;
+      }
+   source: LocalDataSource = new LocalDataSource();
 
-  // constructor(protected service: UserMgmtService) {
-  //   this.service.getData().then((data) => {
-  //     this.source.load(data);
-  //   });
-  // }
+  constructor(protected service: RolePrivilegeService) {
+    
+    this.service.getData().then((data) => {
+      this.source.load(data);   
+    });
+     
+  }
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
@@ -69,6 +75,4 @@ export class RolePrivilegeComponent {
       event.confirm.reject();
     }
   }
-
-
 }
