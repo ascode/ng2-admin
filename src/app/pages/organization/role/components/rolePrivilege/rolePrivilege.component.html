@@ -1,0 +1,80 @@
+<div *ngIf="shouquan==false">
+  <div class="widgets">
+    <div class="row">
+      <ba-card baCardClass="with-scroll" class="smart-table-container">
+        <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+      </ba-card>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="shouquan==true">
+  <ba-card title="管理员" bacardclass="with-scroll">
+    <table class="privilegeTable col-md-12" border="1">
+      <thead>
+        <tr>
+          <td><label><span>权限管理</span></label></td>
+          <td>权限</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <label>
+                  <span>用户管理</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td>
+            <label><span><input type="checkbox"></span><span>新增用户</span></label>
+            <label><span><input type="checkbox"></span><span>用户信息查询</span></label>
+            <label><span><input type="checkbox"></span><span>用户信息修改</span></label>
+            <label><span><input type="checkbox"></span><span>用户信息审核</span></label>
+            <label><span><input type="checkbox"></span><span>禁用用户</span></label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+                  <span>角色管理</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+                  <span>数据权限</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+                  <span>权限报表</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td>
+              
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+                  <span>日志</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+                  <span>全选</span><span><input type="checkbox"></span>
+              </label>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </ba-card>
+</div>

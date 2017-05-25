@@ -1,0 +1,45 @@
+<div class="widgets" style="position:relative">
+    <div class="row">
+        <div class="col-md-6">
+            <ba-card title="标题" bacardclass="with-scroll">
+                <form>
+                    <div class="form-group">
+                        <label for="input001">角色编号</label>
+                        <input type="text" class="form-control" id="input001" placeholder="角色编号" [(ngModel)]='roleObj.FCode' name="FCode" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input01">角色名称</label>
+                        <input type="text" class="form-control" id="input01" placeholder="角色名称" [(ngModel)]='roleObj.FName' name="FName" />
+                    </div>
+                    <div class="form-group">
+                        <label for="input02">角色描述</label>
+                        <input type="text" class="form-control" id="input02" placeholder="角色描述" [(ngModel)]='roleObj.desc' name='desc' />
+                    </div>
+                </form>
+            </ba-card>
+        </div>
+        <div class="col-md-6">
+            <ba-card title="文本标签" bacardclass="with-scroll">
+                <div class="form-group">
+                    <label>数据状态</label>
+                    <div class="input-demo radio-demo row">
+                        <div class="col-md-6">
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="新建" [(ngModel)]='roleObj.DataStatus' name='DataStatus'/> <span>新建</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="提交" [(ngModel)]='roleObj.DataStatus' name='DataStatus'/> <span>提交</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="审核" [(ngModel)]='roleObj.DataStatus' name='DataStatus'/> <span>审核</span> </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="input03">创建人</label>
+                        <input type="text" class="form-control" id="input03" placeholder="姓名" [(ngModel)]='roleObj.creator_name' name='creator_name'
+                            disabled/>
+                    </div>
+                </div>
+            </ba-card>
+            <div class="form-group" style='float:right;'>
+                <button type="submit" class="btn btn-primary" (click)='onClick($event)'>保存</button>
+            </div>
+        </div>
+    </div>
+</div>
