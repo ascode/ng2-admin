@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 
 import {GlobalState} from '../../../global.state';
-
+import { RoleCreateComponent } from '../../../pages/organization/role/components/roleCreate/roleCreate.component';
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
@@ -26,5 +26,9 @@ export class BaPageTop {
 
   public scrolledChanged(isScrolled) {
     this.isScrolled = isScrolled;
+  }
+  rePro(event){
+    // this.url = event;
+    console.log(event);
   }
 }

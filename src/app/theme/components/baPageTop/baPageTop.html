@@ -1,5 +1,4 @@
-<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
-     [ngClass]="{scrolled: isScrolled}">
+<div class="page-top clearfix" baScrollPosition maxHeight="100" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
   <a routerLink="/pages/dashboard" class="al-logo clearfix"><span>ng2-</span>admin</a>
   <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
 
@@ -21,4 +20,15 @@
     </div>
     <ba-msg-center></ba-msg-center>
   </div>
+
+</div>
+
+<div class="page-top clearfix target" baScrollPosition maxHeight="30" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
+  <ul>
+    <li><span class='ion-chevron-left'></span></li>
+    <li><a routerLink="/pages/role/rolecreate" translate>创建用户</a></li>
+    <li (provinceOut)="recPro($event)"></li>
+    <li class='last'><span class='ion-chevron-right'></span></li>
+    <li><a routerLink="/pages/dashboard" translate>Home</a></li>
+  </ul>
 </div>

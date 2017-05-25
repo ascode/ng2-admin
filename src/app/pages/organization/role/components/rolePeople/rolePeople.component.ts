@@ -73,4 +73,10 @@ export class RolePeopleComponent {
       event.confirm.reject();
     }
   }
+  //  ngOnInit() {
+  //          this.route.params.subscribe(params => {
+  //             //  this.id = params  // {id: "xxx"}
+  //             console.log(222)
+  //          });
+  //      }
 }
