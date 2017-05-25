@@ -20,6 +20,10 @@ queryUsersByRoleReq  查询属于指定角色的用户列表
 addUsersToRoleReq  添加一个或者多个用户到一个角色  
 removeUserToRoleReq  从指定角色中移除一个用户  
 
+* 机构  
+queryDepartment  查询部门列表  
+
+
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
