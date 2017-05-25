@@ -1,0 +1,41 @@
+{
+    "all": [{
+        "module_name": "组织管理",
+        "module_text": "组织管理",
+        "selected": false,
+        "culumns": [{
+            "column_name": "用户管理",
+            "column_text": "用户管理",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
+                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
+                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
+                { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
+                { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
+            ]
+        }, {
+            "column_name": "用户管理",
+            "column_text": "用户管理",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
+                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
+                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
+                { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
+                { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
+            ]
+        }, {
+            "column_name": "用户管理",
+            "column_text": "用户管理",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
+                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
+                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
+                { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
+                { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
+            ]
+        }]
+    }]
+}

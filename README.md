@@ -1,3 +1,4 @@
+
 ## 说明  
 目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发风格进行。  
 
@@ -83,8 +84,26 @@ npm run build:prod:aot
 ```
 This will clear up your dist folder (where release files are located), generate a release build and start the built-in server. Now you can copy the sources from the dist folder and use it with any backend framework or simply put it under a web server.
 
-## mock测试服务  
-* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+## 自动部署（ci）  
+本项目采用gitlab-ci实现编码到测试部署的持续集成。   
+自动部署的地址是： [http://vosung.bgenius.cn:4200](http://vosung.bgenius.cn:4200)  
+
+## Electron Hybird架构  
+使用Electron Hybird架构嵌入本Web App的时候，需要对项目下/src/index.html文件进行少许改进。要在页面head节内增加：  
+```
+<!--这里用来适配Electron : begin  -->
+    <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+    </script>
+<!--这里用来适配Electron : end  -->
+```
+相关文章：  
+[Electron基础 - 解决无法使用jQuery/RequireJS/Meteor/AngularJS 的问题](https://zhuanlan.zhihu.com/p/21440362)    
+Electron Hybird项目地址：http://ascode@vosung.bgenius.cn/framework-group/Net4Frm-Hybird.git   
+
 
 ## 组件/模块/工具说明
 * webpack-merge  
@@ -98,17 +117,26 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 * Postman  
 api测试工具  
 
+## 内部网站  
+* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
+
 ## 帮助
-* Angularjs2 在线教程  
-http://www.hubwiz.com/course/5599d367a164dd0d75929c76/  
+* [Angularjs2 在线教程](http://www.hubwiz.com/course/5599d367a164dd0d75929c76/)  
+  
+* [bootstrap 4 官方网站](https://v4-alpha.getbootstrap.com/)  
 
-* bootstrap 4 官方网站：https://v4-alpha.getbootstrap.com/
+* [奚琛发起的《开发人员帮助手册》](http://vosung.bgenius.cn/xic/Devlopment-Helper)  
 
-* 奚琛发起的《开发人员帮助手册》  
-http://vosung.bgenius.cn/xic/Devlopment-Helper  
+* [通知公告](http://vosung.bgenius.cn/ascode/notice)  
+  
+* [前端界面开发框架admui](http://www.admui.com/)  
 
-* 通知公告  
-http://vosung.bgenius.cn/ascode/notice  
+* [前端界面开发框架H+](http://www.zi-han.net/theme/hplus/index.html)  
+
+* 关于ng serve  
+ng serve/ng serve --prod --aot启动项目出现的问题.  
+参见 https://github.com/angular/angular-cli/issues/4895 解决。具体原因，其实那该黄色到警告已经说明，angular-cli 已经被抛弃，转到 @angular/cli。所以当我卸载 angular-cli  ，运行npm install -g @angular/cli，成功后就可以用 cli 的命令了。
 
 
 ## 知识储备  

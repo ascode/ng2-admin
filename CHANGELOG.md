@@ -1,3 +1,14 @@
+### 变更记录  
+* 2017/5/24
+变更：  
+user数据增加department_unique_id，prd_department_name
+涉及： 
+数据库表： N4_SysDatUser  
+前端： “新增用户”、“修改用户”，“新增角色”，“修改角色”
+
+
+---
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/akveo/ng2-admin/compare/v0.9.0...v1.0.0) (2017-04-27)
 

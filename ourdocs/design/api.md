@@ -12,12 +12,13 @@ removeuserReq  删除用户
 updateuserReq  更新用户  
 
 * 角色  
-addRole  创建角色  
-updatePrivilegeForRole  更新角色的授权  
-queryPrivilegeByRole  查询角色的权限  
-queryUsersByRole  查询属于指定角色的用户列表  
-addUsersToRole  添加一个或者多个用户到一个角色  
-removeUserToRole  从指定角色中移除一个用户  
+addRoleReq  创建角色  
+queryRolesReq  查询角色列表  
+updatePrivilegeForRoleReq  更新角色的授权  
+queryPrivilegeByRoleReq  查询角色的权限  
+queryUsersByRoleReq  查询属于指定角色的用户列表  
+addUsersToRoleReq  添加一个或者多个用户到一个角色  
+removeUserToRoleReq  从指定角色中移除一个用户  
 
 ### 二、用户api详细说明  
 
@@ -47,7 +48,7 @@ POST
         "uniqueid":"",
         "login_name":"",
         "user_name":"",
-        "Dir":"",
+        "department_unique_id":"",
         "ScanCode":"",
         "IsAllowLogin":0,
         "InValidTime":"",
@@ -109,8 +110,8 @@ userinfo:
                 <td>用户姓名</td>
             </tr>
             <tr>
-                <td>Dir</td>
-                <td>分类，由原Mes系统保留，暂时没用</td>
+                <td>department_unique_id</td>
+                <td>部门全局唯一id</td>
             </tr>
             <tr>
                 <td>Password</td>
@@ -233,6 +234,7 @@ privilege:
 ##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  
 请求类型：POST  
 请求数据：
+```
 {
     "login_name":"wangraoji",
     "user_name":"wangraoji",
@@ -245,6 +247,7 @@ privilege:
     "Creator_uniqueid":"00001",
     "creator_name":"老王"
 }  
+```
 响应数据：
 <<<<<<< HEAD
 {
@@ -271,7 +274,108 @@ privilege:
 
 ##### *2.1.5 updateuserReq*
 
-* userid  
 
-* jsonObjUpdateUser  
-<span id="jsonObjUpdateUser" name="jsonObjUpdateUser"></span>
+#### 2.2 角色api  
+
+##### *2.2.1 addRoleReq  创建角色*
+请求类型：POST  
+请求数据：
+```
+{
+    "FCode":"角色编号",
+    "FName":"角色名称",
+    "desc":"角色描述",
+    "data_status":"数据状态枚举字段，可选值：新建、提交、审核",
+    "creator_uniqueid":"创建人全局唯一ID",
+    "creator_name":"创建人名称",
+    "create_time":"2017-12-12"
+}  
+```
+响应数据：
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+
+##### *2.2.2 queryRolesReq  查询角色列表*  
+请求类型：POST  
+请求数据：  
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "query_entity":{
+        "FName":"角色名称",
+        "creator_name":"创建人名称"
+    }
+}
+```
+响应数据：  
+```
+[
+    {
+        "id":0,
+        "unique_id":"unique_id",
+        "FCode":"角色编号",
+        "FName":"角色名称",
+        "Dir":"角色分类",
+        "desc":"角色描述",
+        "creator_uniqueid":"创建人全局唯一ID",
+        "creator_name":"创建人名称",
+        "create_time":"2014-01-01",
+        "updator_uniqueid":"最后更新人全局唯一ID",
+        "updator_name":"最后更新人名称",
+        "update_time":"最后更新时间",
+        "submitter_uniqueid":"提交人全局唯一ID",
+        "submitter_name":"提交人名称",
+        "submit_time":"提交时间",
+        "approver_uniqueid":"审核人名称",
+        "approver_name":"审核人名称",
+        "approver_time":"2014-01-10",
+        "abandoner_uniqueid":"禁用人全局唯一ID",
+        "abandoner_name":"禁用人名称",
+        "abandon_time":"禁用时间",
+        "data_status":"数据状态",
+        "abandon_status":"禁用状态",
+        "last_timestamp":"最后一次更新数据的时间戳"
+    }
+]
+```
+##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  
+请求类型：POST  
+请求数据：
+```
+{
+    "role_unique_id":"0",
+    "inserted_privileges":["新增用户","查看用户列表"],
+    "deleted_privileges":["修改用户","删除用户"]
+}  
+```
+响应数据：
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
+
+##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  
+请求类型：GET  
+请求数据：  
+?role_unique_id=0
+
+响应数据：
+点击查看 [privilege_model](../../resource/privilege_model.json)  
+
+##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  
+请求类型：GET  
+请求数据：  
+?role_unique_id=0  
+
+响应数据： 
+``` 
+[
+    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
+    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
+]
+```
+##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
+
+
+##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  
+
