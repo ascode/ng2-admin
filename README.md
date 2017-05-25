@@ -104,8 +104,6 @@ This will clear up your dist folder (where release files are located), generate 
 [Electron基础 - 解决无法使用jQuery/RequireJS/Meteor/AngularJS 的问题](https://zhuanlan.zhihu.com/p/21440362)    
 Electron Hybird项目地址：http://ascode@vosung.bgenius.cn/framework-group/Net4Frm-Hybird.git   
 
-## mock测试服务  
-* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
 
 ## 组件/模块/工具说明
 * webpack-merge  
@@ -118,6 +116,10 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 [http://www.expressjs.com.cn/guide/routing.html](http://www.expressjs.com.cn/guide/routing.html)    
 * Postman  
 api测试工具  
+
+## 内部网站  
+* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
 
 ## 帮助
 * [Angularjs2 在线教程](http://www.hubwiz.com/course/5599d367a164dd0d75929c76/)  
