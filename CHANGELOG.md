@@ -1,6 +1,3 @@
-<a name="1.0.0"></a>
-# [1.0.0](https://github.com/akveo/ng2-admin/compare/v0.9.0...v1.0.0) (2017-04-27)
-
 ### 变更记录  
 * 2017/5/24
 变更：  
@@ -11,6 +8,10 @@ user数据增加department_unique_id，prd_department_name
 
 
 ---
+
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/akveo/ng2-admin/compare/v0.9.0...v1.0.0) (2017-04-27)
+
 
 ### Bug Fixes
 
