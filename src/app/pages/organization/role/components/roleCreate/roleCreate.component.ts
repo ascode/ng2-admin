@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter} from '@angular/core';
 import { Http, Response } from '@angular/http';
+import {ActivatedRoute} from "@angular/router";
 export class Role {
   constructor(
     public FCode: string = '',
@@ -13,37 +14,33 @@ export class Role {
 
 @Component({
   selector: 'role-create',
-  template: './rolecreat.html'
+  templateUrl: './roleCreate.html'
 })
 
-
-
 export class RoleCreateComponent {
-  constructor() {
-//     public DataStatus : string ='',
-//     public creator_uniqueid: string = '001',
-//     public creator_name: string = 'ZLY'
-//   ){}
-// }
-// @Component({
-//   // selector: 'role-create',
-//   templateUrl: './roleCreate.html'
-// })
-
-// export class RoleCreateComponent {
-//   roleData:Object;
-//   constructor(private http : Http) {
-//      console.log('1231324');
-//   }
-//   roleObj =new Role()
-//   onClick(event){
-//     let roleObj = this.roleObj;
-//     console.log(roleObj);
+  // 2.参数，定义输出变量。
+  url:string;
+  @Output() provinceOut = new EventEmitter();
+  constructor(public route: ActivatedRoute) {
+    this.url = '下次';
+    console.log(this.url)
   }
-  
+  // 3.事件出发，发射变量给组件。
+  urlChange() {
+    // 发给父组件
+    this.provinceOut.emit(this.url);
+ }
   roleObj = new Role();
-   makePost(): void {
+  makePost(): void {
     let roleObj = this.roleObj;
     console.log(roleObj);
   }
+  
+
+  // ngOnInit() {
+  //   this.route.params.subscribe(params => {
+  //     //  this.id = params  // {id: "xxx"}
+  //     console.log(22)
+  //   });
+  // }
 }
