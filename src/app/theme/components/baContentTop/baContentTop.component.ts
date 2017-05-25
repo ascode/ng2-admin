@@ -8,7 +8,7 @@ import {GlobalState} from '../../../global.state';
   templateUrl: './baContentTop.html',
 })
 export class BaContentTop {
-
+  
   public activePageTitle:string = '';
 
   constructor(private _state:GlobalState) {

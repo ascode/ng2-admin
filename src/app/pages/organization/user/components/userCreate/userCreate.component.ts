@@ -22,7 +22,6 @@ export class User {
   ) { }
 }
 
-
 @Component({
   templateUrl: './userCreate.html',
 })

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+// 
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -12,7 +13,7 @@ export class Login {
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
-
+// 验证信息。
   constructor(fb:FormBuilder) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],

@@ -254,6 +254,7 @@ privilege:
 ```
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+
 ##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
 请求类型：POST  
 请求数据：  
