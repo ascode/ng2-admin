@@ -5,11 +5,11 @@
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是
 ### 一、api一览  
 * 用户  
-userLogin  用户登录  
-adduser  新增用户  
-queryuser  查询用户  
-removeuser  删除用户  
-updateuser  更新用户  
+userLoginReq  用户登录  
+adduserReq  新增用户  
+queryuserReq  查询用户  
+removeuserReq  删除用户  
+updateuserReq  更新用户  
 
 * 角色  
 addRole  创建角色  
@@ -22,19 +22,23 @@ removeUserToRole  从指定角色中移除一个用户
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
-* userLogin  用户登录  
-请求类型：  
+##### 2.1.1 *userLoginReq  用户登录*  
+
+* 请求类型：  
 POST    
-请求数据：  
+
+* 请求数据：  
+
 ```
 {"uid":0,"pwd":"***"}    
 ```
-参数说明：  
+* 参数说明：  
 
 略   
 
 
-响应数据：  
+* 响应数据：  
+
 包括用户信息(不带有密码的用户信息)、用户的权限信息、授权的token。一个示例数据是这样：  
 ```
 {
@@ -78,7 +82,7 @@ POST
     "token":""
 }    
 ```
-返回消息说明：  
+* 返回消息说明：  
 userinfo:  
 <table>
         <thead>
@@ -226,7 +230,7 @@ privilege:
         </tbody>
     </table>
 
-* adduser(json jsonObjAddUser)  新增用户  
+##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  
 请求类型：POST  
 请求数据：
 {
@@ -242,10 +246,15 @@ privilege:
     "creator_name":"老王"
 }  
 响应数据：
+<<<<<<< HEAD
 {
     
 }
 * queryuser(json jsonQueryUser)  查询用户  
+=======
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
+>>>>>>> 77e1ecf5e22fbac48289c1e9e7d3f5b83fc426b2
 请求类型：POST  
 请求数据：  
 响应数据：
@@ -258,14 +267,9 @@ privilege:
 请求数据：  
 响应数据：
 
-* jsonQueryUser  
-<span id="jsonQueryUser" name="jsonQueryUser"></span>
-类型： json对象  
-字段： 
-``` 
-FName	姓名	字符串(50)
-AbandonStatus	禁用标记	布尔值
-```
+##### *2.1.4 removeuserReq*  
+
+##### *2.1.5 updateuserReq*
 
 * userid  
 
