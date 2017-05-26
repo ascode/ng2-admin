@@ -24,7 +24,7 @@ removeUserToRoleReq  从指定角色中移除一个用户
 queryDepartment  查询部门树  
 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息  
 createDepartment  新增部门  
-deleteDepartment  删除部门  
+[deleteDepartment](#deleteDepartment)  删除部门  
 
 ### 二、用户api详细说明  
 
@@ -513,6 +513,7 @@ privilege:
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
+<a id="deleteDepartment" name="deleteDepartment"></a>
 ##### *2.3.4 deleteDepartment  删除部门*    
 请求类型：GET  
 请求数据： 
