@@ -2,33 +2,39 @@
 * 此文档中数据json中中括号，代表里面的对象有一个或者多个。
 * 值为0，代表这个字段是一个数值类型
 * 值为""，代表这个字段是一个字符串类型
-* Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是
+* Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是   
+
+<a id="menu" name="menu"></a>
+
 ### 一、api一览  
 * 用户  
-userLoginReq  用户登录  
-adduserReq  新增用户  
-queryuserReq  查询用户  
-removeuserReq  删除用户  
-updateuserReq  更新用户  
+[userLoginReq](#userLoginReq)  用户登录  
+[adduserReq](#adduserReq)  新增用户  
+[queryuserReq](#queryuserReq)  查询用户  
+[removeuserReq](#removeuserReq)  删除用户  
+[updateuserReq](#updateuserReq)  更新用户  
 
 * 角色  
-addRoleReq  创建角色  
-queryRolesReq  查询角色列表  
-updatePrivilegeForRoleReq  更新角色的授权  
-queryPrivilegeByRoleReq  查询角色的权限  
-queryUsersByRoleReq  查询属于指定角色的用户列表  
-addUsersToRoleReq  添加一个或者多个用户到一个角色  
-removeUserToRoleReq  从指定角色中移除一个用户  
+[addRoleReq](#addRoleReq)  创建角色  
+[queryRolesReq](#queryRolesReq)  查询角色列表  
+[updatePrivilegeForRoleReq](#updatePrivilegeForRoleReq)  更新角色的授权  
+[queryPrivilegeByRoleReq](#queryPrivilegeByRoleReq)  查询角色的权限  
+[queryUsersByRoleReq](#queryUsersByRoleReq)  查询属于指定角色的用户列表  
+[addUsersToRoleReq](#addUsersToRoleReq)  添加一个或者多个用户到一个角色  
+[removeUserToRoleReq](#removeUserToRoleReq)  从指定角色中移除一个用户  
 
 * 机构  
-queryDepartment  查询部门树  
-queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息  
-createDepartment  新增部门  
+[queryDepartment](#queryDepartment)  查询部门树  
+[queryaDepartmentInfoByUniqueID](#queryaDepartmentInfoByUniqueID)  根据部门全局ID查询部门信息  
+[createDepartment](#createDepartment)  新增部门  
 [deleteDepartment](#deleteDepartment)  删除部门  
 
 ### 二、用户api详细说明  
 
 #### 2.1 用户api  
+
+<a id="userLoginReq" name="userLoginReq"></a>
+
 ##### 2.1.1 *userLoginReq  用户登录*  
 
 * 请求类型：  
@@ -237,7 +243,9 @@ privilege:
         </tbody>
     </table>
 
-##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  
+<a id="adduserReq" name="adduserReq"></a>
+
+##### *2.1.2 adduserReq(json jsonObjAddUser)  新增用户*  [目录](#menu)  
 请求类型：POST  
 请求数据：
 ```
@@ -257,7 +265,9 @@ privilege:
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
 
-##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  
+<a id="queryuserReq" name="queryuserReq"></a>
+
+##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
 响应数据：
@@ -270,14 +280,20 @@ privilege:
 请求数据：  
 响应数据：
 
-##### *2.1.4 removeuserReq*  
+<a id="removeuserReq" name="removeuserReq"></a>
 
-##### *2.1.5 updateuserReq*
+##### *2.1.4 removeuserReq*  [目录](#menu)    
+
+<a id="updateuserReq" name="updateuserReq"></a>
+
+##### *2.1.5 updateuserReq*  [目录](#menu)  
 
 
 #### 2.2 角色api  
 
-##### *2.2.1 addRoleReq  创建角色*
+<a id="addRoleReq" name="addRoleReq"></a>
+
+##### *2.2.1 addRoleReq  创建角色*  [目录](#menu)  
 请求类型：POST  
 请求数据：
 ```
@@ -294,7 +310,9 @@ privilege:
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 
-##### *2.2.2 queryRolesReq  查询角色列表*  
+<a id="queryRolesReq" name="queryRolesReq"></a>
+
+##### *2.2.2 queryRolesReq  查询角色列表*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
 ```
@@ -339,7 +357,9 @@ privilege:
     }
 ]
 ```
-##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  
+<a id="updatePrivilegeForRoleReq" name="updatePrivilegeForRoleReq"></a>
+
+##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  [目录](#menu)    
 请求类型：POST  
 请求数据：
 ```
@@ -354,7 +374,9 @@ privilege:
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
 
-##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  
+<a id="queryPrivilegeByRoleReq" name="queryPrivilegeByRoleReq"></a>
+
+##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?role_unique_id=0
@@ -362,7 +384,9 @@ privilege:
 响应数据：
 点击查看 [privilege_model](../../resource/privilege_model.json)  
 
-##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  
+<a id="queryUsersByRoleReq" name="queryUsersByRoleReq"></a>
+
+##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?role_unique_id=0  
@@ -374,16 +398,23 @@ privilege:
     {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
 ]
 ```
-##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  
+
+<a id="addUsersToRoleReq" name="addUsersToRoleReq"></a>
+
+##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  [目录](#menu)    
 
 
-##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  
+<a id="removeUserToRoleReq" name="removeUserToRoleReq"></a>
+
+##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  [目录](#menu)    
 
 
 
 #### 2.3 机构api  
 
-##### *2.3.1 queryDepartment  查询部门树*  
+<a id="queryDepartment" name="queryDepartment"></a>
+
+##### *2.3.1 queryDepartment  查询部门树*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?userid=0  
@@ -449,8 +480,9 @@ privilege:
     ]
 }
 ```
+<a id="queryaDepartmentInfoByUniqueID" name="queryaDepartmentInfoByUniqueID"></a>
 
-##### *2.3.2 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息*  
+##### *2.3.2 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?department_uniqueid=0  
@@ -485,8 +517,9 @@ privilege:
     "last_timestamp":4123442342
 }
 ```
+<a id="createDepartment" name="createDepartment"></a>
 
-##### *2.3.3 createDepartment  新增部门*   
+##### *2.3.3 createDepartment  新增部门*  [目录](#menu)     
 请求类型：POST  
 请求数据： 
 ``` 
@@ -513,8 +546,9 @@ privilege:
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
-<a id="deleteDepartment" name="deleteDepartment"></a>
-##### *2.3.4 deleteDepartment  删除部门*    
+<a id="deleteDepartment" name="deleteDepartment"></a> 
+
+##### *2.3.4 deleteDepartment  删除部门* [目录](#menu)    
 请求类型：GET  
 请求数据： 
 ?department_uniqueid=0
