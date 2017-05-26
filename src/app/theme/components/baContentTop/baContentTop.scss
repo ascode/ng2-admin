@@ -1,13 +1,16 @@
 @import '../../sass/conf/conf';
 
 .content-top {
-  padding-top:10px;
-  padding-bottom: 15px; 
-  margin-top: 40px;
+  padding-top: 13px;
+  padding-bottom: 27px;
+  margin-top: 30px;
+
 }
-.al-title {
+
+h1.al-title {
   font-weight: $font-bold;
   color: $default-text;
+  float: left;
   width: auto;
   margin: 0;
   padding: 0;
@@ -21,25 +24,26 @@
   color: $default-text;
   padding: 0;
   margin: 0;
+  float: right;
+  padding-top: 11px;
   li {
-    right: 0px;
     font-size: 18px;
     font-weight: $font-normal;
-    float: right;
     a {
       color: $primary-light;
     }
+
     &.breadcrumb-item.active {
       color: $default-text;
     }
   }
 }
-// 
-// .al-look {
-//   float: right;
-//   margin-right: 10px;
-//   padding-top: 10px;
-//   > a {
-//     font-size: 19px;
-//   }
-// }
+
+.al-look {
+  float: right;
+  margin-right: 10px;
+  padding-top: 10px;
+  > a {
+    font-size: 19px;
+  }
+}

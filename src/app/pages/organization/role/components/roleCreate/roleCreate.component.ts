@@ -1,6 +1,6 @@
-import { Component, OnInit, Output,EventEmitter} from '@angular/core';
+import { Component,OnInit,Input, Output,EventEmitter} from '@angular/core';
 import { Http, Response } from '@angular/http';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute,Params} from '@angular/router';
 export class Role {
   constructor(
     public FCode: string = '',
@@ -19,28 +19,21 @@ export class Role {
 
 export class RoleCreateComponent {
   // 2.参数，定义输出变量。
-  url:string;
-  @Output() provinceOut = new EventEmitter();
+  //  url:string;
+  // @Input() 
+  // @Output('url') urlChange:EventEmitter<string> = new EventEmitter<string>();
   constructor(public route: ActivatedRoute) {
-    this.url = '下次';
-    console.log(this.url)
-  }
-  // 3.事件出发，发射变量给组件。
-  urlChange() {
     // 发给父组件
-    this.provinceOut.emit(this.url);
- }
+    // this.url = '创建角色'
+  }
   roleObj = new Role();
   makePost(): void {
     let roleObj = this.roleObj;
-    console.log(roleObj);
   }
   
-
   // ngOnInit() {
   //   this.route.params.subscribe(params => {
-  //     //  this.id = params  // {id: "xxx"}
-  //     console.log(22)
+  //     console.log(params)
   //   });
   // }
 }
