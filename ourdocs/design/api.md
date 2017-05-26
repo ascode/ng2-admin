@@ -1,10 +1,37 @@
 # API说明   
+
+### 约定  
 * 此文档中数据json中中括号，代表里面的对象有一个或者多个。
 * 值为0，代表这个字段是一个数值类型
 * 值为""，代表这个字段是一个字符串类型
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是   
 * pr_开头的字段，（Performance Redundance Design）性能冗余设计，主要用在数据库字段设计，表示这个字段是处于性能考虑设计的冗余。
-* sr_开头的字段，(solidify Redundance Design) 固化冗余设计，主要用于在数据库字段设计，表示这个字段是处于保留历史数据的角度做的冗余设计。比如单据引用产品数据，但是产品名称有可能变更，所以就将产品名称也放在单据的详细信息表。那么这样一来，即使产品表中产品名称变化了，我们的历史单据依然可以具有下单时间的产品名称。
+* sr_开头的字段，(solidify Redundance Design) 固化冗余设计，主要用于在数据库字段设计，表示这个字段是处于保留历史数据的角度做的冗余设计。比如单据引用产品数据，但是产品名称有可能变更，所以就将产品名称也放在单据的详细信息表。那么这样一来，即使产品表中产品名称变化了，我们的历史单据依然可以具有下单时间的产品名称。  
+
+### 特征、风格  
+分页数据请求常用结构：  
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+
+    }
+}  
+```
+分页数据响应常用结构：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+
+    }]
+}
+```
+
+
 
 <a id="menu" name="menu"></a>
 
@@ -285,10 +312,45 @@ privilege:
 
 <a id="queryusersReq" name="queryusersReq"></a>
 
-##### *2.1.3 queryusersReq(json jsonQueryUser)  查询用户列表*  [目录](#menu)    
+##### *2.1.3 queryusersReq  查询用户列表*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
-响应数据：
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "login_name":"wangraoji",
+        "user_name":"wangraoji",
+        "Password":"123",
+        "ScanCode":"kk00011",
+        "IsEmployee":1,
+        "IsAllowLogin":1,
+        "InValidTime":"2017-01-02",
+        "DataStatus":"新建",
+        "Creator_uniqueid":"00001",
+        "creator_name":"老王"
+    }
+}  
+```
+响应数据：  
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "login_name":"wangraoji",
+        "user_name":"wangraoji",
+        "Password":"123",
+        "ScanCode":"kk00011",
+        "IsEmployee":1,
+        "IsAllowLogin":1,
+        "InValidTime":"2017-01-02",
+        "DataStatus":"新建",
+        "Creator_uniqueid":"00001",
+        "creator_name":"老王"
+    }]
+}
 
 <a id="queryuserByUniqueidReq" name="queryuserByUniqueidReq"></a>
 
@@ -343,7 +405,6 @@ privilege:
 {
     "pagesize":10,
     "current_page_index":1,
-    "row_count":50,
     "query_entity":{
         "FName":"角色名称",
         "creator_name":"创建人名称"
@@ -352,34 +413,39 @@ privilege:
 ```
 响应数据：  
 ```
-[
-    {
-        "id":0,
-        "unique_id":"unique_id",
-        "FCode":"角色编号",
-        "FName":"角色名称",
-        "Dir":"角色分类",
-        "desc":"角色描述",
-        "creator_uniqueid":"创建人全局唯一ID",
-        "creator_name":"创建人名称",
-        "create_time":"2014-01-01",
-        "updator_uniqueid":"最后更新人全局唯一ID",
-        "updator_name":"最后更新人名称",
-        "update_time":"最后更新时间",
-        "submitter_uniqueid":"提交人全局唯一ID",
-        "submitter_name":"提交人名称",
-        "submit_time":"提交时间",
-        "approver_uniqueid":"审核人名称",
-        "approver_name":"审核人名称",
-        "approver_time":"2014-01-10",
-        "abandoner_uniqueid":"禁用人全局唯一ID",
-        "abandoner_name":"禁用人名称",
-        "abandon_time":"禁用时间",
-        "data_status":"数据状态",
-        "abandon_status":"禁用状态",
-        "last_timestamp":"最后一次更新数据的时间戳"
-    }
-]
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[
+        {
+            "id":0,
+            "unique_id":"unique_id",
+            "FCode":"角色编号",
+            "FName":"角色名称",
+            "Dir":"角色分类",
+            "desc":"角色描述",
+            "creator_uniqueid":"创建人全局唯一ID",
+            "creator_name":"创建人名称",
+            "create_time":"2014-01-01",
+            "updator_uniqueid":"最后更新人全局唯一ID",
+            "updator_name":"最后更新人名称",
+            "update_time":"最后更新时间",
+            "submitter_uniqueid":"提交人全局唯一ID",
+            "submitter_name":"提交人名称",
+            "submit_time":"提交时间",
+            "approver_uniqueid":"审核人名称",
+            "approver_name":"审核人名称",
+            "approver_time":"2014-01-10",
+            "abandoner_uniqueid":"禁用人全局唯一ID",
+            "abandoner_name":"禁用人名称",
+            "abandon_time":"禁用时间",
+            "data_status":"数据状态",
+            "abandon_status":"禁用状态",
+            "last_timestamp":"最后一次更新数据的时间戳"
+        }
+    ]
+}
 ```
 <a id="updatePrivilegeForRoleReq" name="updatePrivilegeForRoleReq"></a>
 
@@ -633,4 +699,3 @@ privilege:
 ##### *2.5.1 queryLogOfUserOperationException  获取用户异常操作日志* [目录](#menu)   
 
 
- 
