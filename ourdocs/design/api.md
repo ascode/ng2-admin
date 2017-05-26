@@ -388,6 +388,7 @@ privilege:
 请求数据：  
 ?userid=0  
 响应数据：  
+```
 {
     "id":0
     "organization_uniqueid":"唯一ID",
@@ -447,15 +448,76 @@ privilege:
         }
     ]
 }
-
+```
 
 ##### *2.3.2 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息*  
-
-
+请求类型：GET  
+请求数据：  
+?department_uniqueid=0  
+响应数据： 
+```
+{
+    "id":0
+    "organization_uniqueid":"唯一ID",
+    "organization_code":"部门编码",
+    "name":"部门名称",
+    "brief_name":"部门简称",
+    "description":"部门描述",
+    "mnemonic_code":"助记码",
+    "manager_uniqueid":"负责人全局ID",
+    "prd_manager_name":"负责人名称",
+    "parent_organization_uniqueid":"上级部门全局ID",
+    "parent_organization_name":"上级部门名称",
+    "remark":"备注",
+    "data_status":"数据状态",
+    "abandon_status":"禁用状态",
+    "creator_uniqueid":"创建人的全局ID",
+    "prd_creator_name":"创建人名称",
+    "create_time":"2017-12-12",
+    "updator":"",
+    "update_time":"",
+    "submitter":"",
+    "submit_time":"",
+    "approver":"",
+    "approve_time":"",
+    "abandoner":"",
+    "abandon_time":"",
+    "last_timestamp":4123442342
+}
+```
 
 ##### *2.3.3 createDepartment  新增部门*   
-
-
+请求类型：POST  
+请求数据： 
+``` 
+{
+    "organization_uniqueid":"唯一ID",
+    "organization_code":"部门编码",
+    "name":"部门名称",
+    "brief_name":"部门简称",
+    "description":"部门描述",
+    "mnemonic_code":"助记码",
+    "manager_uniqueid":"负责人全局ID",
+    "prd_manager_name":"负责人名称",
+    "parent_organization_uniqueid":"上级部门全局ID",
+    "parent_organization_name":"上级部门名称",
+    "remark":"备注",
+    "data_status":"数据状态",
+    "abandon_status":"禁用状态",
+    "creator_uniqueid":"创建人的全局ID",
+    "prd_creator_name":"创建人名称",
+    "create_time":"2017-12-12"
+}  
+```
+响应数据： 
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 ##### *2.3.4 deleteDepartment  删除部门*    
-
-
+请求类型：GET  
+请求数据： 
+?department_uniqueid=0
+响应数据： 
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
