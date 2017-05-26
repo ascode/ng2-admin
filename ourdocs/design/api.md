@@ -3,6 +3,8 @@
 * 值为0，代表这个字段是一个数值类型
 * 值为""，代表这个字段是一个字符串类型
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是   
+* pr_开头的字段，（Performance Redundance Design）性能冗余设计，主要用在数据库字段设计，表示这个字段是处于性能考虑设计的冗余。
+* sr_开头的字段，(solidify Redundance Design) 固化冗余设计，主要用于在数据库字段设计，表示这个字段是处于保留历史数据的角度做的冗余设计。比如单据引用产品数据，但是产品名称有可能变更，所以就将产品名称也放在单据的详细信息表。那么这样一来，即使产品表中产品名称变化了，我们的历史单据依然可以具有下单时间的产品名称。
 
 <a id="menu" name="menu"></a>
 
@@ -28,6 +30,12 @@
 [queryaDepartmentInfoByUniqueID](#queryaDepartmentInfoByUniqueID)  根据部门全局ID查询部门信息  
 [createDepartment](#createDepartment)  新增部门  
 [deleteDepartment](#deleteDepartment)  删除部门  
+
+* 数据权限  
+
+* 权限报表  
+
+* 日志
 
 ### 二、用户api详细说明  
 
