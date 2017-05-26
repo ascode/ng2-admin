@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class RolePrivilegeService {
+export class DataOperatePrivilegeToUserService {
 
   smartTableData = [
     {
@@ -146,7 +146,7 @@ export class RolePrivilegeService {
       lastName: 'Smith',
       username: '@ann',
       email: 'ann@gmail.com',
-      age: '授权'
+      age: `数据权限`
     },
      ];
  metricsTableData = [

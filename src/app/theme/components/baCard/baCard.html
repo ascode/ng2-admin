@@ -5,14 +5,23 @@
     </div>
     <div *ngIf="title =='管理员'" class="card-header clearfix">
         <h3 class="card-title" translate>
-            <span class="icon-chevron-lock"></span>
-            &#x3000;{{title}}&#x3000;
-            <span class='ion-chevron-right'></span>
-             &#x3000;<span>所有权限</span>
-             &#x3000;&#x3000;<span>组织管理</span>
-             &#x3000;&#x3000;<span>系统管理</span>
+            <span class="icon-chevron-lock"></span> &#x3000;{{title}}&#x3000;
+            <span class='ion-chevron-right'></span> &#x3000;
+            <span>所有权限</span> &#x3000;&#x3000;
+            <span>组织管理</span> &#x3000;&#x3000;
+            <span>系统管理</span>
         </h3>
     </div>
+    <!--<div *ngIf="title !='数据权限'" class="card-header clearfix">
+        <h3 class="card-title" translate>{{title}}</h3>
+    </div>
+    <div *ngIf="title=='数据权限'" class="card-header clearfix">
+        <h3 class="card-title" translate>
+            admin &#x3000;
+            <span class='ion-chevron-right'></span> &#x3000;
+            <span>{{title}}</span>
+        </h3>
+    </div>-->
     <div class="card-body">
         <ng-content></ng-content>
     </div>

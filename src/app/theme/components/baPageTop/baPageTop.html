@@ -24,7 +24,7 @@
 </div>
 
 <div class="page-top clearfix target" baScrollPosition maxHeight="30" (scrollChange)="scrolledChanged($event)" [ngClass]="{scrolled: isScrolled}">
-  <ul>
+  <ul class="nav nav-tabs">
     <li><span class='ion-chevron-left'></span></li>
     <li><a routerLink="/pages/role/rolecreate" translate>创建用户</a></li>
     <li (provinceOut)="recPro($event)"></li>
