@@ -12,7 +12,8 @@
 * 用户  
 [userLoginReq](#userLoginReq)  用户登录  
 [adduserReq](#adduserReq)  新增用户  
-[queryuserReq](#queryuserReq)  查询用户  
+[queryusersReq](#queryusersReq)  查询用户列表  
+[queryuserByUniqueidReq](#queryuserByUniqueidReq)  根据指定的用户全局ID查询用户信息    
 [removeuserReq](#removeuserReq)  删除用户  
 [updateuserReq](#updateuserReq)  更新用户  
 
@@ -22,8 +23,7 @@
 [updatePrivilegeForRoleReq](#updatePrivilegeForRoleReq)  更新角色的授权  
 [queryPrivilegeByRoleReq](#queryPrivilegeByRoleReq)  查询角色的权限  
 [queryUsersByRoleReq](#queryUsersByRoleReq)  查询属于指定角色的用户列表  
-[addUsersToRoleReq](#addUsersToRoleReq)  添加一个或者多个用户到一个角色  
-[removeUserToRoleReq](#removeUserToRoleReq)  从指定角色中移除一个用户  
+[updateUsersToRoleReq](#updateUsersToRoleReq)  更新属于指定角色的用户列表  
 
 * 机构  
 [queryDepartment](#queryDepartment)  查询部门树  
@@ -32,10 +32,20 @@
 [deleteDepartment](#deleteDepartment)  删除部门  
 
 * 数据权限  
+[queryDataPrivelegeOfRole](#queryDataPrivelegeOfRole) 查询某角色的数据权限列表  
+[queryDataPrivelegeOfUser](#queryDataPrivelegeOfUser) 查询某人员的数据权限列表  
+[updateDataPrivelegeOfRoleOfAview](#updateDataPrivelegeOfRoleOfAview) 更新某角色的数据权限列表  
+[updateDataPrivelegeOfUserOfAview](#updateDataPrivelegeOfUserOfAview) 更新某人员的数据权限列表  
 
 * 权限报表  
+[queryPrivilegeReportForUser](#queryPrivilegeReportForUser) 查询某用户的权限报表数据  
 
 * 日志
+[queryLogOfUserLogin](#queryLogOfUserLogin)获取用户的登陆/登出日志  
+[queryLogOfUserLoginException](#queryLogOfUserLoginException)获取用户登录异常的日志  
+[queryLogOfUserOperation](#queryLogOfUserOperation)获取用户操作日志  
+[queryLogOfUserOperationException](#queryLogOfUserOperationException)获取用户异常操作日志  
+
 
 ### 二、用户api详细说明  
 
@@ -273,28 +283,34 @@ privilege:
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
 
-<a id="queryuserReq" name="queryuserReq"></a>
+<a id="queryusersReq" name="queryusersReq"></a>
 
-##### *2.1.3 queryuserReq(json jsonQueryUser)  查询用户*  [目录](#menu)    
+##### *2.1.3 queryusersReq(json jsonQueryUser)  查询用户列表*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
 响应数据：
-* removeuser(int userid)  删除用户  
+
+<a id="queryuserByUniqueidReq" name="queryuserByUniqueidReq"></a>
+
+##### *2.1.4 queryuserByUniqueidReq  根据指定的用户全局ID查询用户信息*   [目录](#menu)   
 请求类型：POST  
 请求数据：  
 响应数据：
-* updateuser(json jsonObjUpdateUser)  更新用户  
-请求类型：POST  
-请求数据：  
-响应数据：
+
 
 <a id="removeuserReq" name="removeuserReq"></a>
 
-##### *2.1.4 removeuserReq*  [目录](#menu)    
+##### *2.1.5 removeuserReq 删除用户*  [目录](#menu)    
+请求类型：POST  
+请求数据：  
+响应数据：
 
 <a id="updateuserReq" name="updateuserReq"></a>
 
-##### *2.1.5 updateuserReq*  [目录](#menu)  
+##### *2.1.6 updateuserReq 更新用户*  [目录](#menu)  
+请求类型：POST  
+请求数据：  
+响应数据：
 
 
 #### 2.2 角色api  
@@ -407,14 +423,10 @@ privilege:
 ]
 ```
 
-<a id="addUsersToRoleReq" name="addUsersToRoleReq"></a>
+<a id="updateUsersToRoleReq" name="updateUsersToRoleReq"></a>
 
-##### *2.2.6 addUsersToRoleReq  添加一个或者多个用户到一个角色*  [目录](#menu)    
-
-
-<a id="removeUserToRoleReq" name="removeUserToRoleReq"></a>
-
-##### *2.2.7 removeUserToRoleReq  从指定角色中移除一个用户*  [目录](#menu)    
+##### *2.2.6 updateUsersToRoleReq  更新属于指定角色的用户列表*  [目录](#menu)    
+ 
 
 
 
@@ -564,3 +576,61 @@ privilege:
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
+
+
+#### 2.4 数据权限  
+
+<a id="queryDataPrivelegeOfRole" name="queryDataPrivelegeOfRole"></a> 
+
+##### *2.4.1 queryDataPrivelegeOfRole  查询某角色的数据权限列表* [目录](#menu)    
+
+
+
+<a id="queryDataPrivelegeOfUser" name="queryDataPrivelegeOfUser"></a> 
+
+##### *2.4.2 queryDataPrivelegeOfUser  查询某人员的数据权限列表* [目录](#menu)    
+
+
+<a id="updateDataPrivelegeOfRoleOfAview" name="updateDataPrivelegeOfRoleOfAview"></a> 
+
+##### *2.4.3 updateDataPrivelegeOfRoleOfAview  更新某角色的数据权限列表* [目录](#menu)    
+
+
+<a id="updateDataPrivelegeOfUserOfAview" name="updateDataPrivelegeOfUserOfAview"></a> 
+
+##### *2.4.4 updateDataPrivelegeOfUserOfAview  更新某人员的数据权限列表* [目录](#menu)    
+
+
+
+#### 2.4 权限报表  
+
+<a id="queryPrivilegeReportForUser" name="queryPrivilegeReportForUser"></a> 
+
+##### *2.5.1 queryPrivilegeReportForUser  查询某用户的权限报表数据* [目录](#menu)   
+
+
+
+#### 2.4 日志  
+
+<a id="queryLogOfUserLogin" name="queryLogOfUserLogin"></a> 
+
+##### *2.5.1 queryLogOfUserLogin  获取用户的登陆/登出日志* [目录](#menu)   
+
+
+
+<a id="queryLogOfUserLoginException" name="queryLogOfUserLoginException"></a> 
+
+##### *2.5.1 queryLogOfUserLoginException  获取用户登录异常的日志* [目录](#menu)   
+
+
+<a id="queryLogOfUserOperation" name="queryLogOfUserOperation"></a> 
+
+##### *2.5.1 queryLogOfUserOperation  获取用户操作日志* [目录](#menu)   
+
+
+<a id="queryLogOfUserOperationException" name="queryLogOfUserOperationException"></a> 
+
+##### *2.5.1 queryLogOfUserOperationException  获取用户异常操作日志* [目录](#menu)   
+
+
+ 
