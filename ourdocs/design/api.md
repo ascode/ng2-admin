@@ -777,20 +777,160 @@ privilege:
 
 ##### *2.5.1 queryLogOfUserLogin  获取用户的登陆/登出日志* [目录](#menu)   
 
+请求类型：POST  
+请求数据： 
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "prd_user_name":"用户名称",
+        "login_time":"登录时间",
+        "login_type":"枚举（登录、登出）",
+        "event_level":"事件级别：正常、异常",
+        "device_info":"登录/登出的设备信息"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":0,
+        "user_unique_id":"用户全局ID",
+        "prd_user_name":"用户名称",
+        "token":"tokentokentokentoken",
+        "login_time":"登录时间",
+        "login_type":"枚举（登录、登出）",
+        "device_info":"登录/登出的设备信息",
+        "event_level":"事件级别：正常、异常",
+        "exception_desc":"异常信息描述",
+        "last_timestamp":"234234124"
+    }]
+}
+```
+
 
 
 <a id="queryLogOfUserLoginException" name="queryLogOfUserLoginException"></a> 
 
-##### *2.5.1 queryLogOfUserLoginException  获取用户登录异常的日志* [目录](#menu)   
+##### *2.5.1 queryLogOfUserLoginException  获取用户登录异常的日志* [目录](#menu)  
+
+请求类型：POST  
+请求数据： 
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "prd_user_name":"用户名称",
+        "login_time":"登录时间",
+        "login_type":"枚举（登录、登出）",
+        "device_info":"登录/登出的设备信息",
+        "event_level":"事件级别：正常、异常",
+        "exception_desc":"异常信息描述"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":0,
+        "user_unique_id":"用户全局ID",
+        "prd_user_name":"用户名称",
+        "token":"tokentokentokentoken",
+        "login_time":"登录时间",
+        "login_type":"枚举（登录、登出）",
+        "device_info":"登录/登出的设备信息",
+        "event_level":"事件级别：正常、异常",
+        "exception_desc":"异常信息描述",
+        "last_timestamp":"234234124"
+    }]
+}
+``` 
 
 
 <a id="queryLogOfUserOperation" name="queryLogOfUserOperation"></a> 
 
 ##### *2.5.1 queryLogOfUserOperation  获取用户操作日志* [目录](#menu)   
 
+请求类型：POST  
+请求数据： 
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "prd_user_name":"用户名称",
+        "column_path":"栏目路径",
+        "operation_name":"操作名称",
+        "operation_desc":"操作描述",
+        "event_level":"事件级别：正常、异常"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":"",
+        "user_unique_id":"用户唯一ID",
+        "prd_user_name":"用户名称",
+        "column_path":"栏目路径",
+        "operation_name":"操作名称",
+        "operation_desc":"操作描述",
+        "exception_desc":"异常信息描述",
+        "event_level":"事件级别：正常、异常",
+        "last_timestamp":49564494
+    }]
+}
+``` 
+
 
 <a id="queryLogOfUserOperationException" name="queryLogOfUserOperationException"></a> 
 
 ##### *2.5.1 queryLogOfUserOperationException  获取用户异常操作日志* [目录](#menu)   
 
-
+请求类型：POST  
+请求数据： 
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "prd_user_name":"用户名称",
+        "column_path":"栏目路径",
+        "operation_name":"操作名称",
+        "operation_desc":"操作描述"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":"",
+        "user_unique_id":"用户唯一ID",
+        "prd_user_name":"用户名称",
+        "column_path":"栏目路径",
+        "operation_name":"操作名称",
+        "operation_desc":"操作描述",
+        "exception_desc":"异常信息描述",
+        "event_level":"事件级别：正常、异常",
+        "last_timestamp":49564494
+    }]
+}
+``` 
