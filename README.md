@@ -10,7 +10,9 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * 开发框架说明[本页]  
 * [API说明](ourdocs/design/api.md)    
 * [前端处理逻辑说明](ourdocs/design/logic.md)  
+* [组织管理菜单结构设计](ourdocs/design/Menus/组织管理菜单结构设计.jpg)
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
+
 
 ## List of features
 * Angular 2+
@@ -126,7 +128,7 @@ api测试工具
   
 * [bootstrap 4 官方网站](https://v4-alpha.getbootstrap.com/)  
 
-* [奚琛发起的《开发人员帮助手册》](http://vosung.bgenius.cn/xic/Devlopment-Helper)  
+* [奚琛发起的《开发人员帮助手册》(目前唯一的内部开发人员帮助手册，包括前后端开发流程指导，git源码使用指导等等)](http://vosung.bgenius.cn/xic/Devlopment-Helper)  
 
 * [通知公告](http://vosung.bgenius.cn/ascode/notice)  
   
