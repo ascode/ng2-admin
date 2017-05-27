@@ -37,6 +37,7 @@
 
 ### 一、api一览  
 * 用户  
+
 [userLoginReq](#userLoginReq)  用户登录  
 [adduserReq](#adduserReq)  新增用户  
 [queryusersReq](#queryusersReq)  查询用户列表  
@@ -45,6 +46,7 @@
 [updateuserReq](#updateuserReq)  更新用户  
 
 * 角色  
+
 [addRoleReq](#addRoleReq)  创建角色  
 [queryRolesReq](#queryRolesReq)  查询角色列表  
 [updatePrivilegeForRoleReq](#updatePrivilegeForRoleReq)  更新角色的授权  
@@ -53,21 +55,27 @@
 [updateUsersToRoleReq](#updateUsersToRoleReq)  更新属于指定角色的用户列表  
 
 * 机构  
+
 [queryDepartment](#queryDepartment)  查询部门树  
 [queryaDepartmentInfoByUniqueID](#queryaDepartmentInfoByUniqueID)  根据部门全局ID查询部门信息  
+
 [createDepartment](#createDepartment)  新增部门  
 [deleteDepartment](#deleteDepartment)  删除部门  
 
 * 数据权限  
+
 [queryDataPrivelegeOfRole](#queryDataPrivelegeOfRole) 查询某角色的数据权限列表  
 [queryDataPrivelegeOfUser](#queryDataPrivelegeOfUser) 查询某人员的数据权限列表  
 [updateDataPrivelegeOfRoleOfAview](#updateDataPrivelegeOfRoleOfAview) 更新某角色的数据权限列表  
+
 [updateDataPrivelegeOfUserOfAview](#updateDataPrivelegeOfUserOfAview) 更新某人员的数据权限列表  
 
 * 权限报表  
+
 [queryPrivilegeReportForUser](#queryPrivilegeReportForUser) 查询某用户的权限报表数据  
 
 * 日志
+
 [queryLogOfUserLogin](#queryLogOfUserLogin)获取用户的登陆/登出日志  
 [queryLogOfUserLoginException](#queryLogOfUserLoginException)获取用户登录异常的日志  
 [queryLogOfUserOperation](#queryLogOfUserOperation)获取用户操作日志  
