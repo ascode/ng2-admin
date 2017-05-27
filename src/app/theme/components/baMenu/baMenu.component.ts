@@ -72,7 +72,7 @@ export class BaMenu {
     let submenu = jQuery($event.currentTarget).next();
      let nowmenu = jQuery($event.currentTarget);
      let now = jQuery($event.target)
-     console.log(now)
+    //  console.log(now)
     //  console.log(submenu);
     //  console.log(nowmenu);
     if (this.sidebarCollapsed) {

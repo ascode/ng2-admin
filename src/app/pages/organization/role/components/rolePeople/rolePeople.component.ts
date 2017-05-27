@@ -7,12 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class RolePeopleComponent {
-
-
-  constructor(){ 
- 
-  }
-  query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
