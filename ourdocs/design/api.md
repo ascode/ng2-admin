@@ -58,7 +58,6 @@
 
 [queryDepartment](#queryDepartment)  查询部门树  
 [queryaDepartmentInfoByUniqueID](#queryaDepartmentInfoByUniqueID)  根据部门全局ID查询部门信息  
-
 [createDepartment](#createDepartment)  新增部门  
 [deleteDepartment](#deleteDepartment)  删除部门  
 
@@ -752,22 +751,116 @@ privilege:
 <a id="queryDataPrivelegeOfRole" name="queryDataPrivelegeOfRole"></a> 
 
 ##### *2.4.1 queryDataPrivelegeOfRole  查询某角色的数据权限列表* [目录](#menu)    
-
-
+请求类型：POST   
+请求数据：  
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "role_uniqueid":0,
+        "data_view_name":"数据视图名称",
+        "columns_of_view":"视图字段列表",
+        "authorize_columns":"授权的字段列表",
+        "authorize_desc":"授权说明"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":0,
+        "data_view_id":0,
+        "data_view_name":"数据视图名称",
+        "columns_of_view":"视图字段列表",
+        "authorize_columns":"授权的字段列表",
+        "authorize_desc":"授权说明"
+    }]
+}
+```
 
 <a id="queryDataPrivelegeOfUser" name="queryDataPrivelegeOfUser"></a> 
 
 ##### *2.4.2 queryDataPrivelegeOfUser  查询某人员的数据权限列表* [目录](#menu)    
-
+请求类型：POST   
+请求数据：  
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "user_uniqueid":0,
+        "data_view_name":"数据视图名称",
+        "columns_of_view":"视图字段列表",
+        "authorize_columns":"授权的字段列表",
+        "authorize_desc":"授权说明"
+    }
+}  
+```
+响应数据：   
+```
+{
+    "pagesize":10,
+    "current_page_index":1,
+    "row_count":50,
+    "result_data":[{
+        "id":0,
+        "data_view_id":0,
+        "data_view_name":"数据视图名称",
+        "columns_of_view":"视图字段列表",
+        "authorize_columns":"授权的字段列表",
+        "authorize_desc":"授权说明"
+    }]
+}
+```
 
 <a id="updateDataPrivelegeOfRoleOfAview" name="updateDataPrivelegeOfRoleOfAview"></a> 
 
 ##### *2.4.3 updateDataPrivelegeOfRoleOfAview  更新某角色的数据权限列表* [目录](#menu)    
 
+请求类型：POST   
+请求数据：  
+```
+{
+    "id":0,
+    "role_uniqueid":"02342343vd",
+    "prd_role_name":"角色名称",
+    "data_view_id":"数据视图id",
+    "prd_data_view_name":"数据视图名称",
+    "authorize_columns":"授权的字段列表",
+    "authorize_desc":"授权说明",
+}  
+```
+响应数据：   
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 <a id="updateDataPrivelegeOfUserOfAview" name="updateDataPrivelegeOfUserOfAview"></a> 
 
 ##### *2.4.4 updateDataPrivelegeOfUserOfAview  更新某人员的数据权限列表* [目录](#menu)    
+
+请求类型：POST   
+请求数据：  
+```
+{
+    "id":0,
+    "user_uniqueid":"02342343vd",
+    "prd_user_name":"角色名称",
+    "data_view_id":"数据视图id",
+    "prd_data_view_name":"数据视图名称",
+    "authorize_columns":"授权的字段列表",
+    "authorize_desc":"授权说明",
+}  
+```
+响应数据：   
+```
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 
 
@@ -777,7 +870,52 @@ privilege:
 
 ##### *2.5.1 queryPrivilegeReportForUser  查询某用户的权限报表数据* [目录](#menu)   
 
+请求类型：POST  
+请求数据：  
+?user_uniqueid=0  
+响应数据：   
+{
+    "userinfo":{
+        "id":0,
+        "uniqueid":"",
+        "login_name":"",
+        "user_name":"",
+        "department_unique_id":"",
+        "ScanCode":"",
+        "IsAllowLogin":0,
+        "InValidTime":"",
+        "IsEmployee":0,
+        "DataStatus":"",
+        "AbandonStatus":0,
+        "Creator_uniqueid":"",
+        "creator_name":"",
+        "create_time":"",
+        "last_updater_name":"",
+        "last_updater_unique_id":"",
+        "last_update_time":"",
+        "approver_unique_id":"",
+        "approver_name":"",
+        "approve_time":"",
+        "abandoner_unique_id":"",
+        "abandoner_name":"",
+        "abandon_time":"",
+        "last_timestamp":0
+    },
+    "function_privilege":[{
+        "module_name": "",
+        "module_text": "",
+        "culumns": [{
+            "column_name": "",
+            "column_text": "",
+            "privilege_item": [
+                { "privilege_item_name": "", "privilege_item_text": "" }
+            ]
+        }]
+    }],
+    "data_privilege":{
 
+    }
+}
 
 #### 2.4 日志  
 
