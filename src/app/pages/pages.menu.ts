@@ -39,6 +39,31 @@ export const PAGES_MENU = [
           }
         ]
       },
+      // {
+      //   path: 'zly',
+      //   data: {
+      //     menu: {
+      //       title: '多例子',
+      //       icon: 'ion-funnel',
+      //       selected: false,
+      //       expanded: false,
+      //       order: 100,
+      //     }
+      //   },
+      //   children: [
+      //    {
+      //       path: 'gutable',
+      //       data: {
+      //         menu: {
+      //           title: '滚动表格', 
+      //           selected: false,
+      //           expanded: false,
+      //           order: 100,    
+      //         }
+      //       }         
+      //     },
+      //   ]
+      // },
       {
         path: '',
         data: {
@@ -104,22 +129,6 @@ export const PAGES_MENU = [
                 data: {
                   menu: {
                     title: '用户信息',
-                  }
-                }
-              },
-              {
-                path: 'table',
-                data: {
-                  menu: {
-                    title: '滚动表格',
-                  }
-                }
-              },
-              {
-                path: 'datatab',
-                data: {
-                  menu: {
-                    title: '数据表格',
                   }
                 }
               },
@@ -259,6 +268,7 @@ export const PAGES_MENU = [
           }
         ]
       },
+      
       {
         path: 'dashboard',
         data: {
@@ -293,6 +303,7 @@ export const PAGES_MENU = [
           }
         ]
       },
+   
       {
         path: 'components',
         data: {

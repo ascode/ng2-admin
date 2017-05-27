@@ -1,0 +1,81 @@
+<div class="widgets">
+    <div class="row ">
+        <div class="col-md-2">
+            <ba-card bacardclass="with-scroll">
+                <ul *ngFor="let item of DepartmentList" class="al-sidebar-list " (mouseleave)="hoverElemTop=outOfArea" style=" padding:0px;margin:0px;" >
+                    <li style="list-style:none;height:25px;width:100px;">{{item.name}}</li>
+                    <ul style="margin-left:-5px ;" *ngFor='let i of item.sub'>
+                        <li style="list-style:none;height:25px;width:100px;">{{i.name}}</li>
+                    </ul>
+                </ul>
+                <div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}" [ngClass]="{'show-hover-elem': showHoverElem }">
+                </div>
+            </ba-card>
+        </div>
+        <div class="col-md-5">
+            <ba-card title='基本信息' bacardclass="with-scroll">
+                <form action="">
+                    <div class="form-group">
+                        <label for="input001">部门编码</label>
+                        <input type="text" class="form-control" id="input001" placeholder="部门编码" [(ngModel)]='DeListObj.organization_code' name='organization_code'
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="input002">部门名称</label>
+                        <input type="text" class="form-control" id="input002" placeholder="部门名称" [(ngModel)]='DeListObj.name' name='name' />
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea03">部门简称</label>
+                        <input placeholder="Default Input" class="form-control" id="textarea03" placeholder="部门简称" [(ngModel)]='DeListObj.brief_name'
+                            name='brief_name'>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea03">助记码</label>
+                        <input placeholder="Default Input" class="form-control" id="textarea03" placeholder="助记码" [(ngModel)]='DeListObj.mnemonic_code'
+                            name='mnemonic_code'>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea03">负责人</label>
+                        <input placeholder="Default Input" class="form-control" id="textarea03" placeholder="负责人" [(ngModel)]='DeListObj.prd_manager_name'
+                            name='prd_manager_name'>
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea03">部门描述</label>
+                        <textarea placeholder="Default Input" class="form-control" id="textarea03" placeholder="部门描述" [(ngModel)]='DeListObj.description'
+                            name='description'></textarea>
+                    </div>
+                </form>
+            </ba-card>
+        </div>
+        <div class="col-md-5">
+            <ba-card title='其他' bacardclass="with-scroll">
+                <div class="form-group">
+                    <label>数据状态</label>
+                    <div class="input-demo radio-demo row">
+                        <div class="col-md-6">
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="新建" [(ngModel)]='DeListObj.data_status' name='data_status'/> <span>新建</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="提交" [(ngModel)]='DeListObj.data_status' name='data_status'/> <span>提交</span> </label>&nbsp;&nbsp;&nbsp;
+                            <label class="radio-inline custom-radio nowrap"> <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="审核" [(ngModel)]='DeListObj.data_status' name='data_status'/> <span>审核</span> </label>&nbsp;&nbsp;&nbsp;
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="input03">创建人</label>
+                        <input type="text" class="form-control" id="input03" placeholder="王饶冀" [(ngModel)]='DeListObj.prd_creator_name' name='prd_creator_name'
+                            disabled/>
+                    </div>
+                </div>
+            </ba-card>
+            <div class="form-group">
+                <button type="submit" style="margin-right:20px;" class="btn btn-primary" (click)='addnextpartment()'>新增下级部门</button>
+                <button type="submit" class="btn btn-primary" (click)='addpartment()'>新增同级部门</button>
+
+            </div>
+            <div class="form-group">
+                <button type="submit" style="margin-right:20px;" class="btn btn-primary" (click)='delectpartment()'>删除部门</button>
+                <button type="submit" class="btn btn-primary" (click)='department()'>保存</button>
+            </div>
+        </div>
+
+    </div>
+</div>

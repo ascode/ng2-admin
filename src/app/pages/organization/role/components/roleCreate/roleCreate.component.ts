@@ -18,17 +18,24 @@ export class Role {
 })
 
 export class RoleCreateComponent {
+   RoleData: Object;
   // 2.参数，定义输出变量。
   //  url:string;
   // @Input() 
   // @Output('url') urlChange:EventEmitter<string> = new EventEmitter<string>();
-  constructor(public route: ActivatedRoute) {
+  constructor(private http: Http) {
     // 发给父组件
     // this.url = '创建角色'
   }
   roleObj = new Role();
-  makePost(): void {
-    let roleObj = this.roleObj;
+  roleCreate(){
+    let role = this.roleObj;
+    console.log(role);
+    this.http.post('http://vosung.bgenius.cn:8081/mockjs/11/adduser?',
+    JSON.stringify(role)).subscribe((res: Response) => {
+				// this.RoleData = res.json();
+				console.log(res);
+			});
   }
   
   // ngOnInit() {
