@@ -7,7 +7,7 @@ deploy:
   only:
     - mes
   tags:
-    - firstshared
+    - ng2-admin
 
     
 
