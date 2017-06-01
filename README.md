@@ -90,6 +90,8 @@ This will clear up your dist folder (where release files are located), generate 
 本项目采用gitlab-ci实现编码到测试部署的持续集成。   
 自动部署的地址是： [http://vosung.bgenius.cn:4200](http://vosung.bgenius.cn:4200)  
 
+RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.168.2.238:8000/metadata)   
+
 ## Electron Hybird架构  
 使用Electron Hybird架构嵌入本Web App的时候，需要对项目下/src/index.html文件进行少许改进。要在页面head节内增加：  
 ```
