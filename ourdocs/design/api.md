@@ -430,7 +430,7 @@ privilege:
 请求数据：  
 ```
 {
-    "id":0,
+    "id":1,
     "uniqueid":"用户的全局ID",
     "login_name":"用户登录名",
     "user_name":"用户姓名",
@@ -453,8 +453,7 @@ privilege:
     "approve_time":"",
     "abandoner_unique_id":"",
     "abandoner_name":"",
-    "abandon_time":"",
-    "last_timestamp":0
+    "abandon_time":""
 }
 ```
 响应数据：
