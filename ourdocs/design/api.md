@@ -47,7 +47,8 @@
 
 * 角色  
 
-[addRoleReq](#addRoleReq)  创建角色  
+[addRoleInfoReq](#addRoleInfoReq)  创建角色  
+[updateRoleInfoReq](#updateRoleInfoReq)  更新角色信息  
 [queryRolesReq](#queryRolesReq)  查询角色列表  
 [updatePrivilegeForRoleReq](#updatePrivilegeForRoleReq)  更新角色的授权  
 [queryPrivilegeByRoleReq](#queryPrivilegeByRoleReq)  查询角色的权限  
@@ -464,9 +465,9 @@ privilege:
 
 #### 2.2 角色api  
 
-<a id="addRoleReq" name="addRoleReq"></a>
+<a id="addRoleInfoReq" name="addRoleInfoReq"></a>
 
-##### *2.2.1 addRoleReq  创建角色*  [目录](#menu)  
+##### *2.2.1 addRoleInfoReq  创建角色*  [目录](#menu)  
 请求类型：POST  
 请求数据：
 ```
@@ -483,9 +484,31 @@ privilege:
 响应数据：
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 
+<a id="updateRoleInfoReq" name="updateRoleInfoReq"></a>
+
+##### *2.2.2 updateRoleInfoReq  更新角色信息*  [目录](#menu)  
+请求类型：POST  
+请求数据：
+```
+{
+    "id":1,
+    "unique_id":"xxx13242323",
+    "FCode":"角色编号",
+    "FName":"角色名称",
+    "role_desc":"角色描述",
+    "updator_uniqueid":"xx82793428",
+    "updator_name":"金飞",
+    "update_time":"2015-12-12",
+    "data_status":"数据状态枚举字段，可选值：新建、提交、审核",
+    "abandon_status":0,
+}  
+```
+响应数据：
+{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+
 <a id="queryRolesReq" name="queryRolesReq"></a>
 
-##### *2.2.2 queryRolesReq  查询角色列表*  [目录](#menu)    
+##### *2.2.3 queryRolesReq  查询角色列表*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
 ```
@@ -536,7 +559,7 @@ privilege:
 ```
 <a id="updatePrivilegeForRoleReq" name="updatePrivilegeForRoleReq"></a>
 
-##### *2.2.3 updatePrivilegeForRoleReq  更新角色的授权*  [目录](#menu)    
+##### *2.2.4 updatePrivilegeForRoleReq  更新角色的授权*  [目录](#menu)    
 请求类型：POST  
 请求数据：
 ```
@@ -553,7 +576,7 @@ privilege:
 
 <a id="queryPrivilegeByRoleReq" name="queryPrivilegeByRoleReq"></a>
 
-##### *2.2.4 queryPrivilegeByRoleReq  查询角色的权限*  [目录](#menu)    
+##### *2.2.5 queryPrivilegeByRoleReq  查询角色的权限*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?role_unique_id=0
@@ -563,7 +586,7 @@ privilege:
 
 <a id="queryUsersByRoleReq" name="queryUsersByRoleReq"></a>
 
-##### *2.2.5 queryUsersByRoleReq  查询属于指定角色的用户列表*  [目录](#menu)    
+##### *2.2.6 queryUsersByRoleReq  查询属于指定角色的用户列表*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
 ?role_unique_id=0  
@@ -578,7 +601,7 @@ privilege:
 
 <a id="updateUsersToRoleReq" name="updateUsersToRoleReq"></a>
 
-##### *2.2.6 updateUsersToRoleReq  更新属于指定角色的用户列表*  [目录](#menu)    
+##### *2.2.7 updateUsersToRoleReq  更新属于指定角色的用户列表*  [目录](#menu)    
 请求类型：POST  
 请求数据：  
 ```
