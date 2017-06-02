@@ -31,10 +31,12 @@ export class RoleCreateComponent {
   roleCreate(){
     let role = this.roleObj;
     console.log(role);
-    this.http.post('http://vosung.bgenius.cn:8081/mockjs/11/adduser?',
+    this.http.post('http://vosung.bgenius.cn:8081/mockjs/12/creatrole.josn?',
     JSON.stringify(role)).subscribe((res: Response) => {
 				// this.RoleData = res.json();
-				console.log(res);
+        if(res.status==200){
+           alert('保存成功');
+        }	
 			});
   }
   

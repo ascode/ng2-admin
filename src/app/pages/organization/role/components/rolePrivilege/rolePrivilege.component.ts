@@ -63,6 +63,7 @@ export class RolePrivilegeComponent {
   constructor(protected service: RolePrivilegeService) {
     
     this.service.getData().then((data) => {
+      console.log(data);
       this.source.load(data);   
     });  
   }

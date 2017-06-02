@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Http, Response } from '@angular/http';
+import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'role-people',
   templateUrl: './rolePeople.html',
@@ -23,23 +24,23 @@ export class RolePeopleComponent {
       confirmDelete: true
     },
     columns: {
-      id: {
+      FCode: {
         title: '编号',
         type: 'string'
       },
-      firstName: {
+      FName: {
         title: '角色名称',
         type: 'string'
       },
-      lastName: {
+      desc: {
         title: '角色描述',
         type: 'string'
       },
-      username: {
+      creator_name: {
         title: '创建人',
         type: 'string'
       },
-      email: {
+      creator_time: {
         title: '创建时间',
         type: 'string'
       },
@@ -49,17 +50,13 @@ export class RolePeopleComponent {
       }
     }
   };
-
-  //  source: LocalDataSource = new LocalDataSource();
-
-  // constructor(protected service: RolePrivilegeService) {
-    
-  //   this.service.getData().then((data) => {
-  //     this.source.load(data);   
-  //   });
-     
-  // }
-
+   source: LocalDataSource = new LocalDataSource();
+  constructor(private http: Http) {
+   this.http.get('http://vosung.bgenius.cn:8081/mockjs/11/tabledata.json?').subscribe((res: Response) => {
+				let data = res.json().obj;     
+        this.source.load(data); 
+			});
+}
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
@@ -67,10 +64,4 @@ export class RolePeopleComponent {
       event.confirm.reject();
     }
   }
-  //  ngOnInit() {
-  //          this.route.params.subscribe(params => {
-  //             //  this.id = params  // {id: "xxx"}
-  //             console.log(222)
-  //          });
-  //      }
 }

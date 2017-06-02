@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogForUserLoginService } from './LogForUserLogin.service';
+import { Http, Response } from '@angular/http';
 import { LocalDataSource } from 'ng2-smart-table';
 
 @Component({
@@ -25,16 +25,16 @@ export class LogForUserLoginComponent {
       confirmDelete: true
     },
     columns: {
-      id: {
+      user_unique_id: {
         title: '用户ID',
         type: 'string',
         
       },
-      firstName: {
+      prd_user_name: {
         title: '用户名称',
         type: 'string'
       },
-      lastName: {
+        device_info: {
         title: '操作路径',
         type: 'string'
       },
@@ -42,7 +42,7 @@ export class LogForUserLoginComponent {
         title: '操作名称',
         type: 'string'
       },
-      email: {
+      token: {
         title: '操作说明',
         type: 'string'
       },
@@ -52,13 +52,29 @@ export class LogForUserLoginComponent {
       }
     }
   };
+   shouquan(){
+    console.log('授权按钮被点击')
+  }
 // 请求到表格的数据。
    source: LocalDataSource = new LocalDataSource();
-
-  constructor(protected service: LogForUserLoginService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);   
-    });  
+  constructor(private http: Http) {
+  let loginList = {
+    "pagesize":10,
+    "current_page_index":1,
+    "query_entity":{
+        "prd_user_name":"zzzz",
+        "login_time":"2017.03.06",
+        "login_type":"登录",
+        "event_level":"正常",
+        "device_info":"pc端"
+    }
+}
+   this.http.post('http://vosung.bgenius.cn:8081/mockjs/11/userLogin?',JSON.stringify(loginList)).subscribe((res: Response) => {
+				let data = res.json().result_data;  
+        console.log(data);
+        setTimeout(() => {this.source.load(data);},2000);   
+          
+			}); 
   }
 
   onDeleteConfirm(event): void {
