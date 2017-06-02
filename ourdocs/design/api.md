@@ -311,7 +311,7 @@ privilege:
     "InValidTime":"2017-01-02",
     "DataStatus":"新建",
     "Creator_uniqueid":"00001",
-    "creator_name":"老王"
+    "prd_creator_name":"老王"
 }  
 ```
 响应数据：
