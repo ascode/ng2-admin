@@ -304,7 +304,7 @@ privilege:
 {
     "login_name":"wangraoji",
     "user_name":"wangraoji",
-    "Password":"123",
+    "pwd":"123",
     "ScanCode":"kk00011",
     "IsEmployee":1,
     "IsAllowLogin":1,
