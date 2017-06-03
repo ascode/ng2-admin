@@ -13,9 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="input02">角色描述</label>
-                        <!--<textarea type="text" class="form-control" id="input02" placeholder="角色描述" [(ngModel)]='roleObj.desc' name='desc' /></textarea>-->
-                        <textarea placeholder="Default Input" class="form-control" id="input02" placeholder="角色描述" [(ngModel)]='roleObj.desc'
-                            name='desc'></textarea>
+                        <input type="text" class="form-control" id="input02" placeholder="角色描述" [(ngModel)]='roleObj.desc' name='desc' />
                     </div>
                 </form>
             </ba-card>
@@ -40,11 +38,8 @@
                 </div>
             </ba-card>
             <div class="form-group" style='float:right;'>
-                <button type="submit" class="btn btn-primary" (click)='roleCreate()'>保存</button>
+                <button type="submit" class="btn btn-primary" (click)='onClick($event)'>保存</button>
             </div>
         </div>
     </div>
 </div>
-<!--<div>   
-     <role-create [(url)]="initialUrl" ></role-create>
-</div>-->
