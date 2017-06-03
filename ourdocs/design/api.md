@@ -563,14 +563,24 @@ privilege:
 请求数据：
 ```
 {
-    "role_unique_id":"0",
-    "inserted_privileges":["新增用户","查看用户列表"],
-    "deleted_privileges":["修改用户","删除用户"]
-}  
+	"inserted_privileges": [{
+	        "Role_uniqueid":"角色的全局ID",
+	        "Privilege_code":"权限code",
+	        "Prd_privilege_text":"权限的显示名称"
+	}],
+	"deleted_privileges": [{
+	        "Role_uniqueid":"角色的全局ID",
+	        "Privilege_code":"权限code",
+	        "Prd_privilege_text":"权限的显示名称"
+	}]
+}
 ```
 响应数据：
 ```
-{"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
 ```
 
 <a id="queryPrivilegeByRoleReq" name="queryPrivilegeByRoleReq"></a>
