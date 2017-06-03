@@ -586,9 +586,9 @@ privilege:
 <a id="queryPrivilegeByRoleReq" name="queryPrivilegeByRoleReq"></a>
 
 ##### *2.2.5 queryPrivilegeByRoleReq  查询角色的权限*  [目录](#menu)    
-请求类型：GET  
+请求类型：POST  
 请求数据：  
-?role_unique_id=0
+{"Role_uniqueid":"角色的全局ID"}
 
 响应数据：
 点击查看 [privilege_model](../../resource/privilege_model.json)  
@@ -763,6 +763,14 @@ privilege:
 }  
 ```
 响应数据： 
+正确：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
@@ -771,8 +779,16 @@ privilege:
 ##### *2.3.4 deleteDepartment  删除部门* [目录](#menu)    
 请求类型：GET  
 请求数据： 
-?department_uniqueid=0
+{"Organization_uniqueid":"唯一ID"}
 响应数据： 
+期望结果：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+出错结果：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
