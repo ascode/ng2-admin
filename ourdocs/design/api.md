@@ -57,7 +57,7 @@
 
 * 机构  
 
-[queryDepartment](#queryDepartment)  查询部门树  
+[queryAllDepartments](#queryAllDepartments)  查询全部部门树  
 [queryaDepartmentInfoByUniqueID](#queryaDepartmentInfoByUniqueID)  根据部门全局ID查询部门信息  
 [createDepartment](#createDepartment)  新增部门  
 [deleteDepartment](#deleteDepartment)  删除部门  
@@ -632,42 +632,16 @@ privilege:
 
 #### 2.3 机构api  
 
-<a id="queryDepartment" name="queryDepartment"></a>
+<a id="queryAllDepartments" name="queryAllDepartments"></a>
 
-##### *2.3.1 queryDepartment  查询部门树*  [目录](#menu)    
+##### *2.3.1 queryAllDepartments  查询全部部门树*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
-?userid=0  
+无  
 响应数据：  
 ```
 {
-    "id":0
-    "organization_uniqueid":"唯一ID",
-    "organization_code":"部门编码",
-    "name":"部门名称",
-    "brief_name":"部门简称",
-    "description":"部门描述",
-    "mnemonic_code":"助记码",
-    "manager_uniqueid":"负责人全局ID",
-    "prd_manager_name":"负责人名称",
-    "parent_organization_uniqueid":"上级部门全局ID",
-    "parent_organization_name":"上级部门名称",
-    "remark":"备注",
-    "data_status":"数据状态",
-    "abandon_status":"禁用状态",
-    "creator_uniqueid":"创建人的全局ID",
-    "prd_creator_name":"创建人名称",
-    "create_time":"2017-12-12",
-    "updator":"",
-    "update_time":"",
-    "submitter":"",
-    "submit_time":"",
-    "approver":"",
-    "approve_time":"",
-    "abandoner":"",
-    "abandon_time":"",
-    "last_timestamp":4123442342,
-    "childs":[
+    "departments":[
         {
             "id":0
             "organization_uniqueid":"唯一ID",
@@ -697,44 +671,52 @@ privilege:
             "last_timestamp":4123442342,
             "childs":[]
         }
-    ]
+    ],
+    "ResponseStatus": {},
+    "DoFlag": true
 }
 ```
 <a id="queryaDepartmentInfoByUniqueID" name="queryaDepartmentInfoByUniqueID"></a>
 
 ##### *2.3.2 queryaDepartmentInfoByUniqueID  根据部门全局ID查询部门信息*  [目录](#menu)    
-请求类型：GET  
+请求类型：POST  
 请求数据：  
-?department_uniqueid=0  
+```
+{"Organization_uniqueid":"全局ID"}
+```  
 响应数据： 
 ```
 {
-    "id":0
-    "organization_uniqueid":"唯一ID",
-    "organization_code":"部门编码",
-    "name":"部门名称",
-    "brief_name":"部门简称",
-    "description":"部门描述",
-    "mnemonic_code":"助记码",
-    "manager_uniqueid":"负责人全局ID",
-    "prd_manager_name":"负责人名称",
-    "parent_organization_uniqueid":"上级部门全局ID",
-    "parent_organization_name":"上级部门名称",
-    "remark":"备注",
-    "data_status":"数据状态",
-    "abandon_status":"禁用状态",
-    "creator_uniqueid":"创建人的全局ID",
-    "prd_creator_name":"创建人名称",
-    "create_time":"2017-12-12",
-    "updator":"",
-    "update_time":"",
-    "submitter":"",
-    "submit_time":"",
-    "approver":"",
-    "approve_time":"",
-    "abandoner":"",
-    "abandon_time":"",
-    "last_timestamp":4123442342
+    "department_info": {
+        "id":0
+        "organization_uniqueid":"唯一ID",
+        "organization_code":"部门编码",
+        "name":"部门名称",
+        "brief_name":"部门简称",
+        "description":"部门描述",
+        "mnemonic_code":"助记码",
+        "manager_uniqueid":"负责人全局ID",
+        "prd_manager_name":"负责人名称",
+        "parent_organization_uniqueid":"上级部门全局ID",
+        "parent_organization_name":"上级部门名称",
+        "remark":"备注",
+        "data_status":"数据状态",
+        "abandon_status":"禁用状态",
+        "creator_uniqueid":"创建人的全局ID",
+        "prd_creator_name":"创建人名称",
+        "create_time":"2017-12-12",
+        "updator":"",
+        "update_time":"",
+        "submitter":"",
+        "submit_time":"",
+        "approver":"",
+        "approve_time":"",
+        "abandoner":"",
+        "abandon_time":"",
+        "last_timestamp":4123442342
+    },
+    "ResponseStatus": {},
+    "DoFlag": true
 }
 ```
 <a id="createDepartment" name="createDepartment"></a>
@@ -779,7 +761,7 @@ privilege:
 ##### *2.3.4 deleteDepartment  删除部门* [目录](#menu)    
 请求类型：GET  
 请求数据： 
-{"Organization_uniqueid":"唯一ID"}
+{"Organization_uniqueid":"唯一ID"}  
 响应数据： 
 期望结果：  
 ```
@@ -819,7 +801,7 @@ privilege:
 {
     "pagesize":10,
     "current_page_index":1,
-    "row_count":50,
+    "total_row_count":50,
     "result_data":[{
         "id":0,
         "data_view_id":0,
@@ -827,7 +809,9 @@ privilege:
         "columns_of_view":"视图字段列表",
         "authorize_columns":"授权的字段列表",
         "authorize_desc":"授权说明"
-    }]
+    }],
+    "ResponseStatus": {},
+    "DoFlag": true
 }
 ```
 
@@ -841,7 +825,7 @@ privilege:
     "pagesize":10,
     "current_page_index":1,
     "query_entity":{
-        "user_uniqueid":0,
+        "user_uniqueid":"0",
         "data_view_name":"数据视图名称",
         "columns_of_view":"视图字段列表",
         "authorize_columns":"授权的字段列表",
@@ -854,7 +838,7 @@ privilege:
 {
     "pagesize":10,
     "current_page_index":1,
-    "row_count":50,
+    "total_row_count":50,
     "result_data":[{
         "id":0,
         "data_view_id":0,
@@ -862,7 +846,9 @@ privilege:
         "columns_of_view":"视图字段列表",
         "authorize_columns":"授权的字段列表",
         "authorize_desc":"授权说明"
-    }]
+    }],
+    "ResponseStatus": {},
+    "DoFlag": true
 }
 ```
 
@@ -874,16 +860,49 @@ privilege:
 请求数据：  
 ```
 {
-    "id":0,
-    "role_uniqueid":"02342343vd",
-    "prd_role_name":"角色名称",
-    "data_view_id":"数据视图id",
-    "prd_data_view_name":"数据视图名称",
-    "authorize_columns":"授权的字段列表",
-    "authorize_desc":"授权说明",
-}  
+	"inserted":[
+		{
+		    "role_uniqueid":"02342343vd",
+		    "prd_role_name":"角色名称",
+		    "data_view_id":"数据视图id",
+		    "prd_data_view_name":"数据视图名称",
+		    "authorize_columns":"授权的字段列表",
+		    "authorize_desc":"授权说明"
+		},
+		{
+		    "role_uniqueid":"02342343vd",
+		    "prd_role_name":"角色名称",
+		    "data_view_id":"数据视图id",
+		    "prd_data_view_name":"数据视图名称",
+		    "authorize_columns":"授权的字段列表",
+		    "authorize_desc":"授权说明"
+		}
+	],
+	"deleted":[{
+		"id":1,
+	    "role_uniqueid":"02342343vd",
+	    "prd_role_name":"角色名称",
+	    "data_view_id":"数据视图id",
+	    "prd_data_view_name":"数据视图名称",
+	    "authorize_columns":"授权的字段列表",
+	    "authorize_desc":"授权说明"
+	}],
+	"updated":[{
+		"id":2,
+	    "authorize_columns":"授权的字段列表",
+	    "authorize_desc":"授权说明"
+	}]
+}
 ```
-响应数据：   
+响应数据：  
+正确：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
