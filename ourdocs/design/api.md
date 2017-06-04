@@ -915,23 +915,56 @@ privilege:
 请求数据：  
 ```
 {
-    "id":0,
-    "user_uniqueid":"02342343vd",
-    "prd_user_name":"角色名称",
-    "data_view_id":"数据视图id",
-    "prd_data_view_name":"数据视图名称",
-    "authorize_columns":"授权的字段列表",
-    "authorize_desc":"授权说明",
-}  
+	"inserted":[
+		{
+		    "user_uniqueid":"02342343vd",
+		    "prd_user_name":"角色名称",
+		    "data_view_id":1,
+		    "prd_data_view_name":"数据视图名称",
+		    "authorize_columns":"授权的字段列表",
+		    "authorize_desc":"授权说明"
+		},
+		{
+		    "user_uniqueid":"02342343vd",
+		    "prd_user_name":"角色名称",
+		    "data_view_id":1,
+		    "prd_data_view_name":"数据视图名称",
+		    "authorize_columns":"授权的字段列表",
+		    "authorize_desc":"授权说明"
+		}
+	],
+	"deleted":[{
+		"id":3,
+	    "user_uniqueid":"02342343vd",
+	    "prd_user_name":"角色名称",
+	    "data_view_id":2,
+	    "prd_data_view_name":"数据视图名称",
+	    "authorize_columns":"授权的字段列表",
+	    "authorize_desc":"授权说明"
+	}],
+	"updated":[{
+		"id":2,
+	    "authorize_columns":"授权的字段列表",
+	    "authorize_desc":"授权说明"
+	}]
+}
 ```
-响应数据：   
+响应数据：  
+正确的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误的响应：   
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
 
 
 
-#### 2.4 权限报表  
+#### 2.5 权限报表  
 
 <a id="queryPrivilegeReportForUser" name="queryPrivilegeReportForUser"></a> 
 
