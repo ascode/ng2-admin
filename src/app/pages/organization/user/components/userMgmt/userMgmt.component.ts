@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
-import { UserMgmtService } from './userMgmt.service' 
+import { UserMgmtService } from './userMgmt.service'
 import { LocalDataSource } from 'ng2-smart-table';
+
+import {
+  Http,
+  Response,
+  RequestOptions,
+  Headers,
+} from '@angular/http';
+
+// import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'user-mgmt',
@@ -26,27 +35,27 @@ export class UserMgmtComponent {
       confirmDelete: true
     },
     columns: {
-      id: {
+      user_name: {
         title: '用户姓名',
         type: 'string'
       },
-      firstName: {
+      login_name: {
         title: '用户登陆名',
         type: 'string'
       },
-      lastName: {
+      IsAllowLogin: {
         title: '是否允许登陆',
         type: 'string'
       },
-      username: {
+      DataStatus: {
         title: '数据状态',
         type: 'string'
       },
-      email: {
+      InValidTime: {
         title: '有效期',
         type: 'string'
       },
-      age: {
+      creator_name: {
         title: '操作',
         type: 'number'
       }
@@ -54,11 +63,22 @@ export class UserMgmtComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-
-  constructor(protected service: UserMgmtService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);
-    });
+  data: Object;
+  // protected service: UserMgmtService
+  constructor(private http: Http) {
+    // console.log(this.source);
+    // this.service.getData().then((data) => {
+    //   // console.log(data);
+    //   // this.source.load(data);
+    //   
+    //   console.log(a);
+    // });
+    let a = [{ 'name': 'zs' }, { 'name': 'ls' }];
+    this.http.post('http://vosung.bgenius.cn:8081/mockjs/14/getUserData?', a)
+      .subscribe((res: Response) => {
+        // this.data = res.json();
+        console.log(res.json())
+      });
   }
 
   onDeleteConfirm(event): void {
@@ -69,3 +89,4 @@ export class UserMgmtComponent {
     }
   }
 }
+

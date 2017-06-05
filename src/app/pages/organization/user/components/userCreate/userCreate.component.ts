@@ -35,8 +35,7 @@ export class UserCreateComponent {
     let userObj = this.userObj;
     this.http.post(
       'http://vosung.bgenius.cn:8081/mockjs/11/adduser?',
-      JSON.stringify(userObj))
-      .subscribe((res: Response) => {
+      JSON.stringify(userObj)).subscribe((res: Response) => {
         this.userData = res.json();
         console.log(this.userData);
       });

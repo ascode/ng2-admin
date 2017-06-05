@@ -167,11 +167,14 @@
         position: absolute;
         top: 50%;
         margin-top: -15px;
-        
       }
     }
     td:last-child{
       width: 95%;
+    }
+    input{
+      position: relative;
+      top: 2px;
     }
   }
   thead{
@@ -181,6 +184,37 @@
       }
       td:last-child{
         text-align: center;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td:first-child{
+        label{
+             width: 100%;
+             span{
+               display: inline-block;
+               width: 50%;
+             };
+             span:first-child{
+               text-align: right;
+             };
+             span:last-child{
+               padding-left: 5px;
+             }
+         }
+      }
+      td:last-child{
+        padding-left: 15px; 
+        label{
+          margin-right: 15px;
+          span:last-child{
+            padding-left: 5px;
+          }
+        };
+        button{
+          margin-right: 30px;
+        }
       }
     }
   }

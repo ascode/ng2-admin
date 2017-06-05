@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'role-people',
   templateUrl: './rolePeople.html',
@@ -10,7 +11,6 @@ export class RolePeopleComponent {
 
 
   constructor(){ 
- 
   }
   query: string = '';
   settings = {
