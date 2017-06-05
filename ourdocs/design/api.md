@@ -303,20 +303,30 @@ privilege:
 请求数据：
 ```
 {
-    "login_name":"wangraoji",
-    "user_name":"wangraoji",
-    "pwd":"123",
-    "ScanCode":"kk00011",
-    "IsEmployee":1,
-    "IsAllowLogin":1,
-    "InValidTime":"2017-01-02",
-    "DataStatus":"新建",
-    "Creator_uniqueid":"00001",
-    "prd_creator_name":"老王"
+    "login_name":"登录名称",
+    "user_name":"用户名",
+    "pwd":"密码",
+    "ScanCode":"扫描码",
+    "IsEmployee":1, //是否是员工
+    "IsAllowLogin":1, //是否允许登录
+    "InValidTime":"2017-01-02",  //用户账户有效期
+    "DataStatus":"新建",  //数据状态:新建;已提交;已审核
+    "Creator_uniqueid":"00001",  //创建人全局ID
+    "prd_creator_name":"老王"  //创建人姓名
 }  
 ```
-响应数据：
+响应数据：  
+正确结果：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误结果：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+```
 
 <a id="queryusersReq" name="queryusersReq"></a>
 
@@ -343,9 +353,11 @@ privilege:
 ```
 响应数据：  
 {
-    "pagesize":10,
-    "current_page_index":1,
-    "row_count":50,
+    "current_page_index": 1,
+    "pagesize": 1,
+    "total_row_count": 0,
+    "ResponseStatus": {},
+    "DoFlag": true,
     "result_data":[{
         "id":0,
         "uniqueid":"用户的全局ID",
