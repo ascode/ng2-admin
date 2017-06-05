@@ -435,8 +435,18 @@ privilege:
 ##### *2.1.5 removeuserReq 删除用户*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
-?user_unique_id=0  
+```
+{"Uniqueid":"aaa"}  
+```
 响应数据：  
+成功的响应数据：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应数据：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
