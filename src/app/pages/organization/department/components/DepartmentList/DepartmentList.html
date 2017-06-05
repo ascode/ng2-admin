@@ -3,7 +3,7 @@
         <div class="col-md-2">
             <ba-card bacardclass="with-scroll">
                 <ul *ngFor="let item of DepartmentList;let i = index;" class="al-sidebar-list" (mouseleave)="hoverElemTop=outOfArea">
-                    <li(click)='xian($event,i)'><i (click)='xian($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{item.name}}</li>
+                    <li><i (click)='xian($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{item.name}}</li>
                     <ul class='lic' [hidden]='item.hide' *ngFor='let i of item.sub'>
                         <li>{{i.name}}</li>
                     </ul>
