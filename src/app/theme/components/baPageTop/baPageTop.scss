@@ -17,6 +17,39 @@
       display: none;
     }
   }
+// 我的css
+    .target{
+     height:40px; margin-top:67px;margin-left:140px;
+    ul{
+      padding: 0px;
+      margin: 0px; 
+      height: 40px;
+      li{
+        float:left;
+        list-style: none;
+        line-height: 40px;
+        height: 40px;       
+        span{
+          display: inline-block;
+          padding:0 5px;
+          border-right: 1px solid #ccc;
+        }
+        a{
+           display: inline-block;
+           padding: 0 10px;
+        border-right: 1px solid #ccc;
+        }
+      }
+      // li:last-child{
+      //  position: absolute;
+      //  right:30px;
+      // }
+      // .last{
+      //  float:right;
+      //  right:-100px;
+      // }
+    }
+  }
 
   .blur {
     .page-top.scrolled {

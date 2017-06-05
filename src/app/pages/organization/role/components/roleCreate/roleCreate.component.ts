@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit,Input, Output,EventEmitter} from '@angular/core';
 import { Http, Response } from '@angular/http';
+import {ActivatedRoute,Params} from '@angular/router';
 export class Role {
   constructor(
     public FCode: string = '',
@@ -13,37 +14,35 @@ export class Role {
 
 @Component({
   selector: 'role-create',
-  templateUrl: './roleCreate.component.html'
+  templateUrl: './roleCreate.html'
 })
 
-
-
 export class RoleCreateComponent {
-  constructor() {
-//     public DataStatus : string ='',
-//     public creator_uniqueid: string = '001',
-//     public creator_name: string = 'ZLY'
-//   ){}
-// }
-// @Component({
-//   // selector: 'role-create',
-//   templateUrl: './roleCreate.html'
-// })
-
-// export class RoleCreateComponent {
-//   roleData:Object;
-//   constructor(private http : Http) {
-//      console.log('1231324');
-//   }
-//   roleObj =new Role()
-//   onClick(event){
-//     let roleObj = this.roleObj;
-//     console.log(roleObj);
+   RoleData: Object;
+  // 2.参数，定义输出变量。
+  //  url:string;
+  // @Input() 
+  // @Output('url') urlChange:EventEmitter<string> = new EventEmitter<string>();
+  constructor(private http: Http) {
+    // 发给父组件
+    // this.url = '创建角色'
+  }
+  roleObj = new Role();
+  roleCreate(){
+    let role = this.roleObj;
+    console.log(role);
+    this.http.post('http://vosung.bgenius.cn:8081/mockjs/12/creatrole.josn?',
+    JSON.stringify(role)).subscribe((res: Response) => {
+				// this.RoleData = res.json();
+        if(res.status==200){
+           alert('保存成功');
+        }	
+			});
   }
   
-  roleObj = new Role();
-   makePost(): void {
-    let roleObj = this.roleObj;
-    console.log(roleObj);
-  }
+  // ngOnInit() {
+  //   this.route.params.subscribe(params => {
+  //     console.log(params)
+  //   });
+  // }
 }

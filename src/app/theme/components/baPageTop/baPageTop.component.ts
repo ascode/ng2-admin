@@ -1,7 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 
 import {GlobalState} from '../../../global.state';
-
 @Component({
   selector: 'ba-page-top',
   templateUrl: './baPageTop.html',
@@ -17,7 +16,7 @@ export class BaPageTop {
       this.isMenuCollapsed = isCollapsed;
     });
   }
-
+//  按钮折叠
   public toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
     this._state.notifyDataChanged('menu.isCollapsed', this.isMenuCollapsed);

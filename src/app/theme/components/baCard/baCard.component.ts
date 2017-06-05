@@ -8,4 +8,5 @@ export class BaCard {
   @Input() title:String;
   @Input() baCardClass:String;
   @Input() cardType:String;
+  
 }

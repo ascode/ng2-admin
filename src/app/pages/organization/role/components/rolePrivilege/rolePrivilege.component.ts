@@ -71,11 +71,10 @@ export class RolePrivilegeComponent {
   constructor(protected service: RolePrivilegeService) {
 
     this.service.getData().then((data) => {
-      this.source.load(data);
-    });
-
+      console.log(data);
+      this.source.load(data);   
+    });  
   }
-
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();

@@ -81,33 +81,3 @@
     }
   }
 }
-.table{
-  tr {
-    // height: 30px;
-    // line-height: 30px;
-label{
- margin-bottom: 0px;
- display: inline-block;
- padding:0px 10px;
-}
-.btn{
-  margin-right: 20px;
-}
-}
- 
-  th:first-child{
-    width: 20%;
-  }
-  th:last-child{
-    width:80%;
-  }
-  tbody tr{   
-    td:first-child{
-    width: 20%;
-    vertical-align:center;
-  }
-  td:last-child{
-    width:80%;
-  }
-  }
-}

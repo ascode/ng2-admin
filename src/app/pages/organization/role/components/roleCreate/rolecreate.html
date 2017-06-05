@@ -1,20 +1,19 @@
-<div class="widgets">
+<div class="widgets" style="position:relative">
     <div class="row">
         <div class="col-md-6">
             <ba-card title="标题" bacardclass="with-scroll">
                 <form>
                     <div class="form-group">
                         <label for="input001">角色编号</label>
-                        <input type="text" class="form-control" id="input001" placeholder="角色编号" [(ngModel)]='roleObj.FCode' name='FCode' />
+                        <input type="text" class="form-control" id="input001" placeholder="角色编号" [(ngModel)]='roleObj.FCode' name="FCode" />
                     </div>
                     <div class="form-group">
-                        <label for="input002">角色名称</label>
-                        <input type="text" class="form-control" id="input002" placeholder="角色名称" [(ngModel)]='roleObj.FName' name='FName' />
+                        <label for="input01">角色名称</label>
+                        <input type="text" class="form-control" id="input01" placeholder="角色名称" [(ngModel)]='roleObj.FName' name="FName" />
                     </div>
                     <div class="form-group">
-                        <label for="textarea03">角色描述</label>
-                        <textarea placeholder="Default Input" class="form-control" id="textarea03" placeholder="角色描述" [(ngModel)]='roleObj.desc'
-                            name='desc'></textarea>
+                        <label for="input02">角色描述</label>
+                        <input type="text" class="form-control" id="input02" placeholder="角色描述" [(ngModel)]='roleObj.desc' name='desc' />
                     </div>
                 </form>
             </ba-card>
@@ -33,13 +32,13 @@
                     <br />
                     <div class="form-group">
                         <label for="input03">创建人</label>
-                        <input type="text" class="form-control" id="input03" placeholder="王饶冀" [(ngModel)]='roleObj.creator_name' name='creator_name'
+                        <input type="text" class="form-control" id="input03" placeholder="姓名" [(ngModel)]='roleObj.creator_name' name='creator_name'
                             disabled/>
                     </div>
                 </div>
             </ba-card>
-            <div class="form-group" >
-                <button type="submit" class="btn btn-primary" (click)='makePost()'>保存</button>
+            <div class="form-group" style='float:right;'>
+                <button type="submit" class="btn btn-primary" (click)='onClick($event)'>保存</button>
             </div>
         </div>
     </div>
