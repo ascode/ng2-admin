@@ -105,30 +105,6 @@ export class DepartmentListComponent {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	/*DeListObj = new DeList();
 	// 点击事件
 	deList = this.DeListObj;	
@@ -210,3 +186,4 @@ export class DepartmentListComponent {
 	}
 }
 */
+

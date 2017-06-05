@@ -3,12 +3,12 @@ import { RolePrivilegeService } from './rolePrivilege.service';
 import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'role-privilege',
-  templateUrl:'./rolePrivilege.html',
-  styleUrls:['./rolePrivilege.scss']
+  templateUrl: './rolePrivilege.component.html',
+  styleUrls: ['./rolePrivilege.component.scss']
 })
 
 export class RolePrivilegeComponent {
-   query: string = '';
+  query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -51,17 +51,25 @@ export class RolePrivilegeComponent {
       }
     }
   };
-   liulan = false;
-    shouquan(){
-        this.liulan = true;
-      }
-      goBack(){
-        this.liulan = false;
-      }
-   source: LocalDataSource = new LocalDataSource();
+  shouquan = false;
+  //  liulan = false;
+  //   shouquan(){
+  //       this.liulan = true;
+  //     }
+  //     goBack(){
+  //       this.liulan = false;
+  //     }
+  goShouquan() {
+      this.shouquan = true;
+  };
+  goBack() {
+      this.shouquan = false;
+  };
+
+  source: LocalDataSource = new LocalDataSource();
 
   constructor(protected service: RolePrivilegeService) {
-    
+
     this.service.getData().then((data) => {
       console.log(data);
       this.source.load(data);   

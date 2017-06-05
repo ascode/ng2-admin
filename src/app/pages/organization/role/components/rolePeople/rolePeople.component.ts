@@ -8,6 +8,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 
 export class RolePeopleComponent {
+  query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
