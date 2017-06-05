@@ -1,6 +1,8 @@
 import { Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { jQuery } from 'jquery/dist/jquery.min';
 // import {ActivatedRoute,Params} from '@angular/router';
+declare var $: any;
 export class DeList {
 	constructor(
 		public organization_code: string = '',
@@ -11,90 +13,200 @@ export class DeList {
 		public prd_manager_name: string = '',
 		public data_status: string = '',
 		public prd_creator_name: string = '王饶冀',
+		public part_name: string = '',
 	) { }
 }
+
 @Component({
 	selector: 'DepartmentList',
 	templateUrl: './DepartmentList.html',
-	// 	providers: [
-	//         ProductService,
-	//         { provide: TreeviewEventParser, useClass: OrderDownlineTreeviewEventParser },
-	//         { provide: TreeviewConfig, useClass: ProductTreeviewConfig }
-	//     ]
+	// templateUrl: './test.html',
+	styleUrls: ['./DepartmentList.scss']
 })
 
 export class DepartmentListComponent {
 	DeListData: Object;
-	DepartmentList:Array<Object>;
+	// DepartmentList: Array<Object>;
+	tarArr: Array<Number>;
+	depart: Array<Object>;
+	nextdepart: Array<Object>;
 	constructor(private http: Http) {
-		this.DepartmentList = [
-			{ name: "部门管理", id: 1 ,
-			sub: [
-					{ name: "部门信息管理", id: 1 },
-				] 
-		   },
-			{ name: "角色管理", id: 2,
-		    sub: [
-					{ name: "新增角色", id: 2 },
-					{ name: "角色权限", id: 2 }
-				] },
-			{name: "用户管理", id: 3,
-				sub: [
-					{ name: "新增用户", id: 3 },
-					{ name: "用户权限", id: 3 }
-				]
-			}
-		]
-		console.log(this.DepartmentList);
+		// 定义变量。
+		this.tarArr = [];
+		this.depart = [];
+		this.nextdepart = [];
+		let DeListObj = {};
+		let nextArr = [];
+		let deList = {};
+		let DepartmentList = [];
 	}
-	DeListObj = new DeList();
+	// 赋初始值。
+	DeListObj = {};
+	modle = true;
+	DepartmentList = [
+		{
+			"name": "部门管理", "id": 1, "hide": true,
+			"sub": [
+				{ "name": "部门信息管理", "id": 1, "hide": true, }
+			]
+		},
+		{
+			"name": "角色管理", "id": 2, "hide": true,
+			"sub": [
+				{ "name": "新增角色", "id": 2, "hide": true, },
+				{ "name": "角色权限", "id": 2, "hide": true, }
+			]
+		},
+		{
+			"name": "用户管理", "id": 3, "hide": true,
+			"sub": [
+				{ "name": "新增用户", "id": 3, "hide": true, },
+				{ "name": "用户权限", "id": 3, "hide": true, }
+			]
+		},
+		{
+			"name": "权限管理", "id": 4, "hide": true,
+		},
+	]
+	xian(e, i) {
+		// console.log(e.target.className);
+		if (e.target.className == 'ion-arrow-right-b') {
+			e.target.className = 'ion-arrow-down-b';
+			// console.log(e.target.parentNode);
+			e.target.parentNode.style = 'color:blue';
+			this.tarArr.push(i);
+			console.log(this.tarArr);
+		} else {
+			e.target.className = 'ion-arrow-right-b';
+			e.target.parentNode.style = 'color:white';
+			let index = this.tarArr.indexOf(i);
+			if (index > -1) {
+				this.tarArr.splice(index, 1);
+			}
+			// console.log(this.tarArr);
+		}
+		// console.log(this.DepartmentList[i]);
+		this.DepartmentList[i].hide = !this.DepartmentList[i].hide;
+	}
+
+	addNext():void{
+		this.modle = false;
+		console.log(this.DepartmentList);	
+		console.log(this.tarArr);
+	  	this.DeListObj = new DeList();
+		  console.log(this.DeListObj);
+	}
+	save():void{
+		this.modle = true;
+	}
+	back():void{
+		this.modle = true;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*DeListObj = new DeList();
 	// 点击事件
+	deList = this.DeListObj;	
 	department() {
-		let deList = this.DeListObj;
-		console.log(deList);
+	
 		this.http.post(
-			'http://vosung.bgenius.cn:8081/mockjs/11/adduser?',
-			JSON.stringify(deList))
-			.subscribe((res: Response) => {
+			'http://vosung.bgenius.cn:8081/mockjs/12/creatlist.json?',
+			JSON.stringify(this.deList)).subscribe((res: Response) => {
 				console.log(res);
 			});
 	}
+	xian(e, i) {
+		// console.log(e.target.className);
+		if (e.target.className == 'ion-arrow-right-b') {
+			e.target.className = 'ion-arrow-down-b';
+			// console.log(e.target.parentNode);
+			e.target.parentNode.style = 'color:blue';
+			this.tarArr.push(i);
+			console.log(this.tarArr);
+		} else {
+			e.target.className = 'ion-arrow-right-b';
+			e.target.parentNode.style = 'color:white';
+			let index = this.tarArr.indexOf(i);
+			if (index > -1) {
+				this.tarArr.splice(index, 1);
+			}
+			console.log(this.tarArr);
+		}
+		this.DepartmentList[i].hide = !this.DepartmentList[i].hide;
+	}
 
+	modle = true;
+	addNext(): void {
+		//  console.log(this.tarArr)
+		this.modle = false;
+		for (var e in this.tarArr) {
+			let v = this.tarArr[e];
+			// console.log(this.DepartmentList[v]);
+			if (this.tarArr.length == 1) {
+				// console.log(this.DepartmentList[v]);					
+				this.DepartmentList[v].nextArr = this.nextdepart;
+				// part_name：不是全局的，点击保存后才能得到值。
+				this.nextdepart.push(this.DeListObj.part_name);
+				// console.log(this.DeListObj)
+				// this.DepartmentList[v].nextArr.push(this.DeListObj.name)
+				console.log(this.DepartmentList[v]);
+			} else {
+				console.log('选择一个');
+				// console.log(this.DepartmentList[v]);
+			}
+		}
+	}
+
+	add(): void {
+		this.modle = false;
+		console.log(this.tarArr)
+		for (var e in this.tarArr) {
+			let v = this.tarArr[e];
+			// console.log(this.DepartmentList[v]);
+			if (this.tarArr.length == 1) {
+				// console.log(this.DepartmentList[v]);						
+				this.DepartmentList[v].arr = this.depart;
+				this.depart.push(this.DeListObj);
+				// console.log(this.DeListObj)
+				// this.DepartmentList[v].nextArr.push(this.DeListObj.name)
+				console.log(this.DepartmentList[v]);
+				// 晚了一步；
+				console.log(this.DepartmentList)
+			} else {
+				console.log('选择一个');
+				// console.log(this.DepartmentList[v]);
+			}
+		}
+	}
+
+	save(): void {
+		this.modle = true;
+		console.log()
+	}
 }
-	//  @ViewChild(TreeviewComponent) treeviewComponent: TreeviewComponent;
-	//     items: TreeviewItem[];
-	//     rows: string[];
-
-	//     constructor(
-	//         private service: ProductService
-	//     ) { }
-
-	//     ngOnInit() {
-	//         this.items = this.service.getProducts();
-	//     }
-
-	//     onItemCheckedChange(item: TreeviewItem) {
-	//         console.log(item);
-	//     }
-
-	//     onSelectedChange(downlineItems: DownlineTreeviewItem[]) {
-	//         this.rows = [];
-	//         downlineItems.forEach(downlineItem => {
-	//             const item = downlineItem.item;
-	//             const value = item.value;
-	//             const texts = [item.text];
-	//             let parent = downlineItem.parent;
-	//             while (!_.isNil(parent)) {
-	//                 texts.push(parent.item.text);
-	//                 parent = parent.parent;
-	//             }
-	//             const reverseTexts = _.reverse(texts);
-	//             const row = `${reverseTexts.join(' -> ')} : ${value}`;
-	//             this.rows.push(row);
-	//         });
-	//     }
-
-	//     removeItem(item: TreeviewItem) {
-	//         TreeviewHelper.removeItem(item, this.items);
-	//         this.treeviewComponent.raiseSelectedChange();
-	//     }
+*/

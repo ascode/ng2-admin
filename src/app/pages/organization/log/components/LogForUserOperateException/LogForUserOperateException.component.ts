@@ -51,6 +51,9 @@ export class  LogForUserOperateExceptionComponent {
       }
     }
   };
+   shouquan(){
+    console.log('授权按钮被点击')
+  }
 // 请求到表格的数据。
    source: LocalDataSource = new LocalDataSource();
 
