@@ -433,7 +433,7 @@ privilege:
 <a id="removeuserReq" name="removeuserReq"></a>
 
 ##### *2.1.5 removeuserReq 删除用户*  [目录](#menu)    
-请求类型：GET  
+请求类型：POST    
 请求数据：  
 ```
 {"Uniqueid":"aaa"}  
