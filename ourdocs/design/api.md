@@ -303,20 +303,30 @@ privilege:
 请求数据：
 ```
 {
-    "login_name":"wangraoji",
-    "user_name":"wangraoji",
-    "pwd":"123",
-    "ScanCode":"kk00011",
-    "IsEmployee":1,
-    "IsAllowLogin":1,
-    "InValidTime":"2017-01-02",
-    "DataStatus":"新建",
-    "Creator_uniqueid":"00001",
-    "prd_creator_name":"老王"
+    "login_name":"登录名称",
+    "user_name":"用户名",
+    "pwd":"密码",
+    "ScanCode":"扫描码",
+    "IsEmployee":1, //是否是员工
+    "IsAllowLogin":1, //是否允许登录
+    "InValidTime":"2017-01-02",  //用户账户有效期
+    "DataStatus":"新建",  //数据状态:新建;已提交;已审核
+    "Creator_uniqueid":"00001",  //创建人全局ID
+    "prd_creator_name":"老王"  //创建人姓名
 }  
 ```
-响应数据：
+响应数据：  
+正确结果：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误结果：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}
+```
 
 <a id="queryusersReq" name="queryusersReq"></a>
 
@@ -343,9 +353,11 @@ privilege:
 ```
 响应数据：  
 {
-    "pagesize":10,
-    "current_page_index":1,
-    "row_count":50,
+    "current_page_index": 1,
+    "pagesize": 1,
+    "total_row_count": 0,
+    "ResponseStatus": {},
+    "DoFlag": true,
     "result_data":[{
         "id":0,
         "uniqueid":"用户的全局ID",
@@ -380,45 +392,61 @@ privilege:
 ##### *2.1.4 queryuserByUniqueidReq  根据指定的用户全局ID查询用户信息*   [目录](#menu)   
 请求类型：GET  
 请求数据：  
-?user_unique_id=0
+```
+{"Uniqueid":"用户全局ID"}
+```
 响应数据：  
 ```
 {
-    "id":0,
-    "uniqueid":"用户的全局ID",
-    "login_name":"用户登录名",
-    "user_name":"用户姓名",
-    "department_unique_id":"部门的全局ID",
-    "prd_department_name":"性能冗余，部门名称",
-    "ScanCode":"扫描码",
-    "IsAllowLogin":0,
-    "InValidTime":"",
-    "IsEmployee":0,
-    "DataStatus":"数据状态:新建;已提交;已审核",
-    "AbandonStatus":0,
-    "Creator_uniqueid":"创建人全局编号（ID）",
-    "prd_creator_name":"创建人名称，这是一个冗余字段，便于直观查看数据",
-    "create_time":"",
-    "last_updater_name":"最后一次修改人名称",
-    "last_updater_unique_id":"最后一次修改人全局id",
-    "last_update_time":"",
-    "approver_unique_id":"",
-    "approver_name":"",
-    "approve_time":"",
-    "abandoner_unique_id":"",
-    "abandoner_name":"",
-    "abandon_time":"",
-    "last_timestamp":0
+    "result_data":{
+        "id":0,
+        "uniqueid":"用户的全局ID",
+        "login_name":"用户登录名",
+        "user_name":"用户姓名",
+        "department_unique_id":"部门的全局ID",
+        "prd_department_name":"性能冗余，部门名称",
+        "ScanCode":"扫描码",
+        "IsAllowLogin":0,
+        "InValidTime":"",
+        "IsEmployee":0,
+        "DataStatus":"数据状态:新建;已提交;已审核",
+        "AbandonStatus":0,
+        "Creator_uniqueid":"创建人全局编号（ID）",
+        "prd_creator_name":"创建人名称，这是一个冗余字段，便于直观查看数据",
+        "create_time":"",
+        "last_updater_name":"最后一次修改人名称",
+        "last_updater_unique_id":"最后一次修改人全局id",
+        "last_update_time":"",
+        "approver_unique_id":"",
+        "approver_name":"",
+        "approve_time":"",
+        "abandoner_unique_id":"",
+        "abandoner_name":"",
+        "abandon_time":"",
+        "last_timestamp":0
+    },
+    "ResponseStatus": {},
+    "DoFlag": true
 }
 ```
 
 <a id="removeuserReq" name="removeuserReq"></a>
 
 ##### *2.1.5 removeuserReq 删除用户*  [目录](#menu)    
-请求类型：GET  
+请求类型：POST    
 请求数据：  
-?user_unique_id=0  
+```
+{"Uniqueid":"aaa"}  
+```
 响应数据：  
+成功的响应数据：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应数据：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
@@ -430,33 +458,28 @@ privilege:
 请求数据：  
 ```
 {
-    "id":1,
-    "uniqueid":"用户的全局ID",
-    "login_name":"用户登录名",
+    "uniqueid":"aa",
     "user_name":"用户姓名",
     "department_unique_id":"部门的全局ID",
     "prd_department_name":"性能冗余，部门名称",
     "ScanCode":"扫描码",
     "IsAllowLogin":0,
-    "InValidTime":"",
+    "InValidTime":"2015-19-19",
     "IsEmployee":0,
     "DataStatus":"数据状态:新建;已提交;已审核",
-    "AbandonStatus":0,
-    "Creator_uniqueid":"创建人全局编号（ID）",
-    "prd_creator_name":"创建人名称，这是一个冗余字段，便于直观查看数据",
-    "create_time":"",
     "last_updater_name":"最后一次修改人名称",
-    "last_updater_unique_id":"最后一次修改人全局id",
-    "last_update_time":"",
-    "approver_unique_id":"",
-    "approver_name":"",
-    "approve_time":"",
-    "abandoner_unique_id":"",
-    "abandoner_name":"",
-    "abandon_time":""
+    "last_updater_unique_id":"最后一次修改人全局id"
 }
 ```
-响应数据：
+响应数据：  
+正确的响应结果： 
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+``` 
+错误的响应结果：  
 ```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
@@ -480,8 +503,18 @@ privilege:
     "create_time":"2017-12-12"
 }  
 ```
-响应数据：
+响应数据：  
+成功的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 <a id="updateRoleInfoReq" name="updateRoleInfoReq"></a>
 
@@ -490,7 +523,6 @@ privilege:
 请求数据：
 ```
 {
-    "id":1,
     "unique_id":"xxx13242323",
     "FCode":"角色编号",
     "FName":"角色名称",
@@ -502,8 +534,18 @@ privilege:
     "abandon_status":0,
 }  
 ```
-响应数据：
+响应数据：  
+成功的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 <a id="queryRolesReq" name="queryRolesReq"></a>
 

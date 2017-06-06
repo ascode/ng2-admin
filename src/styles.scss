@@ -7,6 +7,7 @@ html,body{
 -khtml-user-select: none;
 user-select: none;
 }
+
 .node-menu {
   position: relative;
   width: 150px;
@@ -62,7 +63,7 @@ user-select: none;
 }
 
 tree-internal ul {
-  padding: 3px 0 3px 25px;
+  padding: 3px 0 3px 0px;
 }
 
 tree-internal li {

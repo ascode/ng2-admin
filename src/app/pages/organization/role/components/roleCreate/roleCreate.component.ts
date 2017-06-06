@@ -1,12 +1,17 @@
 import { Component,OnInit,Input, Output,EventEmitter} from '@angular/core';
-import { Http, Response } from '@angular/http';
+import {
+  Http,
+  Response,
+  RequestOptions,
+  Headers,
+} from '@angular/http';
 import {ActivatedRoute,Params} from '@angular/router';
 export class Role {
   constructor(
     public FCode: string = '',
     public FName: string = '',
     public desc: string = '',
-    public DataStatus: string = '',
+    public data_status: string = '',
     public Creator_uniqueid: string = '00001',
     public creator_name: string = '王饶冀',
   ) { }

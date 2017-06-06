@@ -64,60 +64,57 @@ export class UserMgmtComponent {
   source: LocalDataSource = new LocalDataSource();
   data: Object;
   constructor(private http: Http) {
-    let a = {
-      "query_entity": {}
-    };
-    // this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
-    //   .subscribe((res: Response) => {
-    //     let data = res.json().result_data;
-    //     // console.log(data);
-    //     for (var d in data) {
-    //       // console.log(data[d].InValidTime)
-    //       if (data[d].IsAllowLogin == true) {
-    //         data[d].IsAllowLogin = "是";
-    //       } else if (data[d].IsAllowLogin == false) {
-    //         data[d].IsAllowLogin = "否";
-    //       }
-    //       let time = data[d].InValidTime;
-    //       if (time) {
-    //         time = time.replace(/\//g, '');
-    //         //先截取前边的。结果是剩余的。
-    //         let times = time.substring(0, (time.length - 6));//在截掉后边的
-    //         times = eval('new ' + times + ')').toLocaleString().slice(0, 9);
-    //         data[d].InValidTime = times
-
-    //       } else {
-    //         // console.log('不存在')
-    //       }
-    //       data[d].settings = '操作';
-    //     }
-    //     setTimeout(() => {
-    //       this.source.load(data);
-    //     }, 2000);
-    //   });
+    let a = {};
+    this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
+      .subscribe((res: Response) => {
+        let data = res.json().result_data;
+        for (let k in data) {
+          let time = data[k].InValidTime;
+          if (data[k].IsAllowLogin == true) {
+            data[k].IsAllowLogin = "是";
+          } else if (data[k].IsAllowLogin == false) {
+            data[k].IsAllowLogin = "否";
+          }
+          if (time) {
+            time = time.replace(/\//g, '')
+            let newTime = time.substring(0, time.length - 6)
+            newTime = eval('new ' + newTime + ')').toLocaleString().slice(0, 9);
+            //  console.log();
+            data[k].InValidTime = newTime
+          }
+        }
+        setTimeout(() => {
+          this.source.load(data);
+        }, 2000)
+      });
   }
-  // 删除的接口。
-  // onDeleteConfirm(event): void {
-  //   if (window.confirm('Are you sure you want to delete?')) {
-  //     let d = { "Uniqueid": event.data.Uniqueid };
-  //     this.http.post('http://192.168.2.238:8000/json/reply/removeuserReq', JSON.stringify(d))
-  //       .subscribe((res: Response) => {
-  //         event.confirm.resolve();
-  //       })
-  //   } else {
-  //     event.confirm.reject();
-  //   }
-  // }
-  // onEditConfirm(event): void {  
-  //   //  if (window.confirm('Are you sure you want to edit?')) {
-  //      event.confirm.resolve();
-  //      let update = event.newData;
-  //      console.log(update);
-  //     this.http.post('http://192.168.2.238:8000/json/reply/UpdateRoleInfoReq', JSON.stringify(update))
-  //       .subscribe((res: Response) => {
-  //         console.log(res.json())       
- }
 
+  onDeleteConfirm(event): void {
+    if (window.confirm('确定要删除吗?')) {
+      let a = { "Uniqueid": event.data.Uniqueid };
+      this.http.post('http://192.168.2.238:8000/json/reply/RemoveUserReq', JSON.stringify(a))
+        .subscribe((res: Response) => {
+          if(res.status == 200){
+            event.confirm.resolve();
+          }
+        });
+    } else {
+      event.confirm.reject();
+      // console.log("不是")
+    }
+  }
 
-
+  onEditConfirm(event): void {
+    console.log(event.newData);
+    event.confirm.resolve();
+    // UpdateUserReq
+    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(a))
+    //     .subscribe((res: Response) => {
+    //       if(res.status == 200){
+    //         event.confirm.resolve();
+    //       }
+    //     });
+    
+  }
+}
 
