@@ -633,7 +633,25 @@ privilege:
 {"Role_uniqueid":"角色的全局ID"}
 
 响应数据：
-点击查看 [privilege_model](../../resource/privilege_model.json)  
+```
+{
+  "privileges_of_role": [
+    {
+      "Id": 4,
+      "Role_uniqueid": "角色全局ID",
+      "Privilege_code": "权限code",
+      "Prd_privilege_text": "权限的显示名称",
+      "Create_time": "创建时间",
+      "Is_deleted": true,
+      "Last_timestamp": "AAAAAAAACN0="
+    }
+  ],
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+
+参照 [privilege_model](../../resource/privilege_model.json)  
 
 <a id="queryUsersByRoleReq" name="queryUsersByRoleReq"></a>
 
