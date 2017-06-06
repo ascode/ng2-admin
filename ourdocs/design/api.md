@@ -503,8 +503,18 @@ privilege:
     "create_time":"2017-12-12"
 }  
 ```
-响应数据：
+响应数据：  
+成功的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 <a id="updateRoleInfoReq" name="updateRoleInfoReq"></a>
 
