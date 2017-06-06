@@ -9,7 +9,6 @@ import {
   Headers,
 } from '@angular/http';
 
-// import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'user-mgmt',
@@ -18,7 +17,6 @@ import {
 })
 export class UserMgmtComponent {
   query: string = '';
-
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -56,14 +54,15 @@ export class UserMgmtComponent {
         title: '有效期',
         type: 'string'
       },
-      creator_name: {
+      settings: {
         title: '操作',
-        type: 'number'
+        type: 'string'
       }
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
+  data: Object;
   constructor(private http: Http) {
     let a = {};
     this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
@@ -71,6 +70,11 @@ export class UserMgmtComponent {
         let data = res.json().result_data;
         for (let k in data) {
           let time = data[k].InValidTime;
+          if (data[k].IsAllowLogin == true) {
+            data[k].IsAllowLogin = "是";
+          } else if (data[k].IsAllowLogin == false) {
+            data[k].IsAllowLogin = "否";
+          }
           if (time) {
             time = time.replace(/\//g, '')
             let newTime = time.substring(0, time.length - 6)
