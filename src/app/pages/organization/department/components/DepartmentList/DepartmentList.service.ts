@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { TreeviewItem } from 'ng2-tree';
+import { TreeviewItem } from 'ng2-tree';
 
 export class ProductService {
     // getProducts(): TreeviewItem[] {

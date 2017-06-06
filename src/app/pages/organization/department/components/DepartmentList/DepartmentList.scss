@@ -1,55 +1,80 @@
 // @import '../../../sass/conf/conf';
-.al-sidebar-list {
-    padding-top:0px;
-    li{
-         margin:5px 0px;
-        list-style: none;
+// .al-sidebar-list {
+//     padding-top:0px;
+//     li{
+//          margin:5px 0px;
+//         list-style: none;
      
-    }
-}
+//     }
+// }
     
 
-.lic{
-    padding:0px 10px;
-    margin:0px;
-    li{
-        height:25px;
-        line-height:25px;
-        background:blue;
-        margin:0 ;
-        padding:0 10px;
-        color: white;
-    }
-}
-.inactive{font-size:16px;}
-// .selected{
-//     background: blue;
-//     padding:5px;
+// .lic{
+//     padding:0px 10px;
+//     margin:0px;
+//     li{
+//         height:25px;
+//         line-height:25px;
+//         background:blue;
+//         margin:0 ;
+//         padding:0 10px;
+//         color: white;
+//     }
 // }
-.show {
-    color: blue;
-}
-.bg{
-    background:#ccc;
-    opacity: 0.5;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-}
-.modle{
-    width: 300px;
-    height:200px;
-    background:#444;
-    border-radius: 5px;
-    color: white;
-    margin: 200px auto;
-    padding: 10px;
-    button{
-        padding: 5px;
-        margin-right: 10px;
-        margin-top:20px;
+// .inactive{font-size:16px;}
+// // .selected{
+// //     background: blue;
+// //     padding:5px;
+// // }
+// .show {
+//     color: blue;
+// }
+// .bg{
+//     background:#ccc;
+//     opacity: 0.5;
+//     z-index: 99;
+//     width: 100%;
+//     height: 100%;
+//     position: fixed;
+//     top: 0px;
+//     right: 0px;
+// }
+// .modle{
+//     width: 300px;
+//     height:200px;
+//     background:#444;
+//     border-radius: 5px;
+//     color: white;
+//     margin: 200px auto;
+//     padding: 10px;
+//     button{
+//         padding: 5px;
+//         margin-right: 10px;
+//         margin-top:20px;
+//     }
+// }
+
+
+.tree-demo-app {
+      margin: auto;
+      width: -moz-fit-content;
+      width: -webkit-fit-content;
+      width: fit-content;
     }
-}
+    .tree-demo-app .tree-container {
+      float: left;
+      vertical-align: top;
+      width: 500px;
+    }
+    .tree-title {
+      color: #40a070;
+      font-size: 2em;
+    }
+    .notice {
+      color: #e91e63;
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+
+

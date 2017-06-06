@@ -1,0 +1,25 @@
+
+    <div class="tree-demo-app">
+      <div class="tree-container">
+          <!--[settings]="settings";基础设置，[tree]="pls",绑定数据对象是pls-->
+        <tree  [tree]="pls" [settings]="settings" 
+          (nodeRemoved)="onNodeRemoved($event)"
+          (nodeRenamed)="onNodeRenamed($event)"
+          (nodeSelected)="onNodeSelected($event)"
+          (nodeMoved)="onNodeMoved($event)"
+          (nodeCreated)="onNodeCreated($event)" > </tree>
+      </div>
+      <!--<div class="tree-container">
+        <p class="tree-title">Programming languages tree</p>
+        <p class="notice">this tree is loaded asynchronously</p>
+        <tree
+          [tree]="pls"
+          [settings]="settings"
+          (nodeRemoved)="onNodeRemoved($event)"
+          (nodeRenamed)="onNodeRenamed($event)"
+          (nodeSelected)="onNodeSelected($event)"
+          (nodeMoved)="onNodeMoved($event)"
+          (nodeCreated)="onNodeCreated($event)">
+        </tree>
+      </div>-->
+    </div>

@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DepartmentComponent } from './department.component';
 import { CreateDepartmentComponent } from './components/CreateDepartment/CreateDepartment.component';
-import { DepartmentListComponent } from './components/DepartmentList/DepartmentList.component';
+import { DepartmentListComponent } from './components/DepartmentList/DepartmentList';
 const routes: Routes = [
   {
     path: '',
