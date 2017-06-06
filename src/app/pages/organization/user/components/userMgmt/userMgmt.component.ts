@@ -9,7 +9,6 @@ import {
   Headers,
 } from '@angular/http';
 
-// import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'user-mgmt',
@@ -18,7 +17,6 @@ import {
 })
 export class UserMgmtComponent {
   query: string = '';
-
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -29,17 +27,18 @@ export class UserMgmtComponent {
       editButtonContent: '<i class="ion-edit"></i>',
       saveButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
+      confirmSave: true
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
       confirmDelete: true
     },
     columns: {
-      user_name: {
+      User_name: {
         title: '用户姓名',
         type: 'string'
       },
-      login_name: {
+      Login_name: {
         title: '用户登陆名',
         type: 'string'
       },
@@ -55,38 +54,70 @@ export class UserMgmtComponent {
         title: '有效期',
         type: 'string'
       },
-      creator_name: {
+      settings: {
         title: '操作',
-        type: 'number'
+        type: 'string'
       }
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
   data: Object;
-  // protected service: UserMgmtService
   constructor(private http: Http) {
-    // console.log(this.source);
-    // this.service.getData().then((data) => {
-    //   // console.log(data);
-    //   // this.source.load(data);
-    //   
-    //   console.log(a);
-    // });
-    let a = [{ 'name': 'zs' }, { 'name': 'ls' }];
-    this.http.post('http://vosung.bgenius.cn:8081/mockjs/14/getUserData?', a)
-      .subscribe((res: Response) => {
-        // this.data = res.json();
-        console.log(res.json())
-      });
-  }
+    let a = {
+      "query_entity": {}
+    };
+    // this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
+    //   .subscribe((res: Response) => {
+    //     let data = res.json().result_data;
+    //     // console.log(data);
+    //     for (var d in data) {
+    //       // console.log(data[d].InValidTime)
+    //       if (data[d].IsAllowLogin == true) {
+    //         data[d].IsAllowLogin = "是";
+    //       } else if (data[d].IsAllowLogin == false) {
+    //         data[d].IsAllowLogin = "否";
+    //       }
+    //       let time = data[d].InValidTime;
+    //       if (time) {
+    //         time = time.replace(/\//g, '');
+    //         //先截取前边的。结果是剩余的。
+    //         let times = time.substring(0, (time.length - 6));//在截掉后边的
+    //         times = eval('new ' + times + ')').toLocaleString().slice(0, 9);
+    //         data[d].InValidTime = times
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('Are you sure you want to delete?')) {
-      event.confirm.resolve();
-    } else {
-      event.confirm.reject();
-    }
+    //       } else {
+    //         // console.log('不存在')
+    //       }
+    //       data[d].settings = '操作';
+    //     }
+    //     setTimeout(() => {
+    //       this.source.load(data);
+    //     }, 2000);
+    //   });
   }
-}
+  // 删除的接口。
+  // onDeleteConfirm(event): void {
+  //   if (window.confirm('Are you sure you want to delete?')) {
+  //     let d = { "Uniqueid": event.data.Uniqueid };
+  //     this.http.post('http://192.168.2.238:8000/json/reply/removeuserReq', JSON.stringify(d))
+  //       .subscribe((res: Response) => {
+  //         event.confirm.resolve();
+  //       })
+  //   } else {
+  //     event.confirm.reject();
+  //   }
+  // }
+  // onEditConfirm(event): void {  
+  //   //  if (window.confirm('Are you sure you want to edit?')) {
+  //      event.confirm.resolve();
+  //      let update = event.newData;
+  //      console.log(update);
+  //     this.http.post('http://192.168.2.238:8000/json/reply/UpdateRoleInfoReq', JSON.stringify(update))
+  //       .subscribe((res: Response) => {
+  //         console.log(res.json())       
+ }
+
+
+
 

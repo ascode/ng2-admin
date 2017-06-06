@@ -20,7 +20,6 @@ export class DeList {
 @Component({
 	selector: 'DepartmentList',
 	templateUrl: './DepartmentList.html',
-	// templateUrl: './test.html',
 	styleUrls: ['./DepartmentList.scss']
 })
 
