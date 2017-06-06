@@ -523,7 +523,6 @@ privilege:
 请求数据：
 ```
 {
-    "id":1,
     "unique_id":"xxx13242323",
     "FCode":"角色编号",
     "FName":"角色名称",
@@ -535,8 +534,18 @@ privilege:
     "abandon_status":0,
 }  
 ```
-响应数据：
+响应数据：  
+成功的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+失败的响应：  
+```
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
+```
 
 <a id="queryRolesReq" name="queryRolesReq"></a>
 
