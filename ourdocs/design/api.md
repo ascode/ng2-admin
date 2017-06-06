@@ -710,15 +710,28 @@ privilege:
 请求数据：  
 ```
 {
-    "role_uniqueid":"角色的全局唯一ID",
-    "user_list_of_role":[
-        {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
-        {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
-    ]
+	"inserted_users": [{
+			"User_uniqueid":"用户全局ID",
+	        "Role_uniqueid":"角色的全局ID",
+	        "Depart_uniqueid":"部门全局ID"
+	}],
+	"deleted_users": [{
+	        "User_uniqueid":"用户全局ID",
+	        "Role_uniqueid":"角色的全局ID",
+	        "Depart_uniqueid":"部门全局ID"
+	}]
 }
 ```  
 
-响应数据： 
+响应数据：  
+正确的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误的响应：  
 ``` 
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
