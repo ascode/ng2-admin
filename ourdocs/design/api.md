@@ -658,14 +658,49 @@ privilege:
 ##### *2.2.6 queryUsersByRoleReq  查询属于指定角色的用户列表*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
-?role_unique_id=0  
+```
+{
+	"pagesize":1
+	"current_page_index":1,
+	"query_entity":{"Role_uniqueid":"aaa"}
+}
+```
 
 响应数据： 
 ``` 
-[
-    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
-    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
-]
+{
+  "result_data": [{
+        "id":0,
+        "uniqueid":"用户的全局ID",
+        "login_name":"用户登录名",
+        "user_name":"用户姓名",
+        "department_unique_id":"部门的全局ID",
+        "prd_department_name":"性能冗余，部门名称",
+        "ScanCode":"扫描码",
+        "IsAllowLogin":0,
+        "InValidTime":"",
+        "IsEmployee":0,
+        "DataStatus":"数据状态:新建;已提交;已审核",
+        "AbandonStatus":0,
+        "Creator_uniqueid":"创建人全局编号（ID）",
+        "prd_creator_name":"创建人名称，这是一个冗余字段，便于直观查看数据",
+        "create_time":"",
+        "last_updater_name":"最后一次修改人名称",
+        "last_updater_unique_id":"最后一次修改人全局id",
+        "last_update_time":"",
+        "approver_unique_id":"",
+        "approver_name":"",
+        "approve_time":"",
+        "abandoner_unique_id":"",
+        "abandoner_name":"",
+        "abandon_time":"",
+        "last_timestamp":0
+  }],
+  "pagesize": 1,
+  "total_row_count": 0,
+  "ResponseStatus": {},
+  "DoFlag": true
+}
 ```
 
 <a id="updateUsersToRoleReq" name="updateUsersToRoleReq"></a>
