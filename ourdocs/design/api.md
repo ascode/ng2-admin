@@ -834,7 +834,6 @@ privilege:
 请求数据： 
 ``` 
 {
-    "organization_uniqueid":"唯一ID",
     "organization_code":"部门编码",
     "name":"部门名称",
     "brief_name":"部门简称",
