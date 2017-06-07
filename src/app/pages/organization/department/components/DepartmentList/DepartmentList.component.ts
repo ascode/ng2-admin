@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NodeEvent, TreeModel, Ng2TreeSettings } from 'ng2-tree';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import * as _ from 'lodash';
 declare var $: any;
 export class DeList {
   constructor(
@@ -22,10 +23,23 @@ export class DeList {
   styleUrls: ['./DepartmentList.scss']
 })
 export class DepartmentListComponent implements OnInit {
+  constructor(private http: Http) {
+    // 查询所有部门接口
+    this.http.get('http://192.168.2.238:8000/json/reply/QueryAllDepartmentsReq').subscribe((res: Response) => {
+      console.log(res.json().departments);
+      let departList = res.json().departments;
+      // 循环数组，参数v,i:对象，索引。
+      _.forEach(departList, function (v, i) {
+        console.log(v);
+        // console.log(i);
+      });
+    });
+  }
   DeListData: Object;
   public settings: Ng2TreeSettings = {
     rootIsVisible: false
   };
+
   public pls: TreeModel;
   public ngOnInit(): void {
     setTimeout(() => {
@@ -58,11 +72,7 @@ export class DepartmentListComponent implements OnInit {
       };
     }, 2000);
   }
-  constructor(private http: Http) {
-    this.http.get('http://192.168.2.238:8000/json/reply/QueryAllDepartmentsReq').subscribe((res: Response) => {
-      console.log(res.json().departments);   
-    });
-  }
+
   DeListObj = new DeList();
   department(): void {
     let DeList = this.DeListObj;
@@ -73,6 +83,15 @@ export class DepartmentListComponent implements OnInit {
         console.log(res);
       });
   }
+
+  //   // 删除接口
+  // delect(): void {
+  //   let id = { "Organization_uniqueid": "6D0CA1B6-69A2-4C94-90C6-8946CFB25FB2" }
+  //   this.http.post('http://192.168.2.238:8000/json/reply/DeleteDepartmentReq', JSON.stringify(id)).subscribe((res: Response) => {
+  //     console.log(res);
+  //   });
+  // }
+
   public onNodeRemoved(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Removed');
     console.log(e)
