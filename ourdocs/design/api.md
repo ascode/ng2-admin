@@ -108,45 +108,51 @@ POST
 包括用户信息(不带有密码的用户信息)、用户的权限信息、授权的token。一个示例数据是这样：  
 ```
 {
-    "userinfo":{
-        "id":0,
-        "uniqueid":"",
-        "login_name":"",
-        "user_name":"",
-        "department_unique_id":"",
-        "ScanCode":"",
-        "IsAllowLogin":0,
-        "InValidTime":"",
-        "IsEmployee":0,
-        "DataStatus":"",
-        "AbandonStatus":0,
-        "Creator_uniqueid":"",
-        "creator_name":"",
-        "create_time":"",
-        "last_updater_name":"",
-        "last_updater_unique_id":"",
-        "last_update_time":"",
-        "approver_unique_id":"",
-        "approver_name":"",
-        "approve_time":"",
-        "abandoner_unique_id":"",
-        "abandoner_name":"",
-        "abandon_time":"",
-        "last_timestamp":0
+    "result_data":{
+        "userinfo":{
+            "id":0,
+            "uniqueid":"",
+            "login_name":"",
+            "user_name":"",
+            "department_unique_id":"",
+            "ScanCode":"",
+            "IsAllowLogin":0,
+            "InValidTime":"",
+            "IsEmployee":0,
+            "DataStatus":"",
+            "AbandonStatus":0,
+            "Creator_uniqueid":"",
+            "creator_name":"",
+            "create_time":"",
+            "last_updater_name":"",
+            "last_updater_unique_id":"",
+            "last_update_time":"",
+            "approver_unique_id":"",
+            "approver_name":"",
+            "approve_time":"",
+            "abandoner_unique_id":"",
+            "abandoner_name":"",
+            "abandon_time":"",
+            "last_timestamp":0
+        },
+        "privilege":[
+            {
+            "Id": 4,
+            "Role_uniqueid": "角色全局ID",
+            "Privilege_code": "权限code",
+            "Prd_privilege_text": "权限的显示名称",
+            "Create_time": "创建时间",
+            "Is_deleted": true,
+            "Last_timestamp": "AAAAAAAACN0="
+            }
+        ],
+        "token":""
     },
-    "privilege":[{
-        "module_name": "",
-        "module_text": "",
-        "culumns": [{
-            "column_name": "",
-            "column_text": "",
-            "privilege_item": [
-                { "privilege_item_name": "", "privilege_item_text": "" }
-            ]
-        }]
-    }],
-    "token":""
-}    
+    "ResponseStatus": {},
+    "DoFlag": true
+
+}
+    
 ```
 * 返回消息说明：  
 userinfo:  
