@@ -12,6 +12,7 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * [前端处理逻辑说明](ourdocs/design/logic.md)  
 * [组织管理菜单结构设计](ourdocs/design/Menus/组织管理菜单结构设计.jpg)
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
+* [团队协作Bug榜](ourdocs/mgmtdaily.md)
 
 
 ## List of features
