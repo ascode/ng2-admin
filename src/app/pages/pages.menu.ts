@@ -487,6 +487,28 @@ export const PAGES_MENU = [
         ]
       },
       {
+        path: 'tabletest',
+        data:{
+          menu:{
+            title:'tabletest',
+            icon: 'ion-ios-location-outline',
+            selected: false,
+            expanded: false,
+            order: 600,
+          }
+        },
+        children: [
+          {
+            path: 'table1',
+            data: {
+              menu: {
+                title: 'table1',
+              }
+            }
+          }
+        ]
+      },
+      {
         path: 'maps',
         data: {
           menu: {
