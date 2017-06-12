@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import { UserMgmtService } from './userMgmt.service'
+// import { UserMgmtService } from './userMgmt.service'
 import { LocalDataSource } from 'ng2-smart-table';
-
-import {
-  Http,
-  Response,
-  RequestOptions,
-  Headers,
-} from '@angular/http';
-
-// import { Http, Response } from '@angular/http';
+import { ViewCell } from 'ng2-smart-table';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 @Component({
   selector: 'user-mgmt',
@@ -18,7 +11,6 @@ import {
 })
 export class UserMgmtComponent {
   query: string = '';
-
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -58,15 +50,16 @@ export class UserMgmtComponent {
         title: '有效期',
         type: 'string'
       },
-      creator_name: {
+      settings: {
         title: '操作',
-        type: 'number'
+        type: 'string',
       }
       
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
+  data: Object;
   constructor(private http: Http) {
     let a = {};
     this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
@@ -74,6 +67,11 @@ export class UserMgmtComponent {
         let data = res.json().result_data;
         for (let k in data) {
           let time = data[k].InValidTime;
+          if (data[k].IsAllowLogin == true) {
+            data[k].IsAllowLogin = "是";
+          } else if (data[k].IsAllowLogin == false) {
+            data[k].IsAllowLogin = "否";
+          }
           if (time) {
             time = time.replace(/\//g, '')
             let newTime = time.substring(0, time.length - 6)
@@ -81,8 +79,10 @@ export class UserMgmtComponent {
             //  console.log();
             data[k].InValidTime = newTime
           }
+          data[k].settings ="操作"
         }
         setTimeout(() => {
+          console.log(data);
           this.source.load(data);
         }, 2000)
       });
@@ -103,17 +103,24 @@ export class UserMgmtComponent {
     }
   }
 
+<<<<<<< HEAD
   onEdit(event): void {
     console.log(1);
     // event.confirm.resolve();
     // UpdateUserReq
     // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(a))
+=======
+  onEditConfirm(event): void { 
+    let update = event.newData;
+     console.log(update);
+    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(update))
+>>>>>>> mes
     //     .subscribe((res: Response) => {
+    //       console.log(res)
     //       if(res.status == 200){
     //         event.confirm.resolve();
     //       }
     //     });
-    
   }
 
 

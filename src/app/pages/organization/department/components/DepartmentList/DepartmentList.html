@@ -2,7 +2,14 @@
     <div class="row ">
         <div class="col-md-2">
             <ba-card bacardclass="with-scroll">
-                <ul *ngFor="let item of DepartmentList;let i = index;" class="al-sidebar-list" (mouseleave)="hoverElemTop=outOfArea">
+                <div class="tree-demo-app">
+                    <div class="tree-container">
+                        <!--[settings]="settings";基础设置，[tree]="pls",绑定数据对象是pls-->
+                        <tree [tree]="pls" [settings]="settings" (nodeRemoved)="onNodeRemoved($event)" (nodeRenamed)="onNodeRenamed($event)" (nodeSelected)="onNodeSelected($event)"
+                            (nodeMoved)="onNodeMoved($event)" (nodeCreated)="onNodeCreated($event)"> </tree>
+                    </div>
+                </div>
+                <!--<ul *ngFor="let item of DepartmentList;let i = index;" class="al-sidebar-list" (mouseleave)="hoverElemTop=outOfArea">
                     <li><i (click)='xian($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{item.name}}</li>
                     <ul class='lic' [hidden]='item.hide' *ngFor='let i of item.sub'>
                         <li>{{i.name}}</li>
@@ -17,7 +24,7 @@
                             <li><i (click)='lice($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{t.name}}</li>
                         </ul>
                     </div>
-                </ul>
+                </ul>-->
                 <!--<div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}" [ngClass]="{'show-hover-elem': showHoverElem }">
                 </div>-->
             </ba-card>
@@ -27,7 +34,8 @@
                 <form action="">
                     <div class="form-group">
                         <label for="input001">部门编码</label>
-                        <input type="text" class="form-control" id="input001" placeholder="部门编码" [(ngModel)]='DeListObj.organization_code' name='organization_code' />
+                        <input type="text" class="form-control" id="input001" placeholder="部门编码" [(ngModel)]='DeListObj.organization_code' name='organization_code'
+                        />
                     </div>
                     <div class="form-group">
                         <label for="input002">部门名称</label>
@@ -76,26 +84,27 @@
                 </div>
             </ba-card>
             <div class="form-group">
-                <button href="#myModal" role="button" class="btn" data-toggle="modal" type="submit" style="margin-right:20px;" class="btn btn-primary addNext" (click)="addNext()">新增下级部门</button>
+                <button href="#myModal" role="button" class="btn" data-toggle="modal" type="submit" style="margin-right:20px;" class="btn btn-primary addNext"
+                    (click)="addNext()">新增下级部门</button>
                 <button type="submit" class="btn btn-primary add" (click)="add()">新增同级部门</button>
 
             </div>
             <div class="form-group">
-                <button type="submit" style="margin-right:20px;" class="btn btn-primary delect">删除部门</button>
+                <button type="submit" style="margin-right:20px;" class="btn btn-primary " (click)="delect()">删除部门</button>
                 <button type="submit" class="btn btn-primary" (click)='department()'>保存</button>
             </div>
-             <!--<div class="form-group">
+            <!--<div class="form-group">
                 <a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>
             </div>-->
-        </div>   
-    </div> 
+        </div>
+    </div>
 </div>
 
-<div  class='bg' [hidden]="modle">
+<!--<div class='bg' [hidden]="modle">
     <div class="form-group" class='modle'>
         <label for="input003">部门名称</label>
         <input type="text" class="form-control" id="input003" [(ngModel)]='DeListObj.part_name' name='part_name' />
         <button type="button" class="btn" (click)='back()'>关闭</button>
         <button type="submit" class="btn btn-primary" (click)='save()'>保存</button>
     </div>
-</div>
+</div>-->

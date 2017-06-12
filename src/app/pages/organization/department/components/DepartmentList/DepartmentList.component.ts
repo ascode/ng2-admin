@@ -1,20 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import { TreeModel,Ng2TreeSettings } from 'ng2-tree';
-
-// require('./ceshi.css');
-
-// declare const alertify: any;
-
+import { NodeEvent, TreeModel, Ng2TreeSettings } from 'ng2-tree';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
+import { ActivatedRoute, Params } from '@angular/router';
+import * as _ from 'lodash';
+declare var $: any;
+export class DeList {
+  constructor(
+    public organization_code: string = '',
+    public name: string = '',
+    public brief_name: string = '',
+    public description: string = '',
+    public mnemonic_code: string = '',
+    public prd_manager_name: string = '',
+    public data_status: string = '',
+    public prd_creator_name: string = 'zzz',
+    public part_name: string = '',
+  ) { }
+}
 @Component({
-  templateUrl:'./DepartmentList.component.html',
-  styleUrls:['./DepartmentList.scss']
+  selector: 'DepartmentList',
+  templateUrl: './DepartmentList.html',
+  styleUrls: ['./DepartmentList.scss']
 })
 export class DepartmentListComponent implements OnInit {
+  constructor(private http: Http) {
+    // 查询所有部门接口
+    this.http.get('http://192.168.2.238:8000/json/reply/QueryAllDepartmentsReq').subscribe((res: Response) => {
+      console.log(res.json().departments);
+      let departList = res.json().departments;
+      // 循环数组，参数v,i:对象，索引。
+      _.forEach(departList, function (v, i) {
+        console.log(v);
+        // console.log(i);
+      });
+    });
+  }
+  DeListData: Object;
   public settings: Ng2TreeSettings = {
     rootIsVisible: false
   };
-  public pls: TreeModel;
 
+  public pls: TreeModel;
   public ngOnInit(): void {
     setTimeout(() => {
       this.pls = {
@@ -47,28 +73,52 @@ export class DepartmentListComponent implements OnInit {
     }, 2000);
   }
 
-//   public onNodeRemoved(e: NodeEvent): void {
-//     DepartmentListComponent.logEvent(e, 'Removed');
-//   }
+  DeListObj = new DeList();
+  department(): void {
+    let DeList = this.DeListObj;
+    console.log(DeList)
+    this.http.post(
+      'http://192.168.2.238:8000/json/reply/CreateDepartmentReq',
+      JSON.stringify(DeList)).subscribe((res: Response) => {
+        console.log(res);
+      });
+  }
 
-//   public onNodeMoved(e: NodeEvent): void {
-//     DepartmentListComponent.logEvent(e, 'Moved');
-//   }
+  //   // 删除接口
+  // delect(): void {
+  //   let id = { "Organization_uniqueid": "6D0CA1B6-69A2-4C94-90C6-8946CFB25FB2" }
+  //   this.http.post('http://192.168.2.238:8000/json/reply/DeleteDepartmentReq', JSON.stringify(id)).subscribe((res: Response) => {
+  //     console.log(res);
+  //   });
+  // }
 
-//   public onNodeRenamed(e: NodeEvent): void {
-//     DepartmentListComponent.logEvent(e, 'Renamed');
-//   }
+  public onNodeRemoved(e: NodeEvent): void {
+    DepartmentListComponent.logEvent(e, 'Removed');
+    console.log(e)
+  }
 
-//   public onNodeCreated(e: NodeEvent): void {
-//     DepartmentListComponent.logEvent(e, 'Created');
-//   }
+  public onNodeMoved(e: NodeEvent): void {
+    DepartmentListComponent.logEvent(e, 'Moved');
+    console.log(e)
+  }
 
-//   public onNodeSelected(e: NodeEvent): void {
-//     DepartmentListComponent.logEvent(e, 'Selected');
-//   }
+  public onNodeRenamed(e: NodeEvent): void {
+    DepartmentListComponent.logEvent(e, 'Renamed');
+    console.log(e)
+  }
 
-//   private static logEvent(e: NodeEvent, message: string): void {
-//     console.log(e);
-//     // alertify.message(`${message}: ${e.node.value}`);
-//   }
+  public onNodeCreated(e: NodeEvent): void {
+    DepartmentListComponent.logEvent(e, 'Created');
+    console.log(e)
+  }
+
+  public onNodeSelected(e: NodeEvent): void {
+    DepartmentListComponent.logEvent(e, 'Selected');
+    console.log(e)
+  }
+
+  private static logEvent(e: NodeEvent, message: string): void {
+    console.log(e);
+    // alertify.message(`${message}: ${e.node.value}`);
+  }
 }

@@ -61,13 +61,15 @@ user-select: none;
 .node-menu .node-menu-content .node-menu-item .node-menu-item-value {
   margin-left: 5px;
 }
-
+.tree{
+  padding: 0px;
+}
 tree-internal ul {
   padding: 3px 0 3px 0px;
 }
 
 tree-internal li {
-  padding: 0;
+  padding:3px;
   margin: 0;
   list-style: none;
 }
@@ -85,7 +87,7 @@ tree-internal .tree {
 }
 
 tree-internal .tree li {
-  list-style: none;
+  list-style: none ;
   cursor: default;
 }
 
@@ -94,6 +96,9 @@ tree-internal .tree li div {
   box-sizing: border-box;
 }
 
+// tree-internal .tree li .node-value{
+// padding-left:8px;
+// }
 tree-internal .tree .node-value {
   display: inline-block;
   color: #212121;

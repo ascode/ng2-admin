@@ -102,6 +102,14 @@ export const PAGES_MENU = [
                     title: '部门列表',
                   }
                 }
+              }, 
+              {
+                path: 'test',
+                data: {
+                  menu: {
+                    title: '测试',
+                  }
+                }
               },  
             ]
           },
@@ -481,6 +489,28 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'Hot Tables',
+              }
+            }
+          }
+        ]
+      },
+      {
+        path: 'tabletest',
+        data:{
+          menu:{
+            title:'tabletest',
+            icon: 'ion-ios-location-outline',
+            selected: false,
+            expanded: false,
+            order: 600,
+          }
+        },
+        children: [
+          {
+            path: 'table1',
+            data: {
+              menu: {
+                title: 'table1',
               }
             }
           }

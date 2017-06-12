@@ -19,7 +19,7 @@ export class Role {
 
 @Component({
   selector: 'role-create',
-  templateUrl: './roleCreate.component.html'
+  templateUrl: './roleCreate.component.html',
 })
 
 export class RoleCreateComponent {
@@ -30,15 +30,10 @@ export class RoleCreateComponent {
   roleCreate(){
     let role = this.roleObj;
     console.log(role);
-    this.http.post('http://192.168.2.238:8000/json/reply/addRoleInfoReq',
+    this.http.post('http://192.168.2.238:8000/json/reply/AddRoleInfoReq',
     JSON.stringify(role)).subscribe((res: Response) => {
-        console.log(res)
+				// this.RoleData = res.json();
+        console.log(res);
 			});
   }
-  
-  // ngOnInit() {
-  //   this.route.params.subscribe(params => {
-  //     console.log(params)
-  //   });
-  // }
 }
