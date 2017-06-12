@@ -29,7 +29,9 @@ export class UserMgmtComponent {
       editButtonContent: '<i class="ion-edit"></i>',
       saveButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
-      confirmSave: true
+      // mode:'external',
+       confirmSave: true
+      // mode:'inline'
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
@@ -60,6 +62,7 @@ export class UserMgmtComponent {
         title: '操作',
         type: 'number'
       }
+      
     }
   };
 
@@ -100,9 +103,9 @@ export class UserMgmtComponent {
     }
   }
 
-  onEditConfirm(event): void {
-    console.log(event.newData);
-    event.confirm.resolve();
+  onEdit(event): void {
+    console.log(1);
+    // event.confirm.resolve();
     // UpdateUserReq
     // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(a))
     //     .subscribe((res: Response) => {
@@ -111,6 +114,12 @@ export class UserMgmtComponent {
     //       }
     //     });
     
+  }
+
+
+  onEditConfirm(event):void{
+     event.confirm.resolve();
+    console.log(2);
   }
 }
 
