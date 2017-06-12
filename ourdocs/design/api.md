@@ -7,6 +7,7 @@
 * Is开头的字段，一般代表是否的意思，这种数据一般只有0，1两个值，0代表否，1代表是   
 * pr_开头的字段，（Performance Redundance Design）性能冗余设计，主要用在数据库字段设计，表示这个字段是处于性能考虑设计的冗余。
 * sr_开头的字段，(solidify Redundance Design) 固化冗余设计，主要用于在数据库字段设计，表示这个字段是处于保留历史数据的角度做的冗余设计。比如单据引用产品数据，但是产品名称有可能变更，所以就将产品名称也放在单据的详细信息表。那么这样一来，即使产品表中产品名称变化了，我们的历史单据依然可以具有下单时间的产品名称。  
+* 目前后端API项目中采用了一定的模式，我们没有完全遵照Restful api的设计思想，因此几乎所有的API都是Post请求方法，我们约定通常情况，在json中使用query_entity携带请求的数据对象（如果只是一个字段不受这个约定的约束），使用result_data来携带响应的数据对象（单个字段也受这条约定的约束），以此来统一认识，减少接口字段的辨识成本和交流成本。  
 
 ### 特征、风格  
 分页数据请求常用结构：  
@@ -108,45 +109,51 @@ POST
 包括用户信息(不带有密码的用户信息)、用户的权限信息、授权的token。一个示例数据是这样：  
 ```
 {
-    "userinfo":{
-        "id":0,
-        "uniqueid":"",
-        "login_name":"",
-        "user_name":"",
-        "department_unique_id":"",
-        "ScanCode":"",
-        "IsAllowLogin":0,
-        "InValidTime":"",
-        "IsEmployee":0,
-        "DataStatus":"",
-        "AbandonStatus":0,
-        "Creator_uniqueid":"",
-        "creator_name":"",
-        "create_time":"",
-        "last_updater_name":"",
-        "last_updater_unique_id":"",
-        "last_update_time":"",
-        "approver_unique_id":"",
-        "approver_name":"",
-        "approve_time":"",
-        "abandoner_unique_id":"",
-        "abandoner_name":"",
-        "abandon_time":"",
-        "last_timestamp":0
+    "result_data":{
+        "userinfo":{
+            "id":0,
+            "uniqueid":"",
+            "login_name":"",
+            "user_name":"",
+            "department_unique_id":"",
+            "ScanCode":"",
+            "IsAllowLogin":0,
+            "InValidTime":"",
+            "IsEmployee":0,
+            "DataStatus":"",
+            "AbandonStatus":0,
+            "Creator_uniqueid":"",
+            "creator_name":"",
+            "create_time":"",
+            "last_updater_name":"",
+            "last_updater_unique_id":"",
+            "last_update_time":"",
+            "approver_unique_id":"",
+            "approver_name":"",
+            "approve_time":"",
+            "abandoner_unique_id":"",
+            "abandoner_name":"",
+            "abandon_time":"",
+            "last_timestamp":0
+        },
+        "privilege":[
+            {
+            "Id": 4,
+            "Role_uniqueid": "角色全局ID",
+            "Privilege_code": "权限code",
+            "Prd_privilege_text": "权限的显示名称",
+            "Create_time": "创建时间",
+            "Is_deleted": true,
+            "Last_timestamp": "AAAAAAAACN0="
+            }
+        ],
+        "token":""
     },
-    "privilege":[{
-        "module_name": "",
-        "module_text": "",
-        "culumns": [{
-            "column_name": "",
-            "column_text": "",
-            "privilege_item": [
-                { "privilege_item_name": "", "privilege_item_text": "" }
-            ]
-        }]
-    }],
-    "token":""
-}    
+    "ResponseStatus": {},
+    "DoFlag": true
+
+}
+    
 ```
 * 返回消息说明：  
 userinfo:  
@@ -633,21 +640,74 @@ privilege:
 {"Role_uniqueid":"角色的全局ID"}
 
 响应数据：
-点击查看 [privilege_model](../../resource/privilege_model.json)  
+```
+{
+  "privileges_of_role": [
+    {
+      "Id": 4,
+      "Role_uniqueid": "角色全局ID",
+      "Privilege_code": "权限code",
+      "Prd_privilege_text": "权限的显示名称",
+      "Create_time": "创建时间",
+      "Is_deleted": true,
+      "Last_timestamp": "AAAAAAAACN0="
+    }
+  ],
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+
+参照 [privilege_model](../../resource/privilege_model.json)  
 
 <a id="queryUsersByRoleReq" name="queryUsersByRoleReq"></a>
 
 ##### *2.2.6 queryUsersByRoleReq  查询属于指定角色的用户列表*  [目录](#menu)    
 请求类型：GET  
 请求数据：  
-?role_unique_id=0  
+```
+{
+	"pagesize":1
+	"current_page_index":1,
+	"query_entity":{"Role_uniqueid":"aaa"}
+}
+```
 
 响应数据： 
 ``` 
-[
-    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
-    {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
-]
+{
+  "result_data": [{
+        "id":0,
+        "uniqueid":"用户的全局ID",
+        "login_name":"用户登录名",
+        "user_name":"用户姓名",
+        "department_unique_id":"部门的全局ID",
+        "prd_department_name":"性能冗余，部门名称",
+        "ScanCode":"扫描码",
+        "IsAllowLogin":0,
+        "InValidTime":"",
+        "IsEmployee":0,
+        "DataStatus":"数据状态:新建;已提交;已审核",
+        "AbandonStatus":0,
+        "Creator_uniqueid":"创建人全局编号（ID）",
+        "prd_creator_name":"创建人名称，这是一个冗余字段，便于直观查看数据",
+        "create_time":"",
+        "last_updater_name":"最后一次修改人名称",
+        "last_updater_unique_id":"最后一次修改人全局id",
+        "last_update_time":"",
+        "approver_unique_id":"",
+        "approver_name":"",
+        "approve_time":"",
+        "abandoner_unique_id":"",
+        "abandoner_name":"",
+        "abandon_time":"",
+        "last_timestamp":0
+  }],
+  "pagesize": 1,
+  "total_row_count": 0,
+  "ResponseStatus": {},
+  "DoFlag": true
+}
 ```
 
 <a id="updateUsersToRoleReq" name="updateUsersToRoleReq"></a>
@@ -657,15 +717,28 @@ privilege:
 请求数据：  
 ```
 {
-    "role_uniqueid":"角色的全局唯一ID",
-    "user_list_of_role":[
-        {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"},
-        {"id":0,"unique_id":"用户的全局唯一ID","user_name":"用户名称"}
-    ]
+	"inserted_users": [{
+			"User_uniqueid":"用户全局ID",
+	        "Role_uniqueid":"角色的全局ID",
+	        "Depart_uniqueid":"部门全局ID"
+	}],
+	"deleted_users": [{
+	        "User_uniqueid":"用户全局ID",
+	        "Role_uniqueid":"角色的全局ID",
+	        "Depart_uniqueid":"部门全局ID"
+	}]
 }
 ```  
 
-响应数据： 
+响应数据：  
+正确的响应：  
+```
+{
+  "ResponseStatus": {},
+  "DoFlag": true
+}
+```
+错误的响应：  
 ``` 
 {"ResponseStatus":{"ErrorCode":"String","Message":"String","StackTrace":"String","Errors":[{"ErrorCode":"String","FieldName":"String","Message":"String"}]},"DoFlag":false,"DoResult":"String"}  
 ```
@@ -768,7 +841,6 @@ privilege:
 请求数据： 
 ``` 
 {
-    "organization_uniqueid":"唯一ID",
     "organization_code":"部门编码",
     "name":"部门名称",
     "brief_name":"部门简称",
