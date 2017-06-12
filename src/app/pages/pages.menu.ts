@@ -102,6 +102,14 @@ export const PAGES_MENU = [
                     title: '部门列表',
                   }
                 }
+              }, 
+              {
+                path: 'test',
+                data: {
+                  menu: {
+                    title: '测试',
+                  }
+                }
               },  
             ]
           },
