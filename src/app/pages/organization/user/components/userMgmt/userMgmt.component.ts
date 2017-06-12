@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
 import { ViewCell } from 'ng2-smart-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-
+// import { CustomComponent } from './custom/custom.component';
 @Component({
   selector: 'user-mgmt',
   templateUrl: './userMgmt.html',
