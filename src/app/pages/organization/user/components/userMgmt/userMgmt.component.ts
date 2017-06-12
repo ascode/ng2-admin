@@ -103,18 +103,12 @@ export class UserMgmtComponent {
     }
   }
 
-<<<<<<< HEAD
-  onEdit(event): void {
-    console.log(1);
-    // event.confirm.resolve();
-    // UpdateUserReq
-    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(a))
-=======
+
   onEditConfirm(event): void { 
     let update = event.newData;
      console.log(update);
     // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(update))
->>>>>>> mes
+
     //     .subscribe((res: Response) => {
     //       console.log(res)
     //       if(res.status == 200){
@@ -123,10 +117,5 @@ export class UserMgmtComponent {
     //     });
   }
 
-
-  onEditConfirm(event):void{
-     event.confirm.resolve();
-    console.log(2);
-  }
 }
 
