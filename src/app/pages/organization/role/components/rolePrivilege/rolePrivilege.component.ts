@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'role-privilege',
@@ -66,14 +67,13 @@ export class RolePrivilegeComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-
-  // constructor(protected service: RolePrivilegeService) {
-
-  //   this.service.getData().then((data) => {
-  //     console.log(data);
-  //     this.source.load(data);   
-  //   });  
-  // }
+  constructor(private http: Http) {
+    let d = {"query_entity":{"Role_uniqueid":"4C2D2E69-5BFE-492E-8C67-210C2AA80984"}}
+    this.http.post('http://192.168.2.238:8000/json/reply/QueryRolesReq', JSON.stringify(d)).subscribe((res: Response) => {
+      let data = res.json().result_data;     
+      console.log(data);
+  })
+  }
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();
@@ -81,4 +81,4 @@ export class RolePrivilegeComponent {
       event.confirm.reject();
     }
   }
-}
+  }
