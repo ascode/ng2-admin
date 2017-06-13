@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RolePrivilegeService } from './rolePrivilege.service';
 import { LocalDataSource } from 'ng2-smart-table';
 @Component({
   selector: 'role-privilege',
@@ -68,13 +67,13 @@ export class RolePrivilegeComponent {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(protected service: RolePrivilegeService) {
+  // constructor(protected service: RolePrivilegeService) {
 
-    this.service.getData().then((data) => {
-      console.log(data);
-      this.source.load(data);   
-    });  
-  }
+  //   this.service.getData().then((data) => {
+  //     console.log(data);
+  //     this.source.load(data);   
+  //   });  
+  // }
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {
       event.confirm.resolve();

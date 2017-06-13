@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-// import { UserMgmtService } from './userMgmt.service'
 import { LocalDataSource } from 'ng2-smart-table';
 import { ViewCell } from 'ng2-smart-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
-// import { CustomComponent } from './custom/custom.component';
+// import { CustomComponent } from '../../../custom/custom.component';
 @Component({
   selector: 'user-mgmt',
   templateUrl: './userMgmt.html',
   styleUrls: ['./userMgmt.scss']
 })
 export class UserMgmtComponent {
-  query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -56,7 +54,6 @@ export class UserMgmtComponent {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  data: Object;
   constructor(private http: Http) {
     let a = {};
     this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))

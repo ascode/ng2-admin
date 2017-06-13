@@ -12,9 +12,16 @@ import { UserComponent } from './user.component';
 import { UserCreateComponent } from './components/userCreate/userCreate.component';
 import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
 
-// 表格数据
-import { UserMgmtService } from './components/userMgmt/userMgmt.service';
+// import { CustomRenderComponent } from './custom-render.component';
+// import { CustomEditorComponent } from './custom-editor.component';
+// import { ButtonViewComponent , BasicExampleButtonViewComponent } from './basic-example-button-view.component';
 
+// const EXAMPLES_COMPONENTS = [
+//   CustomEditorComponent,
+//   CustomRenderComponent,
+//   BasicExampleButtonViewComponent,
+//   ButtonViewComponent,
+// ];
 @NgModule({
   imports: [
     CommonModule,
@@ -25,14 +32,18 @@ import { UserMgmtService } from './components/userMgmt/userMgmt.service';
     // NgForm,
     routing
   ],
+  //   entryComponents: [
+  //   CustomEditorComponent,
+  //   CustomRenderComponent,
+  //   ButtonViewComponent,
+  // ],
   declarations: [
     UserComponent,
     UserCreateComponent,
     UserMgmtComponent,
+    // ...EXAMPLES_COMPONENTS
   ],
-  providers: [
-    UserMgmtService,
-  ]
+  providers: []
 })
 export class UserModule {}
 
