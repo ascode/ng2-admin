@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'rolecreate', component: RoleCreateComponent },
       { path: 'rolepeople', component: RolePeopleComponent },
-      { path: 'roleprivilege', component: RolePrivilegeComponent }
+      { path: 'roleprivilege', component: RolePrivilegeComponent },
     ]
   }
 ];

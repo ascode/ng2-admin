@@ -7,6 +7,8 @@ import {
   Headers,
 } from '@angular/http';
 
+import * as _ from 'lodash';
+
 export class User {
   constructor(
     public login_name: string = '',
@@ -28,10 +30,11 @@ export class User {
 export class UserCreateComponent {
   userData: Object;
   constructor(private http: Http) {
+    
   }
-
+ 
   userObj = new User();
-   makePost(): void {
+  makePost(): void {
     let userObj = this.userObj;
     this.http.post(
       'http://192.168.2.238:8000/json/reply/AddUserReq',

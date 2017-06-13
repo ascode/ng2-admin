@@ -1,12 +1,42 @@
-import { Component } from '@angular/core';
-import { LocalDataSource } from 'ng2-smart-table';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import { ViewCell } from 'ng2-smart-table';
+
+
+
+import { LocalDataSource } from 'ng2-smart-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 @Component({
-  templateUrl: './userMgmt.html',
+  selector: 'button-view',
+  template: `
+    <button (click)="onClick()" class='clickButton'>{{ renderValue }}</button>
+  `,
 })
-export class UserMgmtComponent {
+export class UserMgmtButtonViewComponent implements ViewCell, OnInit {
+  renderValue: string;
+
+  @Input() value: string | number;
+  @Input() rowData: any;
+  @Output() save: EventEmitter<any> = new EventEmitter();
+  ngOnInit() {
+    this.renderValue = this.value.toString().toUpperCase();
+  }
+
+  onClick() {
+    this.save.emit(this.rowData);
+  }
+}
+
+@Component({
+  selector: 'basic-example-button-view',
+  template: `
+    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+  `,
+  styleUrls:['./userMgmt.scss']
+})
+export class UserBasicExampleButtonViewComponent implements OnInit {
+  show: boolean = true;
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -46,17 +76,26 @@ export class UserMgmtComponent {
       },
       settings: {
         title: '操作',
-        type: 'string',
-      }
+        type: 'custom',
+        renderComponent: UserMgmtButtonViewComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+            // console.log(1);
+            console.log(row);
+          });
+        }
+      },
+
     }
   };
-
   source: LocalDataSource = new LocalDataSource();
+  
   constructor(private http: Http) {
     let a = {};
     this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
       .subscribe((res: Response) => {
         let data = res.json().result_data;
+        console.log(data);
         for (let k in data) {
           let time = data[k].InValidTime;
           if (data[k].IsAllowLogin == true) {
@@ -68,43 +107,19 @@ export class UserMgmtComponent {
             time = time.replace(/\//g, '')
             let newTime = time.substring(0, time.length - 6)
             newTime = eval('new ' + newTime + ')').toLocaleString().slice(0, 9);
-            //  console.log();
             data[k].InValidTime = newTime
           }
-          data[k].settings ="操作"
+          data[k].settings = "操作"
         }
         setTimeout(() => {
           console.log(data);
           this.source.load(data);
         }, 2000)
       });
+
   }
 
-  onDeleteConfirm(event): void {
-    if (window.confirm('确定要删除吗?')) {
-      let a = { "Uniqueid": event.data.Uniqueid };
-      this.http.post('http://192.168.2.238:8000/json/reply/RemoveUserReq', JSON.stringify(a))
-        .subscribe((res: Response) => {
-          if(res.status == 200){
-            event.confirm.resolve();
-          }
-        });
-    } else {
-      event.confirm.reject();
-      // console.log("不是")
-    }
-  }
-
-  onEditConfirm(event): void { 
-    let update = event.newData;
-     console.log(update);
-    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(update))
-    //     .subscribe((res: Response) => {
-    //       console.log(res)
-    //       if(res.status == 200){
-    //         event.confirm.resolve();
-    //       }
-    //     });
+  ngOnInit() {
   }
 
 }

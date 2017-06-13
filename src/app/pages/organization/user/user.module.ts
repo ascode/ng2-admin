@@ -10,18 +10,22 @@ import { routing } from './user.routing';
 // 子组件
 import { UserComponent } from './user.component';
 import { UserCreateComponent } from './components/userCreate/userCreate.component';
+
+
 import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
+import { UserMgmtButtonViewComponent ,UserBasicExampleButtonViewComponent} from './components/userMgmt/userButtonView';
+// 表格组件
+import { CustomEditorComponent } from '../custom/custom-editor.component';
+import { CustomRenderComponent } from '../custom/custom-render.component';
 
-// import { CustomRenderComponent } from './custom-render.component';
-// import { CustomEditorComponent } from './custom-editor.component';
-// import { ButtonViewComponent , BasicExampleButtonViewComponent } from './basic-example-button-view.component';
+const EXAMPLES_COMPONENTS = [
+  CustomEditorComponent,
+  CustomRenderComponent,
+  UserMgmtButtonViewComponent,
+  UserBasicExampleButtonViewComponent,
+  UserMgmtComponent
+];
 
-// const EXAMPLES_COMPONENTS = [
-//   CustomEditorComponent,
-//   CustomRenderComponent,
-//   BasicExampleButtonViewComponent,
-//   ButtonViewComponent,
-// ];
 @NgModule({
   imports: [
     CommonModule,
@@ -32,18 +36,19 @@ import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
     // NgForm,
     routing
   ],
-  //   entryComponents: [
-  //   CustomEditorComponent,
-  //   CustomRenderComponent,
-  //   ButtonViewComponent,
-  // ],
+  entryComponents: [
+    CustomEditorComponent,
+    CustomRenderComponent,
+    UserMgmtButtonViewComponent,
+  ],
   declarations: [
     UserComponent,
     UserCreateComponent,
-    UserMgmtComponent,
-    // ...EXAMPLES_COMPONENTS
+    ...EXAMPLES_COMPONENTS
   ],
-  providers: []
+  providers: [
+    
+  ]
 })
 export class UserModule {}
 
