@@ -39,31 +39,7 @@ export const PAGES_MENU = [
           }
         ]
       },
-      // {
-      //   path: 'zly',
-      //   data: {
-      //     menu: {
-      //       title: '多例子',
-      //       icon: 'ion-funnel',
-      //       selected: false,
-      //       expanded: false,
-      //       order: 100,
-      //     }
-      //   },
-      //   children: [
-      //    {
-      //       path: 'gutable',
-      //       data: {
-      //         menu: {
-      //           title: '滚动表格', 
-      //           selected: false,
-      //           expanded: false,
-      //           order: 100,    
-      //         }
-      //       }         
-      //     },
-      //   ]
-      // },
+
       {
         path: '',
         data: {
@@ -87,7 +63,7 @@ export const PAGES_MENU = [
               }
             },
             children: [
-             {
+              {
                 path: 'CreateDepartment',
                 data: {
                   menu: {
@@ -102,7 +78,7 @@ export const PAGES_MENU = [
                     title: '部门列表',
                   }
                 }
-              }, 
+              },
               {
                 path: 'test',
                 data: {
@@ -110,7 +86,7 @@ export const PAGES_MENU = [
                     title: '测试',
                   }
                 }
-              },  
+              },
             ]
           },
           {
@@ -190,7 +166,7 @@ export const PAGES_MENU = [
               }
             },
             children: [
-             {
+              {
                 path: 'DataOperatePrivilegeToRole',
                 data: {
                   menu: {
@@ -219,7 +195,7 @@ export const PAGES_MENU = [
               }
             },
             children: [
-             {
+              {
                 path: 'UserPrivilegeReport',
                 data: {
                   menu: {
@@ -247,7 +223,7 @@ export const PAGES_MENU = [
                     title: '用户登录日志',
                   }
                 }
-              }, 
+              },
               {
                 path: 'LogForUserOperate',
                 data: {
@@ -276,7 +252,7 @@ export const PAGES_MENU = [
           }
         ]
       },
-      
+
       {
         path: 'dashboard',
         data: {
@@ -311,7 +287,7 @@ export const PAGES_MENU = [
           }
         ]
       },
-   
+
       {
         path: 'components',
         data: {
@@ -496,9 +472,9 @@ export const PAGES_MENU = [
       },
       {
         path: 'tabletest',
-        data:{
-          menu:{
-            title:'tabletest',
+        data: {
+          menu: {
+            title: 'tabletest',
             icon: 'ion-ios-location-outline',
             selected: false,
             expanded: false,
