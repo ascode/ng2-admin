@@ -1,22 +1,12 @@
 import { Component } from '@angular/core';
-import { UserMgmtService } from './userMgmt.service'
 import { LocalDataSource } from 'ng2-smart-table';
-
-import {
-  Http,
-  Response,
-  RequestOptions,
-  Headers,
-} from '@angular/http';
-
+import { ViewCell } from 'ng2-smart-table';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 @Component({
-  selector: 'user-mgmt',
   templateUrl: './userMgmt.html',
-  styleUrls: ['./userMgmt.scss']
 })
 export class UserMgmtComponent {
-  query: string = '';
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -56,13 +46,12 @@ export class UserMgmtComponent {
       },
       settings: {
         title: '操作',
-        type: 'string'
+        type: 'string',
       }
     }
   };
 
   source: LocalDataSource = new LocalDataSource();
-  data: Object;
   constructor(private http: Http) {
     let a = {};
     this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
@@ -82,8 +71,10 @@ export class UserMgmtComponent {
             //  console.log();
             data[k].InValidTime = newTime
           }
+          data[k].settings ="操作"
         }
         setTimeout(() => {
+          console.log(data);
           this.source.load(data);
         }, 2000)
       });
@@ -104,17 +95,16 @@ export class UserMgmtComponent {
     }
   }
 
-  onEditConfirm(event): void {
-    console.log(event.newData);
-    event.confirm.resolve();
-    // UpdateUserReq
-    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(a))
+  onEditConfirm(event): void { 
+    let update = event.newData;
+     console.log(update);
+    // this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(update))
     //     .subscribe((res: Response) => {
+    //       console.log(res)
     //       if(res.status == 200){
     //         event.confirm.resolve();
     //       }
     //     });
-    
   }
-}
 
+}

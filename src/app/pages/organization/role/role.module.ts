@@ -6,9 +6,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { routing } from './role.routing';
 import { RoleComponent } from './role.component';
 import { RoleCreateComponent } from './components/roleCreate/roleCreate.component';
-import { RolePeopleComponent } from './components/rolePeople/rolePeople.component';
 import { RolePrivilegeComponent } from './components/rolePrivilege/rolePrivilege.component';
-import { RolePrivilegeService } from './components/rolePrivilege/rolePrivilege.service';
+import { RolePeopleComponent } from './components/rolePeople/rolePeople.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,14 +18,12 @@ import { RolePrivilegeService } from './components/rolePrivilege/rolePrivilege.s
     routing
   ],
   declarations: [
+    RolePeopleComponent,
     RoleComponent,
     RoleCreateComponent,
-    RolePeopleComponent,
     RolePrivilegeComponent
   ],
-  providers: [
-   RolePrivilegeService
-  ]
+  providers: []
 })
 export class RoleModule {}
 

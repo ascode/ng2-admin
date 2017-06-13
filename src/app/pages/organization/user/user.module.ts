@@ -2,23 +2,29 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
-// import { DataFilterPipe } from './components/table/datatab/data-filter.pipe';
 // import {NgForm} from '@angular/forms';
 import { HttpModule } from "@angular/http";
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 // 必须写
-// import { DataTableModule } from "angular2-datatable";
 import { routing } from './user.routing';
 // 子组件
 import { UserComponent } from './user.component';
 import { UserCreateComponent } from './components/userCreate/userCreate.component';
-import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
 
-// import { TableComponent } from './components/table/table.component';
-// import { DatatabComponent } from './components/table/datatab/datatab.component';
-// import { DataTablesService } from './components/table/datatab/datatab.service';
-// 表格数据
-import { UserMgmtService } from './components/userMgmt/userMgmt.service';
+
+import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
+import { UserMgmtButtonViewComponent ,UserBasicExampleButtonViewComponent} from './components/userMgmt/userButtonView';
+// 表格组件
+import { CustomEditorComponent } from '../custom/custom-editor.component';
+import { CustomRenderComponent } from '../custom/custom-render.component';
+
+const EXAMPLES_COMPONENTS = [
+  CustomEditorComponent,
+  CustomRenderComponent,
+  UserMgmtButtonViewComponent,
+  UserBasicExampleButtonViewComponent,
+  UserMgmtComponent
+];
 
 @NgModule({
   imports: [
@@ -26,22 +32,22 @@ import { UserMgmtService } from './components/userMgmt/userMgmt.service';
     FormsModule,
     NgaModule,
     Ng2SmartTableModule,
-    // DataTableModule,
     HttpModule,
     // NgForm,
     routing
   ],
+  entryComponents: [
+    CustomEditorComponent,
+    CustomRenderComponent,
+    UserMgmtButtonViewComponent,
+  ],
   declarations: [
     UserComponent,
     UserCreateComponent,
-    UserMgmtComponent,
-    // TableComponent,
-    // DataFilterPipe,
-    // DatatabComponent,
+    ...EXAMPLES_COMPONENTS
   ],
   providers: [
-    UserMgmtService,
-    // DataTablesService,
+    
   ]
 })
 export class UserModule {}

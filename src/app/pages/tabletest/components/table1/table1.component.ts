@@ -12,7 +12,7 @@ export class Table1 {
 
 
   rowSelect(){
-alert("a");
+  alert("a");
   }
 
   settings = {

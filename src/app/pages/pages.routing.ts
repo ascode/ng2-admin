@@ -25,10 +25,8 @@ export const routes: Routes = [
       { path: 'ui', loadChildren: './ui/ui.module#UiModule' },
       { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
-      { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
+      { path: 'maps', loadChildren: './maps/maps.module#MapsModule' }
       { path: 'tabletest', loadChildren: './tabletest/tabletest.module#TableTestModule' }
-      // { path: 'tabletest', loadChildren: './tabletest/tabletest.module#TableTestModule' }
-      // { path: 'zly', loadChildren: './zly/zly.module#ZlyModule' }
     ]
   }
 ];

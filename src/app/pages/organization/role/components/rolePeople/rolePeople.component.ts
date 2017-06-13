@@ -60,7 +60,7 @@ export class RolePeopleComponent {
       console.log(data);
       for (var d in data) {
         console.log(data[d])
-        data[d].settings = "操作"
+        data[d].settings = "授权"
         if (data[d].IsAllowLogin == true) {
           data[d].IsAllowLogin = "是";
         } else if (data[d].IsAllowLogin == false) {
@@ -101,3 +101,5 @@ export class RolePeopleComponent {
     //   })
   }
 }
+
+
