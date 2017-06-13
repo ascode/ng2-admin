@@ -5,14 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { OrganizationComponent } from './organization.component';
 import { routing } from './organization.routing';
 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     routing
   ],
+
   declarations: [
-    OrganizationComponent
+    OrganizationComponent,
   ]
 })
 export class OrganizationModule {}

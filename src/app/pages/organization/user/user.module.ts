@@ -18,7 +18,6 @@ import { UserMgmtButtonViewComponent ,UserBasicExampleButtonViewComponent} from 
 import { CustomEditorComponent } from '../custom/custom-editor.component';
 import { CustomRenderComponent } from '../custom/custom-render.component';
 
-
 const EXAMPLES_COMPONENTS = [
   CustomEditorComponent,
   CustomRenderComponent,
@@ -26,6 +25,7 @@ const EXAMPLES_COMPONENTS = [
   UserBasicExampleButtonViewComponent,
   UserMgmtComponent
 ];
+
 @NgModule({
   imports: [
     CommonModule,

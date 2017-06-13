@@ -7,9 +7,7 @@ import { routing } from './role.routing';
 import { RoleComponent } from './role.component';
 import { RoleCreateComponent } from './components/roleCreate/roleCreate.component';
 import { RolePrivilegeComponent } from './components/rolePrivilege/rolePrivilege.component';
-import { RolePrivilegeService } from './components/rolePrivilege/rolePrivilege.service';
 import { RolePeopleComponent } from './components/rolePeople/rolePeople.component';
-
 
 @NgModule({
   imports: [
@@ -25,9 +23,7 @@ import { RolePeopleComponent } from './components/rolePeople/rolePeople.componen
     RoleCreateComponent,
     RolePrivilegeComponent
   ],
-  providers: [
-   RolePrivilegeService
-  ]
+  providers: []
 })
 export class RoleModule {}
 
