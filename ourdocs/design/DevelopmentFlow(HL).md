@@ -2,10 +2,10 @@
 
 ### 1.开发准备   
 #### 1.1 工具安装     
-* A.git已安装  
-* B.postman已安装  
-* C.office Project 2013已安装  
-* D.NodeJs已安装  			 
+        A.git已安装    
+        B.postman已安装    
+        C.office Project 2013已安装    
+        D.NodeJs已安装     			 
 #### 2.开发规范
 * 2.1 git常用命令    
 链http://vosung.bgenius.cn/ascode/Devlopment-Helper/blob/master/newbie/bestpracticeforgit.md  
