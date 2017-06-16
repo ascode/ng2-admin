@@ -1,4 +1,3 @@
-
 ## 说明  
 目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发风格进行。  
 
@@ -14,6 +13,7 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
 * [团队协作Bug榜](ourdocs/mgmtdaily.md)
 * [框架开发流程(黄亮)](ourdocs/design/DevelopmentFlow(HL).md)
+* [表格组件需求](wikis/home)
 
 
 ## List of features
