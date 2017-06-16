@@ -13,7 +13,7 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
 * [团队协作Bug榜](ourdocs/mgmtdaily.md)
 * [框架开发流程(黄亮)](ourdocs/design/DevelopmentFlow(HL).md)
-* [表格组件需求](wikis/home)
+* [表格组件需求](../wikis/home)
 
 
 ## List of features
