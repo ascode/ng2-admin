@@ -8,6 +8,8 @@ import { AppTranslationModule } from '../app.translation.module';
 import { Pages } from './pages.component';
 // 表格组件
 
+
+
 @NgModule({
   imports: [CommonModule, AppTranslationModule, NgaModule, routing],
   declarations: [Pages]

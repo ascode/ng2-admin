@@ -1,12 +1,12 @@
 {
   "login": {
-    "title": "Sign in to ng2-admin",
-    "signup_link": "New to ng2-admin? Sign up!",
-    "email": "Email",
-    "password": "Password",
-    "sign_in": "Sign in",
-    "forgot_password": "Forgot password?",
-    "sign_from_app_text": "or Sign in with one click",
+    "title": "登录到 ng2-admin",
+    "signup_link": "注册一个新用户",
+    "email": "邮箱账号",
+    "password": "登陆密码",
+    "sign_in": "登陆",
+    "forgot_password": "忘记密码？",
+    "sign_from_app_text": "This pages is  by vosung make",
     "share_on_facebook": "Share on Facebook",
     "share_on_twitter": "Share on Twitter",
     "share_on_google_plus": "Share on Google Plus"
