@@ -1,5 +1,5 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
 // import {NgForm} from '@angular/forms';
@@ -11,12 +11,11 @@ import { routing } from './user.routing';
 import { UserComponent } from './user.component';
 import { UserCreateComponent } from './components/userCreate/userCreate.component';
 
-
 import { UserMgmtComponent } from './components/userMgmt/userMgmt.component';
-import { UserMgmtButtonViewComponent ,UserBasicExampleButtonViewComponent} from './components/userMgmt/userButtonView';
-// 表格组件
-import { CustomEditorComponent } from '../custom/custom-editor.component';
-import { CustomRenderComponent } from '../custom/custom-render.component';
+import { UserMgmtButtonViewComponent, UserBasicExampleButtonViewComponent } from './components/userMgmt/userButtonView';
+// // 表格组件
+import { CustomEditorComponent } from './components/userMgmt/custom-editor.component';
+import { CustomRenderComponent } from './components/userMgmt/custom-render.component';
 
 const EXAMPLES_COMPONENTS = [
   CustomEditorComponent,
@@ -44,11 +43,14 @@ const EXAMPLES_COMPONENTS = [
   declarations: [
     UserComponent,
     UserCreateComponent,
+    // UserMgmtComponent,
+    // CustomEditorComponent,
+    // CustomRenderComponent,
+    // UserMgmtButtonViewComponent,
+    // UserBasicExampleButtonViewComponent
     ...EXAMPLES_COMPONENTS
   ],
-  providers: [
-    
-  ]
+  providers: []
 })
-export class UserModule {}
+export class UserModule { }
 

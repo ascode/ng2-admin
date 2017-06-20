@@ -1,9 +1,39 @@
-<div class="widgets" >
+<div class="widgets" [hidden]="!roleShow">
     <div class="row">
         <ba-card title="浏览角色" bacardclass="with-scroll" class="smart-table-container">
-            <!--<ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="onEditConfirm($event)" ></ng2-smart-table>-->
-            <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+            <basic-example-button-view ></basic-example-button-view>
         </ba-card>
     </div>
-    <button type="button" class="btn btn-primary" style='float:left;margin-left:-10px;'>操作</button>
+</div>
+<button (click)="show()">点击</button>
+<div [hidden]="roleShow">
+    <div class="row">
+        <ba-card title="部门结构" bacardclass="with-scroll" class="col-md-2">
+            <ul class='ul_role'>
+                <li><input type="checkbox"><span>产品部</span> </li>
+                <li><input type="checkbox"><span>研发部</span> </li>
+                <li><input type="checkbox"><span>运维部</span> </li>
+                <li><input type="checkbox"><span>总经办</span> </li>
+                <li><input type="checkbox"><span>销售部</span> </li>
+                <li><input type="checkbox"><span>人事部</span> </li>
+                <li><input type="checkbox"><span>财务部</span> </li>
+                <li><input type="checkbox"><span>客服部</span> </li>
+            </ul>
+        </ba-card>
+        <ba-card bacardclass="with-scroll" class="col-md-8">
+            <ul class="ul_role1">
+                <li><span>组内用户</span><input type="checkbox">&#x3000;
+                    <input type="checkbox" checked="checked"><span>李平</span>
+                </li>
+                <li><span>组外用户</span><input type="checkbox">&#x3000;
+                    <input type="checkbox" checkbox="checkbox"><span>李平</span>
+                    <input type="checkbox" checkbox="checkbox"><span>李平</span>
+                    <input type="checkbox" checkbox="checkbox"><span>李平</span>
+                    <input type="checkbox" checkbox="checkbox"><span>李平</span>
+                    <input type="checkbox" checkbox="checkbox"><span>李平</span>
+                </li>
+            </ul>
+            <button class="btn btn-primary">保存</button>
+        </ba-card>
+    </div>
 </div>
