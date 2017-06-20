@@ -26,7 +26,7 @@ RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.1
 * [团队协作Bug榜](ourdocs/mgmtdaily.md)
 * [框架开发流程(黄亮)](ourdocs/design/DevelopmentFlow(HL).md)
 * [表格组件需求](http://vosung.bgenius.cn/framework-group/ng2-admin/wikis/home)
-
+* 标准组件库
 
 ## List of features
 * Angular 2+
