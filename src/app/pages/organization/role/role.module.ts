@@ -10,7 +10,6 @@ import { RolePrivilegeComponent } from './components/rolePrivilege/rolePrivilege
 import { RolePrivilegeService } from './components/rolePrivilege/rolePrivilege.service';
 import { RolePeopleComponent } from './components/rolePeople/rolePeople.component';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +22,7 @@ import { RolePeopleComponent } from './components/rolePeople/rolePeople.componen
     RolePeopleComponent,
     RoleComponent,
     RoleCreateComponent,
-    RolePrivilegeComponent
+    RolePrivilegeComponent,
   ],
   providers: [
    RolePrivilegeService

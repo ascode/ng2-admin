@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 // 
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
+import { LocalStorage } from '../local_storage'
 @Component({
   selector: 'login',
   templateUrl: './login.html',
@@ -13,7 +14,7 @@ export class Login {
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
-// 验证信息。
+  // 验证信息。
   constructor(fb:FormBuilder) {
     this.form = fb.group({
       'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
@@ -24,11 +25,26 @@ export class Login {
     this.password = this.form.controls['password'];
   }
 
+  // public onSubmit(values:Object):void {
+  //   this.submitted = true;
+  //   if (this.form.valid) {
+  //     // your code goes here
+  //     console.log(values);
+  //   }
+  // }
+
+  public localStorage = new LocalStorage();
+
   public onSubmit(values:Object):void {
-    this.submitted = true;
-    if (this.form.valid) {
-      // your code goes here
-      // console.log(values);
-    }
+      
+      let email = this.email.value;
+      let password = this.password.value;
+      // console.log(email)
+      // console.log(password)
+      if(password == this.localStorage.get(email)){
+         alert('登陆成功')
+      }else{
+        alert('密码错误')
+      }
   }
 }
