@@ -10,8 +10,6 @@ import { RoleComponent } from './role.component';
 import { RoleCreateComponent } from './components/roleCreate/roleCreate.component';
 import { RolePrivilegeComponent } from './components/rolePrivilege/rolePrivilege.component';
 
-<<<<<<< HEAD
-=======
 import { CustomEditorComponent } from './components/rolePeople/custom-editor.component';
 import { CustomRenderComponent } from './components/rolePeople/custom-render.component';
 import { RolePeopleComponent } from './components/rolePeople/rolePeople.component';
@@ -24,7 +22,6 @@ const EXAMPLES_COMPONENTS = [
   RoleButtonViewComponent,
   RoleBasicExampleButtonViewComponent
 ];
->>>>>>> mes
 @NgModule({
   imports: [
     CommonModule,
@@ -43,10 +40,7 @@ const EXAMPLES_COMPONENTS = [
     RoleComponent,
     RoleCreateComponent,
     RolePrivilegeComponent,
-<<<<<<< HEAD
-=======
     ...EXAMPLES_COMPONENTS
->>>>>>> mes
   ],
   providers: []
 })
