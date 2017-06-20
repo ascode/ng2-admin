@@ -1,10 +1,21 @@
-
 ## 说明  
 目前这个项目定为新版B/S产品的前端框架项目。这个项目遵循目前流行的互联网前端开发风格进行。  
 
 This project aims to bootstrap the development of your product and provide an ecosystem for building production-ready application or prototypes.
 
 Frameworks like Bootstrap provide a number of components, but usually it’s not enough to build a real-world app. This template comes with lots of popular UI components with a unified color scheme, plus it is based on a modern Angular framework and has a flexible component based structure.  
+
+## 内部网站  
+* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
+
+
+## 自动部署（ci）  
+本项目采用gitlab-ci实现编码到测试部署的持续集成。   
+自动部署的地址是： [http://vosung.bgenius.cn:4200](http://vosung.bgenius.cn:4200)  
+
+RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.168.2.238:8000/metadata)   
+
 
 ## 目录  
 * 开发框架说明[本页]  
@@ -13,7 +24,9 @@ Frameworks like Bootstrap provide a number of components, but usually it’s not
 * [组织管理菜单结构设计](ourdocs/design/Menus/组织管理菜单结构设计.jpg)
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
 * [团队协作Bug榜](ourdocs/mgmtdaily.md)
-
+* [框架开发流程(黄亮)](ourdocs/design/DevelopmentFlow(HL).md)
+* [表格组件需求](http://vosung.bgenius.cn/framework-group/ng2-admin/wikis/home)
+* 标准组件库
 
 ## List of features
 * Angular 2+
@@ -87,11 +100,6 @@ npm run build:prod:aot
 ```
 This will clear up your dist folder (where release files are located), generate a release build and start the built-in server. Now you can copy the sources from the dist folder and use it with any backend framework or simply put it under a web server.
 
-## 自动部署（ci）  
-本项目采用gitlab-ci实现编码到测试部署的持续集成。   
-自动部署的地址是： [http://vosung.bgenius.cn:4200](http://vosung.bgenius.cn:4200)  
-
-RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.168.2.238:8000/metadata)   
 
 ## Electron Hybird架构  
 使用Electron Hybird架构嵌入本Web App的时候，需要对项目下/src/index.html文件进行少许改进。要在页面head节内增加：  
@@ -122,9 +130,6 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 * Postman  
 api测试工具  
 
-## 内部网站  
-* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
-* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
 
 ## 帮助
 * [Angularjs2 在线教程](http://www.hubwiz.com/course/5599d367a164dd0d75929c76/)  

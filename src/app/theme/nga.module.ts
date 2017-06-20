@@ -4,14 +4,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgUploaderModule } from 'ngx-uploader';
 import { AppTranslationModule } from '../app.translation.module';
-
-import {
-  BaThemeConfig
-} from './theme.config';
-
-import {
-  BaThemeConfigProvider
-} from './theme.configProvider';
+import { BaThemeConfig } from './theme.config';
+import { BaThemeConfigProvider } from './theme.configProvider';
 
 import {
   BaAmChart,
