@@ -5,6 +5,11 @@ This project aims to bootstrap the development of your product and provide an ec
 
 Frameworks like Bootstrap provide a number of components, but usually it’s not enough to build a real-world app. This template comes with lots of popular UI components with a unified color scheme, plus it is based on a modern Angular framework and has a flexible component based structure.  
 
+## 内部网站  
+* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
+* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
+
+
 ## 目录  
 * 开发框架说明[本页]  
 * [API说明](ourdocs/design/api.md)    
@@ -123,9 +128,6 @@ Karma 是Google 开源的一个基于Node.js 的 JavaScript 测试执行过程�
 * Postman  
 api测试工具  
 
-## 内部网站  
-* RAP:api文档和mock [http://vosung.bgenius.cn:8081](http://vosung.bgenius.cn:8081)  
-* vosung技术社区 [http://vosung.bgenius.cn:8082/](http://vosung.bgenius.cn:8082/)
 
 ## 帮助
 * [Angularjs2 在线教程](http://www.hubwiz.com/course/5599d367a164dd0d75929c76/)  
