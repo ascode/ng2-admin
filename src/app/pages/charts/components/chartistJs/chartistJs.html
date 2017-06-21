@@ -1,7 +1,7 @@
 <section class="chartist">
   <div class="row">
     <div class="col-md-6 ">
-      <ba-card title="chart.lines" baCardClass="with-scroll">
+      <ba-card title="折线图" baCardClass="with-scroll">
         <h5 translate>{{'chart.simple_line_chart'}}</h5>
         <ba-chartist-chart baChartistChartClass="ct-chart"
                            baChartistChartType="Line"
@@ -26,12 +26,21 @@
     </div>
 
     <div class="col-md-6 ">
-      <ba-card title="chart.bars" baCardClass="with-scroll">
-        <h5 translate>{{'chart.simple_bar_chart'}}</h5>
+      <ba-card title="柱状图" baCardClass="with-scroll">
+        <h5 translate>{{'chart.simple_bar_chart'}}</h5> 
+        <!--chart.simple_bar_chart:值是smilper bar chart-->
+        <!--
+          样式吧：：：baChartistChartClass="ct-chart stacked-bar" ，，stacked-bar：图的宽度间距
+          图标的类型：：：baChartistChartType="Bar" 图的类型只要修改就可以了Line、Bar
+          数据：：[baChartistChartData]="data['simpleBarData']",,simpleBarData，数据对象，
+        X,Y轴数据(间隔值)设置：：：[baChartistChartOptions]="data['simpleBarOptions']"
+        是否是放在一个对象中(分开)，还是一个值上(叠加)：：：[baChartistChartResponsive]="data['multiBarResponsive']"-->
+        <!--子组件绑定的值，传到父组件的[baChartistChartData]，[baChartistChartOptions]-->
         <ba-chartist-chart baChartistChartClass="ct-chart"
                            baChartistChartType="Bar"
-                           [baChartistChartData]="data['simpleBarData']"
-                           [baChartistChartOptions]="data['simpleBarOptions']">
+                          [baChartistChartData]="data['simpleBarData']"
+                          [baChartistChartOptions]="data['simpleBarOptions']"
+                           >
         </ba-chartist-chart>
 
         <h5 translate>{{'chart.multi_line_labels_bar_chart'}}</h5>
@@ -54,9 +63,10 @@
 
   <div class="row">
     <div class="col-md-12">
-      <ba-card title="chart.pies_and_donuts" baCardClass="with-scroll">
+      <ba-card title="饼图和甜甜圈" baCardClass="with-scroll">
         <div class="row">
           <div class="col-md-12 col-lg-4"><h5 translate>{{'chart.simple_pie'}}</h5>
+
             <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
                                baChartistChartType="Pie"
                                [baChartistChartData]="data['simplePieData']"
@@ -65,6 +75,7 @@
             </ba-chartist-chart>
           </div>
           <div class="col-md-12 col-lg-4"><h5 translate>{{'chart.pie_with_labels'}}</h5>
+
             <ba-chartist-chart baChartistChartClass="ct-chart stacked-bar"
                                baChartistChartType="Pie"
                                [baChartistChartData]="data['labelsPieData']"
