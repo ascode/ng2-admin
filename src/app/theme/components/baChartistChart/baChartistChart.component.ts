@@ -30,6 +30,7 @@ export class BaChartistChart {
   ngAfterViewInit() {
     this.chart = new Chartist[this.baChartistChartType](this._selector.nativeElement, this.baChartistChartData, this.baChartistChartOptions, this.baChartistChartResponsive);
     this.onChartReady.emit(this.chart);
+    console.log(this.chart);
   }
 
   ngOnChanges(changes) {

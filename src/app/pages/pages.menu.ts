@@ -249,7 +249,28 @@ export const PAGES_MENU = [
                 }
               }
             ]
-          }
+          },
+           {
+            path: 'chart',
+              data: {
+                menu: {
+                  title: '图表展示',
+                  selected: false,
+                  expanded: false,
+                  order: 100,
+                }
+              },
+              children: [
+              {
+                path: 'basic',
+                data: {
+                  menu: {
+                    title: '多种图表',
+                  }
+                }
+              }
+            ]
+          },
         ]
       },
 

@@ -17,6 +17,7 @@ export const routes: Routes = [
       { path: 'dataprivilege', loadChildren: './organization/dataprivilege/dataprivilege.module#DataPrivilegeModule' },
       { path: 'privilegereport', loadChildren: './organization/privilegereport/privilegereport.module#PrivilegeReportModule' },
       { path: 'log', loadChildren: './organization/log/log.module#LogModule' },
+      { path: 'chart', loadChildren: './organization/chart/chart.module#ChartModule' },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
