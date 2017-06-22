@@ -7,7 +7,6 @@ import { routing } from './department.routing';
 import { DepartmentComponent } from './department.component';
 import { CreateDepartmentComponent } from './components/CreateDepartment/CreateDepartment.component';
 import { DepartmentListComponent } from './components/DepartmentList/DepartmentList.component';
-import { TestComponent } from './components/test/tese';
 
 @NgModule({
   imports: [
@@ -15,13 +14,12 @@ import { TestComponent } from './components/test/tese';
     FormsModule,
     NgaModule,
     TreeModule,
-    routing
+    routing,
   ],
   declarations: [
     DepartmentComponent,
     CreateDepartmentComponent,
-    TestComponent,
-    DepartmentListComponent
+    DepartmentListComponent,
   ]
 })
 export class DepartmentModule {}

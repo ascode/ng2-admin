@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NodeEvent, TreeModel, Ng2TreeSettings } from 'ng2-tree';
+import { NodeEvent, TreeModel, RenamableNode, Ng2TreeSettings } from 'ng2-tree';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
 import * as _ from 'lodash';
-declare var $: any;
+declare const alertify: any;
 export class DeList {
   constructor(
     public organization_code: string = '',
@@ -21,16 +21,16 @@ export class DeList {
   selector: 'DepartmentList',
   templateUrl: './DepartmentList.html',
   styleUrls: ['./DepartmentList.scss']
-})
+})        
 export class DepartmentListComponent implements OnInit {
   constructor(private http: Http) {
     // 查询所有部门接口
     this.http.get('http://192.168.2.238:8000/json/reply/QueryAllDepartmentsReq').subscribe((res: Response) => {
-      console.log(res.json().departments);
+      // console.log(res.json().departments);
       let departList = res.json().departments;
       // 循环数组，参数v,i:对象，索引。
       _.forEach(departList, function (v, i) {
-        console.log(v);
+        // console.log(v);
         // console.log(i);
       });
     });
@@ -94,31 +94,31 @@ export class DepartmentListComponent implements OnInit {
 
   public onNodeRemoved(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Removed');
-    console.log(e)
+    // console.log(e)
   }
 
   public onNodeMoved(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Moved');
-    console.log(e)
+    // console.log(e)
   }
 
   public onNodeRenamed(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Renamed');
-    console.log(e)
+    // console.log(e)
   }
 
   public onNodeCreated(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Created');
-    console.log(e)
+    // console.log(e)
   }
 
   public onNodeSelected(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Selected');
-    console.log(e)
+    // console.log(e)
   }
 
   private static logEvent(e: NodeEvent, message: string): void {
-    console.log(e);
+    // console.log(e);
     // alertify.message(`${message}: ${e.node.value}`);
   }
 }
