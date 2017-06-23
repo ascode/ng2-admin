@@ -9,24 +9,6 @@
                             (nodeMoved)="onNodeMoved($event)" (nodeCreated)="onNodeCreated($event)"> </tree>
                     </div>
                 </div>
-                <!--<ul *ngFor="let item of DepartmentList;let i = index;" class="al-sidebar-list" (mouseleave)="hoverElemTop=outOfArea">
-                    <li><i (click)='xian($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{item.name}}</li>
-                    <ul class='lic' [hidden]='item.hide' *ngFor='let i of item.sub'>
-                        <li>{{i.name}}</li>
-                    </ul>
-                    <div *ngIf="item.nextArr">
-                        <ul class='lic' *ngFor="let n of item.nextArr">
-                            <li><i (click)='lice($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{n.name}}</li>
-                        </ul>
-                    </div>
-                    <div *ngIf="item.arr">
-                        <ul class='al-sidebar-list' *ngFor="let t of item.arr">
-                            <li><i (click)='lice($event,i)' Class='ion-arrow-right-b'></i>&#x3000;{{t.name}}</li>
-                        </ul>
-                    </div>
-                </ul>-->
-                <!--<div class="sidebar-hover-elem" [ngStyle]="{top: hoverElemTop + 'px', height: hoverElemHeight + 'px'}" [ngClass]="{'show-hover-elem': showHoverElem }">
-                </div>-->
             </ba-card>
         </div>
         <div class="col-md-5">
@@ -90,8 +72,8 @@
 
             </div>
             <div class="form-group">
-                <button type="submit" style="margin-right:20px;" class="btn btn-primary " >删除部门</button>
-                <button type="submit" class="btn btn-primary" >保存</button>
+                <button type="submit" style="margin-right:20px;" class="btn btn-primary " (click)='delect()'>删除部门</button>
+                <button type="submit" class="btn btn-primary" (click)="department()">保存</button>
             </div>
             <!--<div class="form-group">
                 <a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>

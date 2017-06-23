@@ -21,70 +21,49 @@ export class DeList {
   selector: 'DepartmentList',
   templateUrl: './DepartmentList.html',
   styleUrls: ['./DepartmentList.scss']
-})        
+})
 export class DepartmentListComponent implements OnInit {
+  public pls: TreeModel;
   constructor(private http: Http) {
     // 查询所有部门接口
     this.http.get('http://192.168.2.238:8000/json/reply/QueryAllDepartmentsReq').subscribe((res: Response) => {
-      // console.log(res.json().departments);
       let departList = res.json().departments;
-      // 循环数组，参数v,i:对象，索引。
-      _.forEach(departList, function (v, i) {
-        // console.log(v);
-        // console.log(i);
-      });
+      let data_child = [];
+      for (var list in departList) {
+        data_child.push({ "value": departList[list].Name});
+      }
+        this.pls = {
+          value: '跟节点',
+          children: data_child,
+          // children: [
+          //   {
+          //     value: '部门管理',
+          //     children: [
+          //       { value: 'AspectJ' },
+          //       { value: 'AspectC++' }
+          //     ]
+          //   },
+          // ],
+        };
     });
   }
+
   DeListData: Object;
   public settings: Ng2TreeSettings = {
     rootIsVisible: false
   };
-
-  public pls: TreeModel;
-  public ngOnInit(): void {
-    setTimeout(() => {
-      this.pls = {
-        value: '跟节点',
-        children: [
-          {
-            value: '部门管理',
-            children: [
-              { value: 'AspectJ' },
-              { value: 'AspectC++' }
-            ]
-          },
-          {
-            value: '新建部门',
-            children: [
-              { value: 'C++' },
-              { value: 'C#' }
-            ]
-          },
-          {
-            value: '部门列表',
-            children: [
-              { value: 'JavaScript' },
-              { value: 'CoffeeScript' },
-              { value: 'TypeScript' }
-            ]
-          }
-        ],
-      };
-    }, 2000);
-  }
-
+  
   DeListObj = new DeList();
   department(): void {
     let DeList = this.DeListObj;
-    console.log(DeList)
-    this.http.post(
-      'http://192.168.2.238:8000/json/reply/CreateDepartmentReq',
+    // console.log(DeList)
+    this.http.post('http://192.168.2.238:8000/json/reply/CreateDepartmentReq',
       JSON.stringify(DeList)).subscribe((res: Response) => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
-  //   // 删除接口
+  // 删除接口
   // delect(): void {
   //   let id = { "Organization_uniqueid": "6D0CA1B6-69A2-4C94-90C6-8946CFB25FB2" }
   //   this.http.post('http://192.168.2.238:8000/json/reply/DeleteDepartmentReq', JSON.stringify(id)).subscribe((res: Response) => {
@@ -121,4 +100,5 @@ export class DepartmentListComponent implements OnInit {
     // console.log(e);
     // alertify.message(`${message}: ${e.node.value}`);
   }
+  ngOnInit(): void { }
 }

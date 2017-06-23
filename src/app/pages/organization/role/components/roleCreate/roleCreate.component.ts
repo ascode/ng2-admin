@@ -36,4 +36,8 @@ export class RoleCreateComponent {
         console.log(res);
 			});
   }
+  onblur(e): void{
+    // 失去焦点。
+    console.log(e);   
+  }
 }

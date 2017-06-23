@@ -76,8 +76,8 @@ export class RoleBasicExampleButtonViewComponent {
         renderComponent: RoleButtonViewComponent,
         // 这个事件来接收输入值。
         onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-            // console.log(row);          
+          instance.save.subscribe(row => {  
+            console.log(row);    
           });
         }
       },

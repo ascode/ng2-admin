@@ -5,7 +5,7 @@
                 <form>
                     <div class="form-group">
                         <label for="input001">角色编号</label>
-                        <input type="text" class="form-control" id="input001" placeholder="角色编号" [(ngModel)]='roleObj.FCode' name='FCode' />
+                        <input type="text" class="form-control" id="input001" placeholder="角色编号" [(ngModel)]='roleObj.FCode' name='FCode' (blur)='onblur($event.target.value)'/>
                     </div>
                     <div class="form-group">
                         <label for="input002">角色名称</label>
