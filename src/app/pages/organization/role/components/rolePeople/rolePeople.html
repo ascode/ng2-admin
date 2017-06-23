@@ -1,4 +1,4 @@
-<div class="widgets" [hidden]="!roleShow">
+<div class="widgets" [hidden]="roleShow">
     <div class="row">
         <ba-card title="浏览角色" bacardclass="with-scroll" class="smart-table-container">
             <basic-example-button-view ></basic-example-button-view>
@@ -6,7 +6,7 @@
     </div>
 </div>
 <button (click)="show()">点击</button>
-<div [hidden]="roleShow">
+<div [hidden]="!roleShow">
     <div class="row">
         <ba-card title="部门结构" bacardclass="with-scroll" class="col-md-2">
             <ul class='ul_role'>

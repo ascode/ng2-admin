@@ -122,6 +122,4 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
   }
   ngOnInit() {
   }
-
-
 }
