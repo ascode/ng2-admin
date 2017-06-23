@@ -5,7 +5,8 @@
                 <form>
                     <div class="form-group">
                         <label for="input001">登录名</label>
-                        <input type="text" class="form-control" id="input001" placeholder="登录名"  [(ngModel)]='userObj.login_name' name="login_name"/>
+                        <input type="text" class="form-control" id="input001" placeholder="登录名"  [(ngModel)]='userObj.login_name' name="login_name" #login_name (blur)='onBlur(login_name)'
+                         [ngStyle]="{'border-color':borderColor}" (keyup)='onKeyup(login_name)'/>
                     </div>
                     <div class="form-group">
                         <label for="input01">用户姓名</label>

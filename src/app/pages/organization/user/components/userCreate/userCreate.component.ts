@@ -29,18 +29,53 @@ export class User {
 })
 export class UserCreateComponent {
   userData: Object;
+  borderColor : string;
+  dataArr : string = '';
   constructor(private http: Http) {
-    
+  
+     let a = {};
+      this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
+      .subscribe((res: Response) => {
+          let data = res.json().result_data;
+          let dataArr = []; 
+          for(var k in data){
+            this.dataArr += data[k].Login_name + '+';
+          }
+        
+      });
+      
   }
  
   userObj = new User();
   makePost(): void {
-    let userObj = this.userObj;
-    this.http.post(
-      'http://192.168.2.238:8000/json/reply/AddUserReq',
-      JSON.stringify(userObj)).subscribe((res: Response) => {
-        this.userData = res.json();
-        console.log(this.userData);
-      });
+    
+    if(this.borderColor != '#33bcff'){
+        window.confirm('注册出错，请检查后再注册')
+    }else{
+       let userObj = this.userObj;
+        this.http.post(
+          'http://192.168.2.238:8000/json/reply/AddUserReq',
+          JSON.stringify(userObj)).subscribe((res: Response) => {
+            this.userData = res.json();
+            window.confirm('注册成功')
+          });
+        }
+   
+  }
+  onBlur(event):void{
+      let arr = this.dataArr.split('+');
+      if(event.value.length<4){
+        this.borderColor = 'red';
+        window.confirm('登陆名过短，请输入4位以上的英文字母')
+      }
+      if(arr.indexOf(event.value) != -1){
+        this.borderColor = 'red';
+        window.confirm('您输入的用户名已被注册，请更换')
+      }
+  }
+  onKeyup(event):void{
+    if(event.value.length >= 4){
+        this.borderColor = '#33bcff';
+      }
   }
 }

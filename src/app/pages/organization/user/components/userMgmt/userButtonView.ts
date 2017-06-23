@@ -29,7 +29,7 @@ export class UserMgmtButtonViewComponent implements ViewCell, OnInit {
   template: `
     <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
   `,
-  styleUrls:['./userMgmt.scss']
+  styleUrls: ['./userMgmt.scss']
 })
 export class UserBasicExampleButtonViewComponent implements OnInit {
   show: boolean = true;
@@ -112,8 +112,16 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
       });
 
   }
-
+  onDeleteConfirm(event): void {
+    // console.log(event);
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
   ngOnInit() {
   }
+
 
 }
