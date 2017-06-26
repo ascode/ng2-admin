@@ -2,7 +2,7 @@
   "login": {
     "title": "登录到 ng2-admin",
     "signup_link": "注册一个新用户",
-    "email": "邮箱账号",
+    "login_name": "登陆账号",
     "password": "登陆密码",
     "sign_in": "登陆",
     "forgot_password": "忘记密码？",

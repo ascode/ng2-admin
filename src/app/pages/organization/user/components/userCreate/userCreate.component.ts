@@ -11,9 +11,10 @@ import * as _ from 'lodash';
 
 export class User {
   constructor(
+    
     public login_name: string = '',
     public user_name: string = '',
-    public Password: string = '',
+    public pwd: string = '',
     public ScanCode: string = '',
     public IsEmployee: string = '',
     public IsAllowLogin: string = '',
@@ -32,7 +33,6 @@ export class UserCreateComponent {
   borderColor : string;
   dataArr : string = '';
   constructor(private http: Http) {
-  
      let a = {};
       this.http.post('http://192.168.2.238:8000/json/reply/QueryUsersReq', JSON.stringify(a))
       .subscribe((res: Response) => {
@@ -41,36 +41,34 @@ export class UserCreateComponent {
           for(var k in data){
             this.dataArr += data[k].Login_name + '+';
           }
-        
       });
-      
+     
   }
  
   userObj = new User();
   makePost(): void {
-    
-    if(this.borderColor != '#33bcff'){
-        window.confirm('注册出错，请检查后再注册')
+    if(this.borderColor != '#33bcff' || this.userObj.pwd == ''){
+        console.log('注册出错，请检查后再注册')
     }else{
        let userObj = this.userObj;
+       console.log(userObj);
         this.http.post(
           'http://192.168.2.238:8000/json/reply/AddUserReq',
           JSON.stringify(userObj)).subscribe((res: Response) => {
             this.userData = res.json();
-            window.confirm('注册成功')
+            console.log('注册成功')
           });
         }
-   
   }
   onBlur(event):void{
       let arr = this.dataArr.split('+');
       if(event.value.length<4){
         this.borderColor = 'red';
-        window.confirm('登陆名过短，请输入4位以上的英文字母')
+        console.log('登陆名过短，请输入4位以上的英文字母')
       }
       if(arr.indexOf(event.value) != -1){
         this.borderColor = 'red';
-        window.confirm('您输入的用户名已被注册，请更换')
+        console.log('您输入的用户名已被注册，请更换')
       }
   }
   onKeyup(event):void{

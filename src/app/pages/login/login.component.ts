@@ -1,8 +1,16 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 // 
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
-import { LocalStorage } from '../local_storage'
+import {
+  Http,
+  Response,
+  RequestOptions,
+  Headers,
+} from '@angular/http';
+
+import { LocalStorage } from '../local_storage';
+
 @Component({
   selector: 'login',
   templateUrl: './login.html',
@@ -11,17 +19,18 @@ import { LocalStorage } from '../local_storage'
 export class Login {
 
   public form:FormGroup;
-  public email:AbstractControl;
+  public loginName:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
+  
   // 验证信息。
-  constructor(fb:FormBuilder) {
+  constructor(private http: Http,fb:FormBuilder) {
     this.form = fb.group({
-      'email': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
+      'loginName': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
     });
 
-    this.email = this.form.controls['email'];
+    this.loginName = this.form.controls['loginName'];
     this.password = this.form.controls['password'];
   }
 
@@ -35,16 +44,24 @@ export class Login {
 
   public localStorage = new LocalStorage();
 
-  public onSubmit(values:Object):void {
-      
-      let email = this.email.value;
-      let password = this.password.value;
-      // console.log(email)
-      // console.log(password)
-      if(password == this.localStorage.get(email)){
-         alert('登陆成功')
-      }else{
-        alert('密码错误')
-      }
+  public onSubmit():void {
+      this.submitted = true;
+      let userData = {
+          uid:this.loginName.value,
+          pwd:this.password.value,
+      };
+      this.http.post('http://192.168.2.238:8000/json/reply/UserLoginReq', JSON.stringify(userData))
+      .subscribe((res: Response) => {
+          if(res.json().DoFlag){
+              console.log('登陆成功')
+              this.localStorage.setObject('userData',res.json().userinfo);
+              location.href='#'
+
+          }else{
+            console.log('用户名或用户密码错误')
+          }
+          
+      });
   }
+
 }
