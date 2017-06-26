@@ -347,7 +347,7 @@ privilege:
     "query_entity":{
         "login_name":"wangraoji",
         "user_name":"wangraoji",
-        "Password":"123",
+        "pwd":"密码",
         "ScanCode":"kk00011",
         "IsEmployee":1,
         "IsAllowLogin":1,
