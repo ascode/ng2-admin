@@ -40,7 +40,7 @@ export class Login {
       let email = this.email.value;
       let password = this.password.value;
       // console.log(email)
-      // console.log(password)
+      
       if(password == this.localStorage.get(email)){
          alert('登陆成功')
       }else{
