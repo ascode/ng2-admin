@@ -28,9 +28,9 @@ export class RoleButtonViewComponent implements ViewCell, OnInit {
 @Component({
   selector: 'basic-example-button-view',
   template: `
-    <ng2-smart-table [settings]="settings" [source]="source"></ng2-smart-table>
+    <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="onEditConfirm($event)" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
   `,
-//   styleUrls:['./userMgmt.scss']
+  //   styleUrls:['./userMgmt.scss']
 })
 export class RoleBasicExampleButtonViewComponent {
   settings = {
@@ -43,32 +43,32 @@ export class RoleBasicExampleButtonViewComponent {
       editButtonContent: '<i class="ion-edit"></i>',
       saveButtonContent: '<i class="ion-checkmark"></i>',
       cancelButtonContent: '<i class="ion-close"></i>',
-      confirmSave: true
+      confirmSave: true,
     },
     delete: {
       deleteButtonContent: '<i class="ion-trash-a"></i>',
-      confirmDelete: true
+      confirmDelete: true,
     },
     columns: {
       FName: {
         title: '角色编号',
-        type: 'string'
+        type: 'string',
       },
       FCode: {
         title: '角色名称',
-        type: 'string'
+        type: 'string',
       },
       IsAllowLogin: {
         title: '角色描述',
-        type: 'string'
+        type: 'string',
       },
       Creator_name: {
         title: '创建人',
-        type: 'string'
+        type: 'string',
       },
       Create_time: {
         title: '创建时间',
-        type: 'string'
+        type: 'string',
       },
       button: {
         title: '操作',
@@ -76,8 +76,8 @@ export class RoleBasicExampleButtonViewComponent {
         renderComponent: RoleButtonViewComponent,
         // 这个事件来接收输入值。
         onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {  
-            console.log(row);    
+          instance.save.subscribe(row => {
+            console.log(row);
           });
         }
       },
@@ -104,6 +104,23 @@ export class RoleBasicExampleButtonViewComponent {
           this.source.load(data);
         }, 2000);
       });
+  }
+  onDeleteConfirm(event): void {
+    if (window.confirm('Are you sure you want to delete?')) {
+      event.confirm.resolve();
+    } else {
+      event.confirm.reject();
+    }
+  }
+  onEditConfirm(event): void {
+    event.confirm.resolve();
+    let update = event.newData;
+    console.log(update);
+    this.http.post('http://192.168.2.238:8000/json/reply/UpdateRoleInfoReq', JSON.stringify(update))
+      .subscribe((res: Response) => {
+        console.log(res.json())        
+      })
+    // roleShow:boolean = false;
   }
   ngOnInit() { }
 }

@@ -1,18 +1,20 @@
-<!--<div class="widgets">
+<div class="widgets" [hidden]='yin'>
   <div class="row">
 <ba-card baCardClass="with-scroll" class="smart-table-container">
-        <basic-example-button-view></basic-example-button-view>
+        <basic-example-button-view [xianshi]="xianshi" ></basic-example-button-view>
     </ba-card>
   </div>
-</div>-->
+</div>
 
-
-<div class="widgets">
-
+<!--<div class="widgets">
   <div class="row">
     <ba-card title="Basic Example" baCardClass="with-scroll" class="smart-table-container">
       <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
     </ba-card>
   </div>
+</div>-->
 
+<div class="widgets" style="position:relative" [hidden]='!yin'>
+    <h2>这个</h2>
+    <button (save)="datalist($event)"></button>
 </div>

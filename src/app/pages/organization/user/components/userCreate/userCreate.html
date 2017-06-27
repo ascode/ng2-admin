@@ -42,6 +42,13 @@
                         <label for="input05">日期</label>
                         <input type="date" class="form-control" id="input05"  [(ngModel)]='userObj.InValidTime' name='InValidTime'/>
                     </div>
+                     <div class="form-group">
+                        <label for="input09">所在部门</label>
+                        <!--<input type="date" class="form-control" id="input05"  [(ngModel)]='userObj.InValidTime' name='InValidTime'/>-->
+                        <select name="Name" class="form-control" id="input09" [(ngModel)]='userObj.Name'>
+                            <option [value]='bm' *ngFor= "let bm of bumenArr;let i=index;">{{bm}}</option>
+                        </select>
+                    </div>
                 </form>
             </ba-card> 
         </div>
