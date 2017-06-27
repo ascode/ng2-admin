@@ -26,8 +26,8 @@ export class Login {
   // 验证信息。
   constructor(private http: Http,fb:FormBuilder) {
     this.form = fb.group({
-      'loginName': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
+      'loginName': ['', Validators.compose([Validators.required, Validators.minLength(2)])],
+      'password': ['', Validators.compose([Validators.required, Validators.minLength(3)])]
     });
 
     this.loginName = this.form.controls['loginName'];

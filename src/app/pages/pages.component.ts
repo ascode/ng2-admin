@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+import { Inject, Component } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 
 import { BaMenuService } from '../theme';
 import { PAGES_MENU } from './pages.menu';
+
+import { LocalStorage } from './local_storage';
 
 @Component({
   selector: 'pages',
@@ -20,7 +22,21 @@ import { PAGES_MENU } from './pages.menu';
 })
 export class Pages {
 
-  constructor(private _menuService: BaMenuService,) {
+  public localStorage = new LocalStorage();
+
+
+  constructor(private _menuService: BaMenuService) {
+  
+      console.log("判断是否登录");
+      this.localStorage.getObject('userData');
+      console.log(this.localStorage.getObject('userData').Id);
+      console.log("判断是否登录完成");
+      if (this.localStorage.getObject('userData').Id == undefined) {
+          console.log("用户没有登录，即将跳转到登录界面");
+          // this.router.navigate(['../../'], { relativeTo: this.activatedRoute, queryParamsHandling: 'preserve' });
+          console.dir(Router);
+          location.href="#/login"
+      }
   }
 
   ngOnInit() {
