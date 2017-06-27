@@ -1,8 +1,12 @@
 import {Injectable} from '@angular/core';
 
+
+
+import {DefaultConfig } from '../../../../../config/default_config';
+
 @Injectable()
 export class LogForUserLoginExceptionService {
-
+  public config;
   smartTableData = [
     {
       id: 1,
@@ -203,10 +207,18 @@ export class LogForUserLoginExceptionService {
     
   ];
 
-  getData(): Promise<any> {
+  constructor(){
+    this.config = new DefaultConfig();
+  }
+
+  getData(http): Promise<any> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.smartTableData);
+        http.post(this.config.getApiURL() + 'queryLogOfUserLoginExceptionReq',null).subscribe((res: Response) => {
+          console.log(res);
+          resolve(res);
+        })
+        //resolve(this.smartTableData);
       }, 2000);
     });
   }

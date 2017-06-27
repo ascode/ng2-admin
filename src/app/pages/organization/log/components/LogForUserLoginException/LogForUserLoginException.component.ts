@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { LogForUserLoginExceptionService } from './LogForUserLoginException.service';
 import { LocalDataSource } from 'ng2-smart-table';
+
+import { Http, Response } from '@angular/http';
+
+
 @Component({
   selector: 'LogForUserLoginException',
   templateUrl:'./LogForUserLoginException.html',
@@ -8,6 +12,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 
 export class LogForUserLoginExceptionComponent {
+  
+
    settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -24,29 +30,33 @@ export class LogForUserLoginExceptionComponent {
       confirmDelete: true
     },
     columns: {
-      id: {
+      User_unique_id: {
         title: '用户ID',
         type: 'string',
         
       },
-      firstName: {
+      Prd_user_name: {
         title: '用户名称',
         type: 'string'
       },
-      lastName: {
-        title: '操作路径',
+      Exception_desc: {
+        title: '异常信息',
         type: 'string'
       },
-      username: {
-        title: '操作名称',
+      Token: {
+        title: '登录令牌',
         type: 'string'
       },
-      email: {
-        title: '操作说明',
+      Login_type: {
+        title: '登录/登出',
         type: 'string'
       },
-      age: {
-        title: '数据变化',
+      Login_time: {
+        title: '登录时间',
+        type: 'string'
+      },
+      device_info: {
+        title: '设备信息',
         type: 'string'
       }
     }
@@ -57,9 +67,11 @@ export class LogForUserLoginExceptionComponent {
 // 请求到表格的数据。
    source: LocalDataSource = new LocalDataSource();
 
-  constructor(protected service: LogForUserLoginExceptionService) {
-    this.service.getData().then((data) => {
-      this.source.load(data);   
+  constructor(protected service: LogForUserLoginExceptionService, private http: Http) {
+    this.service.getData(http).then((data) => {
+      console.log("结果集:");
+      console.dir(data.json().result_data);
+      this.source.load(data.json().result_data);   
     });  
   }
 

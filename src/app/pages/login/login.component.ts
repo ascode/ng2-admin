@@ -2,11 +2,16 @@ import { Component } from '@angular/core';
 // 
 import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 
+import {DefaultConfig } from '../../config/default_config';
+
+//import { UiModule } from '../ui/ui.module';
+
 import {
   Http,
   Response,
   RequestOptions,
   Headers,
+  
 } from '@angular/http';
 
 import { LocalStorage } from '../local_storage';
@@ -22,6 +27,7 @@ export class Login {
   public loginName:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
+  public config;
   
   // 验证信息。
   constructor(private http: Http,fb:FormBuilder) {
@@ -32,6 +38,8 @@ export class Login {
 
     this.loginName = this.form.controls['loginName'];
     this.password = this.form.controls['password'];
+
+    this.config = new DefaultConfig();
   }
 
   // public onSubmit(values:Object):void {
@@ -51,7 +59,7 @@ export class Login {
           uid:this.loginName.value,
           pwd:this.password.value,
       };
-      this.http.post('http://192.168.2.238:8000/json/reply/UserLoginReq', JSON.stringify(userData))
+      this.http.post(this.config.getApiURL() + 'UserLoginReq', JSON.stringify(userData))
       .subscribe((res: Response) => {
           if(res.json().DoFlag){
               console.log('登陆成功')
@@ -59,7 +67,7 @@ export class Login {
               location.href='#'
 
           }else{
-            console.log('用户名或用户密码错误')
+              console.log('用户名或用户密码错误')
           }
           
       });

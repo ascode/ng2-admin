@@ -26,15 +26,8 @@ export class Pages {
 
 
   constructor(private _menuService: BaMenuService) {
-  
-      console.log("判断是否登录");
-      this.localStorage.getObject('userData');
-      console.log(this.localStorage.getObject('userData').Id);
-      console.log("判断是否登录完成");
       if (this.localStorage.getObject('userData').Id == undefined) {
           console.log("用户没有登录，即将跳转到登录界面");
-          // this.router.navigate(['../../'], { relativeTo: this.activatedRoute, queryParamsHandling: 'preserve' });
-          console.dir(Router);
           location.href="#/login"
       }
   }
