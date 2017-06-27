@@ -4,15 +4,12 @@
         "module_text": "组织管理",
         "selected": false,
         "culumns": [{
-            "column_name": "用户管理",
-            "column_text": "用户管理",
+            "column_name": "部门管理",
+            "column_text": "部门管理",
             "selected": false,
             "privilege_item": [
-                { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
-                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
-                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
-                { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
-                { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
+                { "privilege_item_name": "新增部门", "privilege_item_text": "新增部门", "selected": false },
+                { "privilege_item_name": "部门列表", "privilege_item_text": "部门列表", "selected": false }
             ]
         }, {
             "column_name": "用户管理",
@@ -20,21 +17,43 @@
             "selected": false,
             "privilege_item": [
                 { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
-                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
-                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
+                { "privilege_item_name": "用户信息", "privilege_item_text": "用户信息", "selected": false }
+            ]
+        }, {
+            "column_name": "角色管理",
+            "column_text": "角色管理",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "新建角色", "privilege_item_text": "新建角色", "selected": false },
+                { "privilege_item_name": "角色权限管理", "privilege_item_text": "角色权限管理", "selected": false },
+                { "privilege_item_name": "角色人员管理", "privilege_item_text": "角色人员管理", "selected": false },
                 { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
                 { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
             ]
         }, {
-            "column_name": "用户管理",
-            "column_text": "用户管理",
+            "column_name": "数据权限管理",
+            "column_text": "数据权限管理",
             "selected": false,
             "privilege_item": [
-                { "privilege_item_name": "新增用户", "privilege_item_text": "新增用户", "selected": false },
-                { "privilege_item_name": "查看用户列表", "privilege_item_text": "查看用户列表", "selected": false },
-                { "privilege_item_name": "查看用户详情", "privilege_item_text": "查看用户详情", "selected": false },
-                { "privilege_item_name": "修改用户", "privilege_item_text": "修改用户", "selected": false },
-                { "privilege_item_name": "删除用户", "privilege_item_text": "删除用户", "selected": false }
+                { "privilege_item_name": "根据角色", "privilege_item_text": "根据角色", "selected": false },
+                { "privilege_item_name": "根据用户", "privilege_item_text": "根据用户", "selected": false }
+            ]
+        }, {
+            "column_name": "权限报表管理",
+            "column_text": "权限报表管理",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "用户权限报表", "privilege_item_text": "用户权限报表", "selected": false }
+            ]
+        }, {
+            "column_name": "日志",
+            "column_text": "日志",
+            "selected": false,
+            "privilege_item": [
+                { "privilege_item_name": "用户登录日志", "privilege_item_text": "用户登录日志", "selected": false },
+                { "privilege_item_name": "用户操作日志", "privilege_item_text": "用户操作日志", "selected": false },
+                { "privilege_item_name": "用户异常登录日志", "privilege_item_text": "用户异常登录日志", "selected": false },
+                { "privilege_item_name": "用户异常操作日志", "privilege_item_text": "用户异常操作日志", "selected": false }
             ]
         }]
     }]

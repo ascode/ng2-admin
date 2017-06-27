@@ -503,8 +503,8 @@ privilege:
 {
     "FCode":"角色编号",
     "FName":"角色名称",
-    "desc":"角色描述",
-    "data_status":"数据状态枚举字段，可选值：新建、提交、审核",
+    "Role_desc":"角色描述",
+    "Data_status":"数据状态枚举字段，可选值：新建、提交、审核",
     "creator_uniqueid":"创建人全局唯一ID",
     "creator_name":"创建人名称",
     "create_time":"2017-12-12"
