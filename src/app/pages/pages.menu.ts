@@ -114,7 +114,7 @@ export const PAGES_MENU = [
                   menu: {
                     title: '用户信息',
                   }
-                }
+                }       
               },
             ]
           },
@@ -250,17 +250,17 @@ export const PAGES_MENU = [
               }
             ]
           },
-           {
+          {
             path: 'chart',
-              data: {
-                menu: {
-                  title: '图表展示',
-                  selected: false,
-                  expanded: false,
-                  order: 100,
-                }
-              },
-              children: [
+            data: {
+              menu: {
+                title: '图表展示',
+                selected: false,
+                expanded: false,
+                order: 100,
+              }
+            },
+            children: [
               {
                 path: 'basic',
                 data: {

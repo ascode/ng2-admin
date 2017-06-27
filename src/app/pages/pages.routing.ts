@@ -13,7 +13,7 @@ export const routes: Routes = [
     children: [
       { path: 'department', loadChildren: './organization/department/department.module#DepartmentModule' },
       { path: 'user', loadChildren: './organization/user/user.module#UserModule' },
-      { path: 'role', loadChildren: './organization/role/role.module#RoleModule' },
+      { path: 'role', loadChildren: './organization/role/role.module#RoleModule'},
       { path: 'dataprivilege', loadChildren: './organization/dataprivilege/dataprivilege.module#DataPrivilegeModule' },
       { path: 'privilegereport', loadChildren: './organization/privilegereport/privilegereport.module#PrivilegeReportModule' },
       { path: 'log', loadChildren: './organization/log/log.module#LogModule' },
