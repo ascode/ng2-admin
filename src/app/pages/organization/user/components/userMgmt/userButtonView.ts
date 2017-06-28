@@ -35,11 +35,10 @@ export class UserMgmtButtonViewComponent implements ViewCell, OnInit {
 })
 export class UserBasicExampleButtonViewComponent implements OnInit {
   // public show: boolean = true;
-  @Input() xianshi: boolean;
   // @Output() shows: EventEmitter<boolean> = new EventEmitter();
-  // @Output() edit: EventEmitter<any> = new EventEmitter();
+  @Output() edit: EventEmitter<any> = new EventEmitter();
+  isShow = false;
   public settings;
-
   source: LocalDataSource = new LocalDataSource();
   constructor(private http: Http) {
     let athis = this;
@@ -86,8 +85,12 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
           renderComponent: UserMgmtButtonViewComponent,
           onComponentInitFunction(instance) {
             instance.save.subscribe(row => {
-              athis.xianshi = !athis.xianshi;
-              console.log(athis.xianshi);
+              console.log(athis.isShow);
+              let dataObj = {
+               isShow: athis.isShow,
+               row: row,
+              }
+              athis.edit.emit(dataObj);   
             });      
           },
         },
@@ -112,10 +115,10 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
           }
           data[k].button = "操作";
         }
-        setTimeout(() => {
-          console.log(data);
+        // setTimeout(() => {
+        //   console.log(data);
           this.source.load(data);
-        }, 2000)
+        // }, 2000)
       });
   }
   onDeleteConfirm(event): void {

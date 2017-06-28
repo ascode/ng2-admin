@@ -20,8 +20,8 @@ export class User {
     public InValidTime: string = '',
     public DataStatus: string = '',
     public Creator_uniqueid: string = '00001',
-    public Name: string = '部门名称',
-    public Organization_uniqueid : string = '',
+    public prd_department_name: string = '部门名称',
+    public Department_unique_id : string = '',
     public creator_name: string = 'zly',
   ) {}
 }
@@ -59,13 +59,15 @@ export class UserCreateComponent {
 
   makePost(): void {
     // this.userObj.bumenId = this.bumenArr.indexOf(this.userObj.Name)+'';
-    let index = this.bumenArr.indexOf(this.userObj.Name)+''
-    this.userObj.Organization_uniqueid = this.seleDepartId[index];
+    let index = this.bumenArr.indexOf(this.userObj.prd_department_name)+''
+    this.userObj.Department_unique_id = this.seleDepartId[index];
+    // this.userObj.departMent = this.bumenArr;
+    // this.userObj.departMentId = this.seleDepartId;
     if (this.borderColor != '#33bcff' || this.userObj.pwd == '') {
       console.log('注册出错，请检查后再注册')
     } else {
       let userObj = this.userObj;
-      // console.log(userObj);
+      console.log(userObj);
       this.http.post('http://192.168.2.238:8000/json/reply/AddUserReq',
         JSON.stringify(userObj)).subscribe((res: Response) => {
           this.userData = res.json();
