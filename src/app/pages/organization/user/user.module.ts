@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
 // import {NgForm} from '@angular/forms';
-import { HttpModule } from "@angular/http";
+import { HttpModule } from  "@angular/http";
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 // 必须写
 import { routing } from './user.routing';
@@ -22,7 +22,7 @@ const EXAMPLES_COMPONENTS = [
   CustomRenderComponent,
   UserMgmtButtonViewComponent,
   UserBasicExampleButtonViewComponent,
-  UserMgmtComponent
+  UserMgmtComponent,
 ];
 
 @NgModule({
