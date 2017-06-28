@@ -79,7 +79,7 @@ export class LogForUserLoginComponent {
   this.http.post(this.config.getApiURL() + 'queryLogOfUserLoginReq',JSON.stringify(loginList)).subscribe((res: Response) => {
 				let data = res.json().result_data;  
         console.log(data);
-        setTimeout(() => {this.source.load(data);},0);   
+        this.source.load(data);
           
 			}); 
   }

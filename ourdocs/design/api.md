@@ -314,6 +314,8 @@ privilege:
     "user_name":"用户名",
     "pwd":"密码",
     "ScanCode":"扫描码",
+    "Department_unique_id":"部门唯一ID",
+    "prd_department_name":"部门名称",
     "IsEmployee":1, //是否是员工
     "IsAllowLogin":1, //是否允许登录
     "InValidTime":"2017-01-02",  //用户账户有效期

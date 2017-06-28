@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource } from 'ng2-smart-table';
+
+import {DefaultConfig } from '../../../../../config/default_config';
+
+
 @Component({
   selector: 'role-privilege',
   templateUrl: './rolePrivilege.component.html',
@@ -8,6 +12,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 
 export class RolePrivilegeComponent {
+    public config;
+
   query: string = '';
   settings = {
     add: {
@@ -25,11 +31,11 @@ export class RolePrivilegeComponent {
       confirmDelete: true
     },
     columns: {
-      id: {
+      Id: {
         title: '角色编号',
         type: 'string'
       },
-      firstName: {
+      FName: {
         title: '角色名称',
         type: 'string'
       },
@@ -37,11 +43,11 @@ export class RolePrivilegeComponent {
         title: '角色描述',
         type: 'string'
       },
-      username: {
+      Creator_name: {
         title: '创建人',
         type: 'string'
       },
-      email: {
+      Create_time: {
         title: '创建时间',
         type: 'string'
       },
@@ -68,9 +74,11 @@ export class RolePrivilegeComponent {
 
   source: LocalDataSource = new LocalDataSource();
   constructor(private http: Http) {
-    let d = {"query_entity":{"Role_uniqueid":"4C2D2E69-5BFE-492E-8C67-210C2AA80984"}}
-    this.http.post('http://192.168.2.238:8000/json/reply/QueryRolesReq', JSON.stringify(d)).subscribe((res: Response) => {
+    this.config = new DefaultConfig();
+    let d = {"query_entity":{}}
+    this.http.post(this.config.getApiURL() + 'QueryRolesReq', null).subscribe((res: Response) => {
       let data = res.json().result_data;     
+      this.source.load(data);
       console.log(data);
   })
   }

@@ -3,6 +3,8 @@ import { ViewCell } from 'ng2-smart-table';
 import { LocalDataSource } from 'ng2-smart-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
+import {DefaultConfig } from '../../../../../config/default_config';
+
 @Component({
   selector: 'button-view',
   template: `
@@ -10,6 +12,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
   `,
 })
 export class RoleButtonViewComponent implements ViewCell, OnInit {
+    
+
   renderValue: string;
   @Input() value: string | number;
   @Input() rowData: any;
@@ -33,6 +37,7 @@ export class RoleButtonViewComponent implements ViewCell, OnInit {
   //   styleUrls:['./userMgmt.scss']
 })
 export class RoleBasicExampleButtonViewComponent {
+  public config;
   settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -85,8 +90,9 @@ export class RoleBasicExampleButtonViewComponent {
   };
   source: LocalDataSource = new LocalDataSource();
   constructor(private http: Http) {
+    this.config = new DefaultConfig();
     let a = {};
-    this.http.post('http://192.168.2.238:8000/json/reply/QueryRolesReq', JSON.stringify(a))
+    this.http.post(this.config.getApiURL() + 'QueryRolesReq', JSON.stringify(a))
       .subscribe((res: Response) => {
         let data = res.json().result_data;
         for (let k in data) {
@@ -99,10 +105,8 @@ export class RoleBasicExampleButtonViewComponent {
           }
           data[k].button = "成员维护"
         }
-        setTimeout(() => {
-          console.log(data);
-          this.source.load(data);
-        }, 2000);
+        console.log(data);
+        this.source.load(data);
       });
   }
   onDeleteConfirm(event): void {

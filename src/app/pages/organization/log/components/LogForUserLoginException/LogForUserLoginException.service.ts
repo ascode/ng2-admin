@@ -213,13 +213,10 @@ export class LogForUserLoginExceptionService {
 
   getData(http): Promise<any> {
     return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        http.post(this.config.getApiURL() + 'queryLogOfUserLoginExceptionReq',null).subscribe((res: Response) => {
+      http.post(this.config.getApiURL() + 'queryLogOfUserLoginExceptionReq',null).subscribe((res: Response) => {
           console.log(res);
           resolve(res);
         })
-        //resolve(this.smartTableData);
-      }, 2000);
     });
   }
 }
