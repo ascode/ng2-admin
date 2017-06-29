@@ -53,7 +53,7 @@ export class Login {
   public localStorage = new LocalStorage();
 
 
-  public onSubmit():void {
+  public onSubmit(value):void {
       this.submitted = true;
       let userData = {
           uid:this.loginName.value,

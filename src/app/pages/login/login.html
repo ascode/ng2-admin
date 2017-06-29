@@ -1,31 +1,31 @@
 <div class="auth-main">
-  <div class="auth-block">
-    <h1 translate>{{'login.title'}}</h1>
-    <a routerLink="/register" class="auth-link" translate>{{'login.signup_link'}}</a>
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal" action='#'>
-      <div class="form-group row" [ngClass]="{'has-error': (!loginName.valid && loginName.touched), 'has-success': (loginName.valid && loginName.touched)}">
-        <label for="inputEmail3" class="col-sm-2 control-label" translate>{{'login.login_name'}}</label>
+    <div class="auth-block">
+        <h1 translate>{{'login.title'}}</h1>
+        <a routerLink="/register" class="auth-link" translate>{{'login.signup_link'}}</a>
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal" action='#'>
+            <div class="form-group row" [ngClass]="{'has-error': (!loginName.valid && loginName.touched), 'has-success': (loginName.valid && loginName.touched)}">
+                <label for="inputEmail3" class="col-sm-2 control-label" translate>{{'login.login_name'}}</label>
 
-        <div class="col-sm-10">
-          <input [formControl]="loginName" type="text" class="form-control" id="inputEmail3" placeholder="{{'login.login_name' | translate}}">
-        </div>
-      </div>
-      <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
-        <label for="inputPassword3" class="col-sm-2 control-label" translate>{{'login.password'}}</label>
+                <div class="col-sm-10">
+                    <input [formControl]="loginName" type="text" class="form-control" id="inputEmail3" placeholder="{{'login.login_name' | translate}}">
+                </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+                <label for="inputPassword3" class="col-sm-2 control-label" translate>{{'login.password'}}</label>
 
-        <div class="col-sm-10">
-          <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="{{'login.password' | translate}}">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="offset-sm-2 col-sm-10">
-          <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate>{{'login.sign_in'}}</button>
-          <a routerLink="/login" class="forgot-pass" translate>{{'login.forgot_password'}}</a>
-        </div>
-      </div>
+                <div class="col-sm-10">
+                    <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="{{'login.password' | translate}}">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button [disabled]="!form.valid" type="submit" class="btn btn-default btn-auth" translate>{{'login.sign_in'}}</button>
+                    <a routerLink="/login" class="forgot-pass" translate>{{'login.forgot_password'}}</a>
+                </div>
+            </div>
 
-      <div class="auth-sep"><span><span translate>{{'login.sign_from_app_text'}}</span></span>
-      </div>
-    </form>
-  </div>
+            <div class="auth-sep"><span><span translate>{{'login.sign_from_app_text'}}</span></span>
+            </div>
+        </form>
+    </div>
 </div>

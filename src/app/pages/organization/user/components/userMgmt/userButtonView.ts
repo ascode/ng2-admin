@@ -160,4 +160,6 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
       });
   }
   ngOnInit() { }
+
+  onSave(event) { }
 };
