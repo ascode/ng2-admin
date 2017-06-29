@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
 // import {NgForm} from '@angular/forms';
 import { HttpModule } from  "@angular/http";
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from 'ng2-first-table';
 // 必须写
 import { routing } from './user.routing';
 // 子组件

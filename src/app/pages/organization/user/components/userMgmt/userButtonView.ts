@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ViewCell } from 'ng2-smart-table';
-import { LocalDataSource } from 'ng2-smart-table';
+import { ViewCell } from 'ng2-first-table';
+import { LocalDataSource } from 'ng2-first-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 @Component({
@@ -29,7 +29,7 @@ export class UserMgmtButtonViewComponent implements ViewCell, OnInit {
 @Component({
   selector: 'basic-example-button-view',
   template: `
-    <ng2-smart-table [settings]="settings"  [source]="source" (editConfirm)="onEditConfirm($event)" (deleteConfirm)="onDeleteConfirm($event)" (save)='onSave($event)'></ng2-smart-table>
+    <ng2-first-table [settings]="settings"  [source]="source" (editConfirm)="onEditConfirm($event)" (deleteConfirm)="onDeleteConfirm($event)" (save)='onSave($event)'></ng2-first-table>
   `,
   styleUrls: ['./userMgmt.scss'],
 })

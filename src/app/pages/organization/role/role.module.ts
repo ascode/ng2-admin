@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../../theme/nga.module';
 
 import { HttpModule, JsonpModule } from '@angular/http';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from 'ng2-first-table';
 import { routing } from './role.routing';
 
 import { RoleComponent } from './role.component';

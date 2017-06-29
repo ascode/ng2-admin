@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { NgaModule } from '../../../theme/nga.module';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from 'ng2-first-table';
 import { FormsModule } from '@angular/forms';
 import { routing } from './dataprivilege.routing';
 import { DataPrivilegeComponent } from './dataprivilege.component';

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LogForUserLoginExceptionService } from './LogForUserLoginException.service';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
 
 import { Http, Response } from '@angular/http';
 

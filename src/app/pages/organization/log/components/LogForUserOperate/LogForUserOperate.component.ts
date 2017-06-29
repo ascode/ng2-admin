@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LogForUserOperateService } from './LogForUserOperate.service';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
 @Component({
   selector: 'LogForUserOperate',
   templateUrl: './LogForUserOperate.html',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
 
 import {DefaultConfig } from '../../../../../config/default_config';
 

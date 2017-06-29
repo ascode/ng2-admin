@@ -197,7 +197,7 @@ Things to consider:
 
 ### Features
 
-* Missed new component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+* Missed new component [ng2-first-table](https://akveo.github.io/ng2-first-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
 
 ### How to update
 
@@ -218,7 +218,7 @@ Things to consider:
 ### Features
 
 * Finally get rid of bower (thanks to @GRoguelon)
-* New component [ng2-smart-table](https://akveo.github.io/ng2-smart-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
+* New component [ng2-first-table](https://akveo.github.io/ng2-first-table/) - [demo](http://akveo.com/ng2-admin/#/pages/tables/smarttables)
 
 
 ### How to update

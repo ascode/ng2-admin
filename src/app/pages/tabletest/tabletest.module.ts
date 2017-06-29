@@ -6,7 +6,7 @@ import { routing } from './tabletest.routing';
 import { TableTest } from './tabletest.component';
 import { Table1 } from './components/table1/table1.component';
 
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from 'ng2-first-table';
 
 @NgModule({
   imports: [

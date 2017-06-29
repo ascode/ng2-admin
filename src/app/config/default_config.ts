@@ -3,7 +3,7 @@ export class DefaultConfig {
     private apiUrl = "http://localhost/Net4Frm.Host/json/reply/";
 
     constructor(){
-
+        
     }
 
     getApiURL(){

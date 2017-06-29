@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataOperatePrivilegeToUserService } from './DataOperatePrivilegeToUser.service';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
 @Component({
   selector: 'DataOperatePrivilegeToUser',
   templateUrl:'./DataOperatePrivilegeToUser.html',
