@@ -10,6 +10,7 @@ import { Pages } from './pages.component';
 
 
 
+
 @NgModule({
   imports: [CommonModule, AppTranslationModule, NgaModule, routing],
   declarations: [Pages]

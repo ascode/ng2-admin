@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { ViewCell } from 'ng2-smart-table';
+import { ViewCell } from 'ng2-first-table';
 
 @Component({
   selector: 'button-view',
@@ -27,7 +27,7 @@ export class TestComponent implements ViewCell, OnInit {
 // @Component({
 //   selector: 'basic-example-button-view',
 //   template: `
-//     <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+//     <ng2-first-table [settings]="settings" [source]="data"></ng2-first-table>
 //   `,
 // })
 // export class BasicExampleButtonViewComponent implements OnInit {

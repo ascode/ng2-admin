@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { LocalDataSource } from 'ng2-smart-table';
-import { ViewCell } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
+import { ViewCell } from 'ng2-first-table';
 import {
   Http,
   Response,

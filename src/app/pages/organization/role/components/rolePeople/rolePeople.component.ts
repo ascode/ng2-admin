@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LocalDataSource ,ViewCell} from 'ng2-smart-table';
+import { LocalDataSource ,ViewCell} from 'ng2-first-table';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 @Component({
   selector: 'role-people',

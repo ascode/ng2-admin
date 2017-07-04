@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { LocalDataSource } from 'ng2-smart-table';
+import { LocalDataSource } from 'ng2-first-table';
+
+import {DefaultConfig } from '../../../../../config/default_config';
 
 @Component({
   selector: 'LogForUserLogin',
@@ -9,6 +11,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 })
 
 export class LogForUserLoginComponent {
+  public config;
+
    settings = {
     add: {
       addButtonContent: '<i class="ion-ios-plus-outline"></i>',
@@ -25,29 +29,29 @@ export class LogForUserLoginComponent {
       confirmDelete: true
     },
     columns: {
-      user_unique_id: {
+      User_unique_id: {
         title: '用户ID',
         type: 'string',
         
       },
-      prd_user_name: {
+      Prd_user_name: {
         title: '用户名称',
         type: 'string'
       },
-        device_info: {
-        title: '操作路径',
+        Token: {
+        title: '登录令牌',
         type: 'string'
       },
-      username: {
-        title: '操作名称',
+      Login_type: {
+        title: '登录/登出',
         type: 'string'
       },
-      token: {
-        title: '操作说明',
+      Login_time: {
+        title: '登录时间',
         type: 'string'
       },
-      age: {
-        title: '数据变化',
+      Device_info: {
+        title: '设备信息',
         type: 'string'
       }
     }
@@ -58,6 +62,7 @@ export class LogForUserLoginComponent {
 // 请求到表格的数据。
    source: LocalDataSource = new LocalDataSource();
   constructor(private http: Http) {
+    this.config = new DefaultConfig();
   let loginList = {
     "pagesize":10,
     "current_page_index":1,
@@ -69,10 +74,12 @@ export class LogForUserLoginComponent {
         "device_info":"pc端"
     }
 }
-   this.http.post('http://vosung.bgenius.cn:8081/mockjs/11/userLogin?',JSON.stringify(loginList)).subscribe((res: Response) => {
+  //  this.http.post('http://vosung.bgenius.cn:8081/mockjs/11/userLogin?',JSON.stringify(loginList)).subscribe((res: Response) => {
+    //
+  this.http.post(this.config.getApiURL() + 'queryLogOfUserLoginReq',JSON.stringify(loginList)).subscribe((res: Response) => {
 				let data = res.json().result_data;  
         console.log(data);
-        setTimeout(() => {this.source.load(data);},2000);   
+        this.source.load(data);
           
 			}); 
   }

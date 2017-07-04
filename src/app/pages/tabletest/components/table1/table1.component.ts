@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { Ng2SmartTableModule } from 'ng2-first-table';
 
 @Component({
   selector: 'table1',
-  template: `<ng2-smart-table (userRowSelect)="rowSelect()" [settings]="settings" [source]="data"></ng2-smart-table>`
+  template: `<ng2-first-table (userRowSelect)="rowSelect()" [settings]="settings" [source]="data"></ng2-first-table>`
 })
 export class Table1 {
 

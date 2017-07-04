@@ -46,6 +46,7 @@ RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.1
 ## 先决条件  
 * [下载安装git](https://git-for-windows.github.io/)  
 * [下载安装nodejs(v6.10.2)](https://nodejs.org)  
+* [下载安装Python(Python 2.7.13 - 2016-12-17)](https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi)
 * npm install webpack-merge -g  
 * npm install webpack -g  
 * npm install rimraf -g  

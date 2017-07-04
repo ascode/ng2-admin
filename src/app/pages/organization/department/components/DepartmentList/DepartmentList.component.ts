@@ -64,12 +64,12 @@ export class DepartmentListComponent implements OnInit {
   }
 
   // 删除接口
-  // delect(): void {
-  //   let id = { "Organization_uniqueid": "6D0CA1B6-69A2-4C94-90C6-8946CFB25FB2" }
-  //   this.http.post('http://192.168.2.238:8000/json/reply/DeleteDepartmentReq', JSON.stringify(id)).subscribe((res: Response) => {
-  //     console.log(res);
-  //   });
-  // }
+  delect(): void {
+    // let id = { "Organization_uniqueid": "6D0CA1B6-69A2-4C94-90C6-8946CFB25FB2" }
+    // this.http.post('http://192.168.2.238:8000/json/reply/DeleteDepartmentReq', JSON.stringify(id)).subscribe((res: Response) => {
+    //   console.log(res);
+    // });
+  }
 
   public onNodeRemoved(e: NodeEvent): void {
     DepartmentListComponent.logEvent(e, 'Removed');
