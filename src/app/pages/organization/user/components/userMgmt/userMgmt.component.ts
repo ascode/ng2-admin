@@ -45,10 +45,11 @@ export class UserMgmtComponent {
     });
   }
   edit() {
-    console.log(this.row);  
+    // console.log(this.row);  
     let update = {
       uniqueid: this.row['Uniqueid'],
       user_name: this.row['User_name'],
+      Login_name : this.row['Login_name'],
       department_unique_id: this.row['Department_unique_id'],
       prd_department_name: this.row['Prd_department_name'],
       ScanCode: this.row['ScanCode'],
@@ -60,9 +61,14 @@ export class UserMgmtComponent {
       last_updater_unique_id: "111",
     };
     console.log(update);
-    this.http.post('http://192.168.2.238:8000/json/reply/UpdateRoleInfoReq', JSON.stringify(update))
+    this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserReq', JSON.stringify(update))
       .subscribe((res: Response) => {
         console.dir(res.json());
+       if(res.json().DoFlag == true){
+        this.xianshi = !this.xianshi;
+       }else{
+         window.confirm('修改失败')
+       }
       });
   };
 }
