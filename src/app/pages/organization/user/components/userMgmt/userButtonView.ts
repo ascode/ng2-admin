@@ -136,9 +136,8 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
     }
   }
   onEditConfirm(event): void {
-    console.log(1)
     event.confirm.resolve();
-    console.log(event.newData);
+    // console.log(event.newData);
     let update = {
       uniqueid: event.newData.Uniqueid,
       user_name: event.newData.User_name,
@@ -153,7 +152,8 @@ export class UserBasicExampleButtonViewComponent implements OnInit {
       last_updater_unique_id: "111",
     }
     console.log(update);
-    this.http.post('http://192.168.2.238:8000/json/reply/UpdateRoleInfoReq', JSON.stringify(update))
+    console.log(this.source);
+    this.http.post('http://192.168.2.238:8000/json/reply/UpdateUserfoReq', JSON.stringify(update))
       .subscribe((res: Response) => {
         console.dir(res.json());
         console.dir(res);
