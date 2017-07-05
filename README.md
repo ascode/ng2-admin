@@ -20,7 +20,7 @@ RestAPI的内网测试地址：[http://192.168.2.238:8000/metadata](http://192.1
 ## 目录  
 * 开发框架说明[本页]  
 * [API说明](ourdocs/design/api.md)    
-* [前端处理逻辑说明](ourdocs/design/logic.md)  
+* [前端处理逻辑说明](ourdocs/design/frontendlogic.md)  
 * [组织管理菜单结构设计](ourdocs/design/Menus/组织管理菜单结构设计.jpg)
 * [组织管理原型设计](ourdocs/design/PrototypeProject/Net4FrmPrototype.rar)
 * [团队协作Bug榜](ourdocs/mgmtdaily.md)
